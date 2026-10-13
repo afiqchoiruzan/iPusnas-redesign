@@ -33,10 +33,12 @@ const show = async (page, selector, ms = 1200) => {
     await page.locator('#page-beranda .search-bar input').fill('');
     await page.locator('.filter-btn-square').click();
     await pause(1200);
-    await page.locator('.filter-sheet-footer button').first().click().catch(() => page.keyboard.press('Escape'));
+    await page.locator('.filter-sheet-footer button').first().click().catch(() => {});
+    await pause(700);
+    await page.keyboard.press('Escape');
     await pause(900);
 
-    // Open a book detail and browse it
+    // Open the reader from the "lanjut baca" card
     await page.locator('.reading-card').click();
     await pause(1400);
     await page.locator('#page-ebook-reader .ebook-reader-page').hover();

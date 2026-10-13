@@ -4,1382 +4,583 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iPusnas - Redesign Prototype</title>
+    <meta name="theme-color" content="rgb(255, 253, 248)">
+    <title>iPusnas · Prototype redesign</title>
+    <script>
+        (function () {
+            try {
+                var stored = localStorage.getItem('ipusnas-theme');
+                var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+                var meta = document.querySelector('meta[name="theme-color"]');
+                if (meta) meta.setAttribute('content', dark ? 'rgb(23, 24, 28)' : 'rgb(255, 253, 248)');
+            } catch (e) {
+                document.documentElement.dataset.theme = 'light';
+            }
+        })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500;600;700&family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,400,0..1,0&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="phone-frame">
-        <!-- ============ STATUS BAR ============ -->
+        <!-- STATUS BAR -->
         <div class="status-bar">
-            <span class="time">09:41</span>
+            <span class="time">13.27</span>
             <div class="status-icons">
-                <span class="material-icons-round" style="font-size:14px">signal_cellular_alt</span>
-                <span class="material-icons-round" style="font-size:14px">wifi</span>
-                <span class="material-icons-round" style="font-size:14px">battery_full</span>
+                <span class="material-symbols-rounded" aria-hidden="true">signal_cellular_alt</span>
+                <span class="material-symbols-rounded" aria-hidden="true">wifi</span>
+                <span class="material-symbols-rounded" aria-hidden="true">battery_full</span>
             </div>
         </div>
 
-        <!-- ============ PAGE: BERANDA ============ -->
+        <!-- PAGE: BERANDA -->
         <div class="page active" id="page-beranda">
             <div class="page-scroll">
-                <div class="beranda-header">
-                    <div>
-                        <img src="src/logoipusnas.jpeg" alt="iPusnas Logo"
-                            style="height:75%;width: 35%; object-fit: contain; margin-top: 5px">
-                    </div>
-                    <button class="icon-btn" aria-label="Notifikasi">
-                        <span class="material-icons-round">notifications_none</span>
+                <div class="beranda-head">
+                    <img class="logo logo--light" src="src/logo-ipusnas.svg" alt="iPusnas" width="150" height="40">
+                    <img class="logo logo--dark" src="src/logo-ipusnas-dark.svg" alt="iPusnas" width="150" height="40">
+                    <button type="button" class="icon-btn" aria-label="Notifikasi" data-action="not-in-prototype" data-label="Notifikasi">
+                        <span class="material-symbols-rounded" aria-hidden="true">notifications</span>
                     </button>
                 </div>
 
-                <!-- Search and Filter -->
                 <div class="search-and-filter">
                     <div class="search-bar">
-                        <span class="material-icons-round">search</span>
-                        <input type="text" placeholder="Cari judul, penulis, atau topik...">
+                        <span class="material-symbols-rounded" aria-hidden="true">search</span>
+                        <label class="sr-only" for="beranda-search">Cari buku</label>
+                        <input id="beranda-search" type="text" placeholder="Cari judul, penulis, atau ISBN…">
                     </div>
-                    <button class="filter-btn-square" aria-label="Filter & Urutkan" onclick="openFilterSheet()">
-                        <span class="material-icons-round">tune</span>
+                    <button type="button" class="filter-btn-square" aria-label="Filter dan urutkan" data-action="open-filter">
+                        <span class="material-symbols-rounded" aria-hidden="true">tune</span>
                     </button>
-                </div>
-
-                <!-- Featured Banner -->
-                <div class="featured-banner" aria-label="Banner pilihan iPusnas">
-                    <button class="banner-arrow banner-arrow-prev" aria-label="Banner sebelumnya">
-                        <span class="material-icons-round">chevron_left</span>
-                    </button>
-                    <div class="banner-track">
-                        <article class="banner-slide banner-slide-book">
-                            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=640&h=360&fit=crop"
-                                alt="Buku The Book of Tomorrow">
-                            <div class="banner-overlay"></div>
-                            <div class="banner-copy">
-                                <span>Review Buku</span>
-                                <strong>The Book of Tomorrow</strong>
-                            </div>
-                        </article>
-                        <article class="banner-slide banner-slide-bulletin">
-                            <div class="bulletin-art">
-                                <span class="bulletin-title">LEMBARAN</span>
-                                <span class="bulletin-subtitle">JAGA LINGKUNGAN<br>JAGA KEHIDUPAN</span>
-                                <span class="bulletin-trees">♣ ♣ ♣</span>
-                            </div>
-                            <div class="banner-copy">
-                                <span>Buletin Lembaran Vol. VI, Juni 2026</span>
-                            </div>
-                        </article>
-                    </div>
-                    <button class="banner-arrow banner-arrow-next" aria-label="Banner berikutnya">
-                        <span class="material-icons-round">chevron_right</span>
-                    </button>
-                </div>
-                <div class="banner-dots" aria-label="Slide banner">
-                    <span class="active"></span><span></span><span></span><span></span>
-                </div>
-
-                <!-- Sedang Kamu Baca -->
-                <div class="section-block">
-                    <h2 class="section-title">Sedang Kamu Baca</h2>
-                    <div class="reading-card" onclick="openEbook()">
-                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=80&h=110&fit=crop"
-                            alt="Book Cover" class="reading-thumb">
-                        <div class="reading-info">
-                            <h3>Gadis Kretek</h3>
-                            <p>Ratih Kumala</p>
-                            <div class="progress-bar-container">
-                                <div class="progress-bar" style="width:65%"></div>
-                            </div>
-                            <div class="progress-meta">
-                                <span class="progress-text">247/300 Halaman</span>
-                                <strong>65%</strong>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Banner -->
-                <div class="promo-banner">
-                    <div class="promo-content">
-                        <h3>Hari Kunjung Perpustakaan</h3>
-                        <p>Pinjam e-book lebih mudah, kumpulkan poin baca hari ini!</p>
-                    </div>
-                    <div class="promo-decoration">📚</div>
+                <div class="featured-banner" aria-label="Sorotan iPusnas">
+                    <button type="button" class="banner-arrow banner-arrow-prev" aria-label="Slide sebelumnya">
+                        <span class="material-symbols-rounded" aria-hidden="true">chevron_left</span>
+                    </button>
+                    <div class="banner-track" id="banner-track"></div>
+                    <button type="button" class="banner-arrow banner-arrow-next" aria-label="Slide berikutnya">
+                        <span class="material-symbols-rounded" aria-hidden="true">chevron_right</span>
+                    </button>
                 </div>
+                <div class="banner-dots" id="banner-dots" role="group" aria-label="Pilih slide"></div>
 
-                <!-- Rekomendasi Untukmu -->
-                <div class="section-block">
-                    <div class="section-header">
-                        <h2 class="section-title">Rekomendasi Untukmu</h2>
-                        <a href="#" class="see-all"
-                            onclick="showPage('page-selengkapnya', 'Rekomendasi Untukmu')">Selengkapnya ›</a>
-                    </div>
-                    <div class="book-row">
-                        <div class="book-card" onclick="showPage('page-detail-buku')">
-                            <div class="book-cover-wrap">
-                                <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=140&h=200&fit=crop"
-                                    alt="Cover">
-                            </div>
-                            <h4>Cantik Itu Luka</h4>
-                            <p class="book-author">Eka Kurniawan</p>
-                            <div class="book-rating"><span class="material-icons-round star">star</span> 4.8</div>
-                        </div>
-                        <div class="book-card" onclick="showPage('page-detail-buku')">
-                            <div class="book-cover-wrap">
-                                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=140&h=200&fit=crop"
-                                    alt="Cover">
-                            </div>
-                            <h4>Laut Bercerita</h4>
-                            <p class="book-author">Leila S. Chudori</p>
-                            <div class="book-rating"><span class="material-icons-round star">star</span> 4.5</div>
-                        </div>
-                        <div class="book-card" onclick="showPage('page-detail-buku')">
-                            <div class="book-cover-wrap">
-                                <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=140&h=200&fit=crop"
-                                    alt="Cover">
-                            </div>
-                            <h4>Pulang</h4>
-                            <p class="book-author">Leila S. Chudori</p>
-                            <div class="book-rating"><span class="material-icons-round star">star</span> 4.4</div>
-                        </div>
-                    </div>
-                </div>
+                <!-- Lanjut baca -->
+                <div id="reading-card-slot"></div>
 
-                <!-- Populer Minggu Ini -->
-                <div class="section-block">
-                    <div class="section-header">
-                        <h2 class="section-title">Populer Minggu Ini</h2>
-                        <a href="#" class="see-all"
-                            onclick="showPage('page-selengkapnya', 'Populer Minggu Ini')">Selengkapnya ›</a>
-                    </div>
-                    <div class="book-row">
-                        <div class="book-card" onclick="showPage('page-detail-buku')">
-                            <div class="book-cover-wrap popular">
-                                <img src="https://images.unsplash.com/photo-1524578271613-d550eacf6090?w=140&h=200&fit=crop"
-                                    alt="Cover">
-                            </div>
-                            <h4>Aroma Melati</h4>
-                            <p class="book-author">Anita Diar</p>
-                            <div class="book-rating"><span class="material-icons-round star">star</span> 4.6</div>
-                        </div>
-                        <div class="book-card" onclick="showPage('page-detail-buku')">
-                            <div class="book-cover-wrap popular">
-                                <img src="https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=140&h=200&fit=crop"
-                                    alt="Cover">
-                            </div>
-                            <h4>Tejaimu</h4>
-                            <p class="book-author">Tyas B. Hiarti</p>
-                            <div class="book-rating"><span class="material-icons-round star">star</span> 4.5</div>
-                        </div>
-                        <div class="book-card" onclick="showPage('page-detail-buku')">
-                            <div class="book-cover-wrap popular">
-                                <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=140&h=200&fit=crop"
-                                    alt="Cover">
-                            </div>
-                            <h4>Laskar Pelangi</h4>
-                            <p class="book-author">Andrea Hirata</p>
-                            <div class="book-rating"><span class="material-icons-round star">star</span> 4.7</div>
-                        </div>
-                    </div>
-                </div>
+                <!-- Strip pengingat -->
+                <div id="notice-strip-slot"></div>
 
-                <!-- Terbaru -->
-                <div class="section-block">
-                    <div class="section-header">
-                        <h2 class="section-title">Terbaru</h2>
-                        <a href="#" class="see-all" onclick="showPage('page-selengkapnya', 'Terbaru')">Selengkapnya
-                            ›</a>
+                <!-- Untukmu -->
+                <section class="section">
+                    <div class="section-head">
+                        <div>
+                            <h2 class="section-title">Untukmu</h2>
+                            <p class="section-subtitle" id="untukmu-subtitle">Rekomendasi dari katalog</p>
+                        </div>
+                        <button type="button" class="link" data-action="open-selengkapnya" data-kind="untukmu">Lihat semua</button>
                     </div>
-                    <div class="book-row">
-                        <div class="book-card" onclick="showPage('page-detail-buku')">
-                            <div class="book-cover-wrap">
-                                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=140&h=200&fit=crop"
-                                    alt="Cover">
-                            </div>
-                            <h4>Gadis Kretek</h4>
-                            <p class="book-author">Ratih Kumala</p>
-                            <div class="book-rating"><span class="material-icons-round star">star</span> 4.6</div>
-                        </div>
-                        <div class="book-card" onclick="showPage('page-detail-buku')">
-                            <div class="book-cover-wrap">
-                                <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?w=140&h=200&fit=crop"
-                                    alt="Cover">
-                            </div>
-                            <h4>Hujan</h4>
-                            <p class="book-author">Tere Liye</p>
-                            <div class="book-rating"><span class="material-icons-round star">star</span> 4.4</div>
-                        </div>
-                        <div class="book-card" onclick="showPage('page-detail-buku')">
-                            <div class="book-cover-wrap">
-                                <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=140&h=200&fit=crop"
-                                    alt="Cover">
-                            </div>
-                            <h4>Aroma Karsa</h4>
-                            <p class="book-author">Dee Lestari</p>
-                            <div class="book-rating"><span class="material-icons-round star">star</span> 4.5</div>
-                        </div>
-                    </div>
-                </div>
+                    <div class="book-row" id="untukmu-row"></div>
+                </section>
 
-                <div style="height:90px"></div>
+                <!-- Paling banyak dipinjam -->
+                <section class="section">
+                    <div class="section-head">
+                        <h2 class="section-title">Paling banyak dipinjam minggu ini</h2>
+                        <button type="button" class="link" data-action="open-selengkapnya" data-kind="populer">Lihat semua</button>
+                    </div>
+                    <div class="rank-list" id="popular-list"></div>
+                </section>
+
+                <!-- Baru masuk katalog -->
+                <section class="section">
+                    <div class="section-head">
+                        <h2 class="section-title">Baru masuk katalog</h2>
+                        <button type="button" class="link" data-action="open-selengkapnya" data-kind="baru">Lihat semua</button>
+                    </div>
+                    <div class="book-row" id="baru-row"></div>
+                </section>
             </div>
         </div>
 
-        <!-- ============ PAGE: SELENGKAPNYA ============ -->
+        <!-- PAGE: SELENGKAPNYA -->
         <div class="page" id="page-selengkapnya">
             <div class="page-scroll">
-                <div class="detail-topbar">
-                    <button class="icon-btn" onclick="showPage('page-beranda')">
-                        <span class="material-icons-round">arrow_back</span>
+                <div class="topbar">
+                    <button type="button" class="icon-btn" aria-label="Kembali" data-action="back">
+                        <span class="material-symbols-rounded" aria-hidden="true">arrow_back</span>
                     </button>
-                    <h2 class="topbar-title" id="selengkapnya-title">Rekomendasi Untukmu</h2>
-                    <div style="width:40px"></div>
-                </div>
-
-                <!-- Sort bar -->
-                <div class="sort-bar" style="margin-top: 4px;">
-                    <span class="sort-label">Menampilkan 24 buku</span>
-                    <button class="sort-btn" onclick="openFilterSheet()">
-                        <span class="material-icons-round">sort</span>
-                        Urutkan
+                    <h2 class="topbar-title" id="selengkapnya-title">Untukmu</h2>
+                    <button type="button" class="icon-btn" aria-label="Filter dan urutkan" data-action="open-filter">
+                        <span class="material-symbols-rounded" aria-hidden="true">tune</span>
                     </button>
                 </div>
-
-                <!-- Grid list buku ke bawah -->
-                <div class="book-grid-vertical">
-                    <div class="book-list-item" onclick="showPage('page-detail-buku')">
-                        <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=100&h=140&fit=crop"
-                            alt="Cover" class="list-book-cover">
-                        <div class="list-book-info">
-                            <h4>Cantik Itu Luka</h4>
-                            <p class="book-author">Eka Kurniawan</p>
-                            <p class="book-genre">Fiksi Sastra</p>
-                            <div class="book-rating"><span class="material-icons-round star">star</span> 4.8 <span
-                                    class="rating-count">(2.1k ulasan)</span></div>
-                        </div>
-                    </div>
-                    <div class="book-list-item" onclick="showPage('page-detail-buku')">
-                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=100&h=140&fit=crop"
-                            alt="Cover" class="list-book-cover">
-                        <div class="list-book-info">
-                            <h4>Laut Bercerita</h4>
-                            <p class="book-author">Leila S. Chudori</p>
-                            <p class="book-genre">Fiksi Sejarah</p>
-                            <div class="book-rating"><span class="material-icons-round star">star</span> 4.5 <span
-                                    class="rating-count">(1.8k ulasan)</span></div>
-                        </div>
-                    </div>
-                    <div class="book-list-item" onclick="showPage('page-detail-buku')">
-                        <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=100&h=140&fit=crop"
-                            alt="Cover" class="list-book-cover">
-                        <div class="list-book-info">
-                            <h4>Pulang</h4>
-                            <p class="book-author">Leila S. Chudori</p>
-                            <p class="book-genre">Fiksi Sastra</p>
-                            <div class="book-rating"><span class="material-icons-round star">star</span> 4.4 <span
-                                    class="rating-count">(1.2k ulasan)</span></div>
-                        </div>
-                    </div>
-                    <div class="book-list-item" onclick="showPage('page-detail-buku')">
-                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=100&h=140&fit=crop"
-                            alt="Cover" class="list-book-cover">
-                        <div class="list-book-info">
-                            <h4>Gadis Kretek</h4>
-                            <p class="book-author">Ratih Kumala</p>
-                            <p class="book-genre">Fiksi Sejarah</p>
-                            <div class="book-rating"><span class="material-icons-round star">star</span> 4.6 <span
-                                    class="rating-count">(3.4k ulasan)</span></div>
-                        </div>
-                    </div>
-                    <div class="book-list-item" onclick="showPage('page-detail-buku')">
-                        <img src="https://images.unsplash.com/photo-1524578271613-d550eacf6090?w=100&h=140&fit=crop"
-                            alt="Cover" class="list-book-cover">
-                        <div class="list-book-info">
-                            <h4>Aroma Melati</h4>
-                            <p class="book-author">Anita Diar</p>
-                            <p class="book-genre">Fiksi Romantis</p>
-                            <div class="book-rating"><span class="material-icons-round star">star</span> 4.6 <span
-                                    class="rating-count">(982 ulasan)</span></div>
-                        </div>
-                    </div>
-                    <div class="book-list-item" onclick="showPage('page-detail-buku')">
-                        <img src="https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=100&h=140&fit=crop"
-                            alt="Cover" class="list-book-cover">
-                        <div class="list-book-info">
-                            <h4>Tejaimu</h4>
-                            <p class="book-author">Tyas B. Hiarti</p>
-                            <p class="book-genre">Fiksi Sastra</p>
-                            <div class="book-rating"><span class="material-icons-round star">star</span> 4.5 <span
-                                    class="rating-count">(1.5k ulasan)</span></div>
-                        </div>
-                    </div>
-                    <div class="book-list-item" onclick="showPage('page-detail-buku')">
-                        <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=100&h=140&fit=crop"
-                            alt="Cover" class="list-book-cover">
-                        <div class="list-book-info">
-                            <h4>Laskar Pelangi</h4>
-                            <p class="book-author">Andrea Hirata</p>
-                            <p class="book-genre">Fiksi Sastra</p>
-                            <div class="book-rating"><span class="material-icons-round star">star</span> 4.7 <span
-                                    class="rating-count">(5.2k ulasan)</span></div>
-                        </div>
-                    </div>
-                    <div class="book-list-item" onclick="showPage('page-detail-buku')">
-                        <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?w=100&h=140&fit=crop"
-                            alt="Cover" class="list-book-cover">
-                        <div class="list-book-info">
-                            <h4>Hujan</h4>
-                            <p class="book-author">Tere Liye</p>
-                            <p class="book-genre">Fiksi Kontemporer</p>
-                            <div class="book-rating"><span class="material-icons-round star">star</span> 4.4 <span
-                                    class="rating-count">(2.7k ulasan)</span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="height:90px"></div>
+                <p class="list-head" id="selengkapnya-head">8 buku</p>
+                <div class="book-list" id="selengkapnya-list"></div>
             </div>
         </div>
 
-        <!-- ============ PAGE: DETAIL BUKU ============ -->
+        <!-- PAGE: DETAIL BUKU -->
         <div class="page" id="page-detail-buku">
             <div class="page-scroll">
-                <div class="detail-topbar">
-                    <button class="icon-btn" onclick="goBack()">
-                        <span class="material-icons-round">arrow_back</span>
+                <div class="topbar">
+                    <button type="button" class="icon-btn" aria-label="Kembali" data-action="back">
+                        <span class="material-symbols-rounded" aria-hidden="true">arrow_back</span>
                     </button>
-                    <h2 class="topbar-title">Detail Buku</h2>
-                    <button class="icon-btn">
-                        <span class="material-icons-round">bookmark_border</span>
+                    <h2 class="topbar-title">Detail buku</h2>
+                    <button type="button" class="icon-btn" id="detail-bookmark" aria-label="Simpan ke penanda" aria-pressed="false" data-action="toggle-bookmark">
+                        <span class="material-symbols-rounded" aria-hidden="true">bookmark</span>
                     </button>
                 </div>
 
-                <div class="detail-hero">
-                    <div class="detail-cover-glow"></div>
-                    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=180&h=260&fit=crop"
-                        alt="Laut Bercerita" class="detail-cover">
+                <div class="detail-hero" id="detail-hero"></div>
+                <div class="detail-info">
+                    <h2 class="detail-title" id="detail-title"></h2>
+                    <p class="detail-author" id="detail-author"></p>
+                    <div class="detail-meta" id="detail-meta"></div>
                 </div>
 
-                <div class="detail-info-center">
-                    <h2 class="detail-book-title">Laut Bercerita</h2>
-                    <p class="detail-book-author">Leila S. Chudori</p>
-                    <div class="detail-meta">
-                        <div class="meta-item">
-                            <span class="material-icons-round star">star</span>
-                            <span>4.5</span>
-                        </div>
-                        <div class="meta-divider"></div>
-                        <a href="#" class="meta-link">Fiksi Sejarah</a>
-                    </div>
-                </div>
-
-                <!-- Sinopsis -->
                 <div class="detail-section">
                     <h3 class="detail-section-title">Sinopsis</h3>
-                    <p class="detail-text">Novel ini menceritakan tentang persahabatan, cinta, keluarga, dan kehilangan
-                        kelompok mahasiswa yang diculik dan disiksa pada masa Orde Baru. Melalui sudut pandang Biru Laut
-                        dan adiknya, Asmara Jati... <a href="#" class="text-link">Baca selengkapnya</a></p>
+                    <p class="detail-synopsis clamped" id="detail-synopsis"></p>
+                    <button type="button" class="link" id="detail-synopsis-more" data-action="synopsis-more">Baca selengkapnya</button>
                 </div>
 
-                <!-- Estimasi -->
-                <div class="estimate-card">
-                    <span class="material-icons-round">schedule</span>
-                    <div>
-                        <strong>Estimasi tersedia dalam ±3 hari</strong>
-                        <p>Sedang dipinjam, 12 orang mengantri di depanmu.</p>
-                    </div>
-                </div>
+                <div id="detail-status-slot"></div>
 
-                <!-- Info Detail Buku -->
                 <div class="detail-section">
-                    <div class="detail-collapsible" onclick="this.classList.toggle('open')">
-                        <h3 class="detail-section-title" style="margin-bottom:0">Info Detail Buku</h3>
-                        <span class="material-icons-round chevron">expand_more</span>
-                    </div>
-                    <div class="collapsible-content">
-                        <div class="info-grid">
-                            <div class="info-item"><span class="info-label">Penerbit</span><span
-                                    class="info-value">Kepustakaan Populer Gramedia</span></div>
-                            <div class="info-item"><span class="info-label">Tahun</span><span
-                                    class="info-value">2017</span></div>
-                            <div class="info-item"><span class="info-label">Halaman</span><span
-                                    class="info-value">379</span></div>
-                            <div class="info-item"><span class="info-label">ISBN</span><span
-                                    class="info-value">978-602-424-047-6</span></div>
-                            <div class="info-item"><span class="info-label">Bahasa</span><span
-                                    class="info-value">Indonesia</span></div>
-                        </div>
-                    </div>
+                    <details class="detail-facts">
+                        <summary>Info buku <span class="material-symbols-rounded" aria-hidden="true">expand_more</span></summary>
+                        <dl class="fact-grid" id="detail-facts-grid"></dl>
+                    </details>
                 </div>
 
-                <!-- Ulasan Pembaca -->
                 <div class="detail-section">
-                    <div class="section-header">
-                        <h3 class="detail-section-title">Ulasan Pembaca</h3>
-                        <a href="#" class="see-all">Lihat Semua</a>
+                    <div class="section-head">
+                        <h3 class="detail-section-title" id="detail-reviews-title">Ulasan pembaca</h3>
+                        <button type="button" class="link" data-action="not-in-prototype" data-label="Semua ulasan">Lihat semua</button>
                     </div>
-                    <div class="review-card">
-                        <div class="review-header">
-                            <div class="reviewer-avatar">RS</div>
-                            <div>
-                                <strong>Rian Saputra</strong>
-                                <div class="review-stars">
-                                    <span class="material-icons-round star">star</span>
-                                    <span class="material-icons-round star">star</span>
-                                    <span class="material-icons-round star">star</span>
-                                    <span class="material-icons-round star">star</span>
-                                    <span class="material-icons-round star">star</span>
-                                    <span>5.0</span>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="review-text">Luar biasa menyentuh. Gaya bahasa Leila selalu puitis namun tetap tajam.
-                            Salah satu karya sastra terbaik Indonesia modern.</p>
-                    </div>
-                    <div class="review-card">
-                        <div class="review-header">
-                            <div class="reviewer-avatar" style="background:linear-gradient(135deg,#e8913a,#e85d3a)">SR
-                            </div>
-                            <div>
-                                <strong>Siti Rahma</strong>
-                                <div class="review-stars">
-                                    <span class="material-icons-round star">star</span>
-                                    <span class="material-icons-round star">star</span>
-                                    <span class="material-icons-round star">star</span>
-                                    <span class="material-icons-round star">star</span>
-                                    <span class="material-icons-round star empty">star</span>
-                                    <span>4.0</span>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="review-text">Cerita yang sangat penting tentang sejarah kita. Sangat sedih sekaligus
-                            bangga membacanya.</p>
-                    </div>
+                    <div id="detail-reviews"></div>
                 </div>
 
-                <!-- REKOMENDASI BUKU SERUPA (NEW) -->
                 <div class="detail-section">
-                    <div class="section-header">
-                        <h3 class="detail-section-title">Buku Serupa</h3>
-                        <a href="#" class="see-all">Selengkapnya ›</a>
-                    </div>
-                    <div class="book-row">
-                        <div class="book-card" onclick="showPage('page-detail-buku')">
-                            <div class="book-cover-wrap">
-                                <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=140&h=200&fit=crop"
-                                    alt="Cover">
-                            </div>
-                            <h4>Cantik Itu Luka</h4>
-                            <p class="book-author">Eka Kurniawan</p>
-                            <div class="book-rating"><span class="material-icons-round star">star</span> 4.8</div>
-                        </div>
-                        <div class="book-card" onclick="showPage('page-detail-buku')">
-                            <div class="book-cover-wrap">
-                                <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=140&h=200&fit=crop"
-                                    alt="Cover">
-                            </div>
-                            <h4>Pulang</h4>
-                            <p class="book-author">Leila S. Chudori</p>
-                            <div class="book-rating"><span class="material-icons-round star">star</span> 4.4</div>
-                        </div>
-                        <div class="book-card" onclick="showPage('page-detail-buku')">
-                            <div class="book-cover-wrap">
-                                <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=140&h=200&fit=crop"
-                                    alt="Cover">
-                            </div>
-                            <h4>Laskar Pelangi</h4>
-                            <p class="book-author">Andrea Hirata</p>
-                            <div class="book-rating"><span class="material-icons-round star">star</span> 4.7</div>
-                        </div>
-                    </div>
+                    <h3 class="detail-section-title">Pembaca buku ini juga meminjam</h3>
+                    <div class="book-row" id="detail-recs"></div>
                 </div>
-
-                <div style="height:100px"></div>
             </div>
 
-            <!-- Floating CTA -->
-            <div class="floating-cta">
-                <button class="icon-btn-outline">
-                    <span class="material-icons-round">favorite_border</span>
+            <div class="detail-cta">
+                <button type="button" class="icon-toggle" id="detail-fav" aria-label="Tandai favorit" aria-pressed="false" data-action="toggle-favorite">
+                    <span class="material-symbols-rounded" aria-hidden="true">favorite_border</span>
                 </button>
-                <button class="btn-primary-large">Masuk Antrian Pinjam</button>
+                <button type="button" class="btn btn--primary" id="detail-cta-btn" data-action="borrow">Pinjam</button>
             </div>
         </div>
 
-        <!-- ============ PAGE: RAK SAYA ============ -->
+        <!-- PAGE: RAK SAYA -->
         <div class="page" id="page-rak-saya">
             <div class="page-scroll">
-                <div class="beranda-header" style="padding-top:12px">
-                    <h1 class="page-title-large">Rak Buku Saya</h1>
+                <div class="page-head">
+                    <h1 class="page-title">Rak saya</h1>
+                </div>
+                <div class="sub-tabs" role="tablist" aria-label="Rak saya">
+                    <button type="button" class="sub-tab" role="tab" id="tab-pinjaman" aria-selected="true" aria-controls="rak-pinjaman" data-tab-group="rak" data-panel="rak-pinjaman">Pinjaman</button>
+                    <button type="button" class="sub-tab" role="tab" id="tab-antrean" aria-selected="false" tabindex="-1" aria-controls="rak-antrean" data-tab-group="rak" data-panel="rak-antrean">Antrean <span class="tab-badge" id="rak-queue-badge">3</span></button>
+                    <button type="button" class="sub-tab" role="tab" id="tab-riwayat" aria-selected="false" tabindex="-1" aria-controls="rak-riwayat" data-tab-group="rak" data-panel="rak-riwayat">Riwayat</button>
                 </div>
 
-                <!-- Sub-tabs -->
-                <div class="sub-tabs">
-                    <button class="sub-tab active" onclick="switchRakTab(this, 'rak-pinjaman')">Pinjaman</button>
-                    <button class="sub-tab" onclick="switchRakTab(this, 'rak-antrian')">Antrian <span
-                            class="tab-badge">3</span></button>
-                    <button class="sub-tab" onclick="switchRakTab(this, 'rak-riwayat')">Riwayat</button>
+                <div class="tab-panel active" id="rak-pinjaman" role="tabpanel" aria-labelledby="tab-pinjaman" data-tab-group="rak">
+                    <div id="rak-loans"></div>
                 </div>
-
-                <!-- Tab: Pinjaman -->
-                <div class="rak-content active" id="rak-pinjaman">
-                    <div class="loan-card" onclick="showPage('page-detail-buku')">
-                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=80&h=110&fit=crop"
-                            alt="Cover" class="loan-cover">
-                        <div class="loan-info">
-                            <h4>Gadis Kretek</h4>
-                            <p class="book-author">Ratih Kumala</p>
-                            <span class="due-tag warning">Jatuh tempo dalam 4 hari</span>
-                        </div>
-                        <button class="btn-sm-primary">Baca</button>
-                    </div>
-                    <div class="loan-card" onclick="showPage('page-detail-buku')">
-                        <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=80&h=110&fit=crop"
-                            alt="Cover" class="loan-cover">
-                        <div class="loan-info">
-                            <h4>Negeri 5 Menara</h4>
-                            <p class="book-author">A. Fuadi</p>
-                            <span class="due-tag danger">Jatuh tempo dalam 12 hari</span>
-                        </div>
-                        <button class="btn-sm-primary">Baca</button>
-                    </div>
-
-                    <div class="section-block" style="margin-top:24px">
-                        <h3 class="detail-section-title">Rekomendasi Tambahan Untukmu</h3>
-                        <div class="book-row">
-                            <div class="book-card" onclick="showPage('page-detail-buku')">
-                                <div class="book-cover-wrap">
-                                    <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=140&h=200&fit=crop"
-                                        alt="Cover">
-                                </div>
-                                <h4>Laskar Pelangi</h4>
-                                <p class="book-author">Andrea Hirata</p>
-                            </div>
-                            <div class="book-card" onclick="showPage('page-detail-buku')">
-                                <div class="book-cover-wrap">
-                                    <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=140&h=200&fit=crop"
-                                        alt="Cover">
-                                </div>
-                                <h4>Bumi Manusia</h4>
-                                <p class="book-author">Pramoedya A. T.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="tab-panel" id="rak-antrean" role="tabpanel" aria-labelledby="tab-antrean" data-tab-group="rak">
+                    <div id="rak-queue"></div>
                 </div>
-
-                <!-- Tab: Antrian -->
-                <div class="rak-content" id="rak-antrian">
-                    <div class="queue-card">
-                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=80&h=110&fit=crop"
-                            alt="Cover" class="loan-cover">
-                        <div class="loan-info">
-                            <h4>Laut Bercerita</h4>
-                            <p class="book-author">Leila S. Chudori</p>
-                            <div class="queue-status">
-                                <span class="material-icons-round"
-                                    style="font-size:16px;color:var(--primary)">people</span>
-                                <span>Posisi antrian: <strong>3</strong> dari 15</span>
-                            </div>
-                            <span class="due-tag info">Estimasi ±3 hari</span>
-                        </div>
-                    </div>
-                    <div class="queue-card">
-                        <img src="https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=80&h=110&fit=crop"
-                            alt="Cover" class="loan-cover">
-                        <div class="loan-info">
-                            <h4>Cantik Itu Luka</h4>
-                            <p class="book-author">Eka Kurniawan</p>
-                            <div class="queue-status">
-                                <span class="material-icons-round"
-                                    style="font-size:16px;color:var(--primary)">people</span>
-                                <span>Posisi antrian: <strong>7</strong> dari 20</span>
-                            </div>
-                            <span class="due-tag info">Estimasi ±5 hari</span>
-                        </div>
-                    </div>
-                    <div class="queue-card">
-                        <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?w=80&h=110&fit=crop"
-                            alt="Cover" class="loan-cover">
-                        <div class="loan-info">
-                            <h4>Hujan</h4>
-                            <p class="book-author">Tere Liye</p>
-                            <div class="queue-status">
-                                <span class="material-icons-round"
-                                    style="font-size:16px;color:var(--primary)">people</span>
-                                <span>Posisi antrian: <strong>1</strong> dari 8</span>
-                            </div>
-                            <span class="due-tag success">Hampir tersedia!</span>
-                        </div>
-                    </div>
-
-                    <div class="empty-hint" style="display:none">
-                        <span class="material-icons-round" style="font-size:48px;color:#cbd5e1">hourglass_empty</span>
-                        <p>Belum ada buku dalam antrian</p>
-                    </div>
+                <div class="tab-panel" id="rak-riwayat" role="tabpanel" aria-labelledby="tab-riwayat" data-tab-group="rak">
+                    <div id="rak-history"></div>
                 </div>
-
-
-
-                <!-- Tab: Riwayat -->
-                <div class="rak-content" id="rak-riwayat">
-                    <div class="history-month">
-                        <h4 class="history-month-title">September 2026</h4>
-                        <div class="history-item">
-                            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=60&h=84&fit=crop"
-                                alt="Cover" class="history-cover">
-                            <div class="history-info">
-                                <h4>Gadis Kretek</h4>
-                                <p class="book-author">Ratih Kumala</p>
-                                <div class="history-meta">
-                                    <span class="material-icons-round" style="font-size:14px">calendar_today</span>
-                                    <span>1 Sep – 5 Sep 2026</span>
-                                </div>
-                                <span class="history-status completed">Selesai dibaca</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="history-month">
-                        <h4 class="history-month-title">Agustus 2026</h4>
-                        <div class="history-item">
-                            <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=60&h=84&fit=crop"
-                                alt="Cover" class="history-cover">
-                            <div class="history-info">
-                                <h4>Negeri 5 Menara</h4>
-                                <p class="book-author">A. Fuadi</p>
-                                <div class="history-meta">
-                                    <span class="material-icons-round" style="font-size:14px">calendar_today</span>
-                                    <span>20 Agt – 28 Agt 2026</span>
-                                </div>
-                                <span class="history-status completed">Selesai dibaca</span>
-                            </div>
-                        </div>
-                        <div class="history-item">
-                            <img src="https://images.unsplash.com/photo-1524578271613-d550eacf6090?w=60&h=84&fit=crop"
-                                alt="Cover" class="history-cover">
-                            <div class="history-info">
-                                <h4>Aroma Melati</h4>
-                                <p class="book-author">Anita Diar</p>
-                                <div class="history-meta">
-                                    <span class="material-icons-round" style="font-size:14px">calendar_today</span>
-                                    <span>10 Agt – 18 Agt 2026</span>
-                                </div>
-                                <span class="history-status returned">Dikembalikan</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="history-month">
-                        <h4 class="history-month-title">Juli 2026</h4>
-                        <div class="history-item">
-                            <img src="https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=60&h=84&fit=crop"
-                                alt="Cover" class="history-cover">
-                            <div class="history-info">
-                                <h4>Tejaimu</h4>
-                                <p class="book-author">Tyas B. Hiarti</p>
-                                <div class="history-meta">
-                                    <span class="material-icons-round" style="font-size:14px">calendar_today</span>
-                                    <span>5 Jul – 15 Jul 2026</span>
-                                </div>
-                                <span class="history-status completed">Selesai dibaca</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div style="height:90px"></div>
             </div>
         </div>
 
-        <!-- ============ PAGE: KOMUNITAS ============ -->
+        <!-- PAGE: KOMUNITAS -->
         <div class="page" id="page-komunitas">
             <div class="page-scroll">
-                <div class="beranda-header" style="padding-top:12px">
-                    <h1 class="page-title-large">Komunitas</h1>
+                <div class="page-head">
+                    <h1 class="page-title">Komunitas</h1>
+                </div>
+                <div class="sub-tabs" role="tablist" aria-label="Komunitas">
+                    <button type="button" class="sub-tab" role="tab" id="tab-kom-saya" aria-selected="true" aria-controls="komunitas-saya" data-tab-group="komunitas" data-panel="komunitas-saya">Komunitas saya</button>
+                    <button type="button" class="sub-tab" role="tab" id="tab-kom-cari" aria-selected="false" tabindex="-1" aria-controls="komunitas-cari" data-tab-group="komunitas" data-panel="komunitas-cari">Cari komunitas</button>
+                    <button type="button" class="sub-tab" role="tab" id="tab-kom-trending" aria-selected="false" tabindex="-1" aria-controls="komunitas-trending-panel" data-tab-group="komunitas" data-panel="komunitas-trending-panel">Trending</button>
                 </div>
 
-                <!-- Sub-tabs -->
-                <div class="sub-tabs">
-                    <button class="sub-tab active" onclick="switchKomunitasTab(this, 'komunitas-saya')">Komunitas
-                        Saya</button>
-                    <button class="sub-tab" onclick="switchKomunitasTab(this, 'komunitas-cari')">Cari Komunitas</button>
-                    <button class="sub-tab" onclick="switchKomunitasTab(this, 'komunitas-trending')">Trending</button>
+                <div class="tab-panel active" id="komunitas-saya" role="tabpanel" aria-labelledby="tab-kom-saya" data-tab-group="komunitas">
+                    <div id="komunitas-mine"></div>
                 </div>
-
-                <!-- Tab: Komunitas Saya -->
-                <div class="komunitas-content active" id="komunitas-saya">
-                    <div class="empty-state" style="text-align: center; padding: 60px 20px;">
-                        <h4 style="font-size: 16px; color: var(--text); margin-bottom: 8px;">Belum Ada Komunitas</h4>
-                        <p
-                            style="font-size: 14px; color: var(--text-secondary); margin-bottom: 24px; line-height: 1.5;">
-                            Kamu belum bergabung dengan komunitas mana pun. Yuk gabung untuk berdiskusi tentang buku
-                            favoritmu!</p>
-                        <button class="btn-primary-large" style="width: auto; padding: 12px 24px;"
-                            onclick="document.querySelectorAll('#page-komunitas .sub-tab')[1].click()">Cari Komunitas
-                            Sekarang</button>
+                <div class="tab-panel" id="komunitas-cari" role="tabpanel" aria-labelledby="tab-kom-cari" data-tab-group="komunitas">
+                    <div class="search-bar mb-4">
+                        <span class="material-symbols-rounded" aria-hidden="true">search</span>
+                        <label class="sr-only" for="komunitas-search">Cari komunitas</label>
+                        <input id="komunitas-search" type="text" placeholder="Cari nama komunitas atau topik…">
                     </div>
+                    <div id="komunitas-find"></div>
                 </div>
-
-                <!-- Tab: Cari Komunitas -->
-                <div class="komunitas-content" id="komunitas-cari">
-                    <div class="search-bar" style="margin: 0 20px 16px;">
-                        <span class="material-icons-round">search</span>
-                        <input type="text" placeholder="Cari nama komunitas atau topik...">
-                    </div>
-
-                    <h4 class="komunitas-section-title" style="margin: 0 20px 12px;">Rekomendasi Komunitas</h4>
-                    <div class="wa-list">
-                        <div class="wa-item">
-                            <div class="wa-avatar" style="background: linear-gradient(135deg, #0e7490, #06b6d4);">
-                                <span class="material-icons-round">menu_book</span>
-                            </div>
-                            <div class="wa-info">
-                                <div class="wa-header">
-                                    <h4>Pecinta Fiksi Sejarah</h4>
-                                    <span class="wa-members">128 anggota</span>
-                                </div>
-                                <div class="wa-message">
-                                    <p>Diskusi seru soal Gadis Kretek dll.</p>
-                                </div>
-                            </div>
-                            <button class="btn-sm-outline" style="margin-left: 10px;">Gabung</button>
-                        </div>
-                        <div class="wa-item">
-                            <div class="wa-avatar" style="background: linear-gradient(135deg, #ea580c, #f97316);">
-                                <span class="material-icons-round">local_library</span>
-                            </div>
-                            <div class="wa-info">
-                                <div class="wa-header">
-                                    <h4>Sastra Indonesia Modern</h4>
-                                    <span class="wa-members">342 anggota</span>
-                                </div>
-                                <div class="wa-message">
-                                    <p>Fokus diskusi karya sastra kontemporer</p>
-                                </div>
-                            </div>
-                            <button class="btn-sm-outline" style="margin-left: 10px;">Gabung</button>
-                        </div>
-                        <div class="wa-item">
-                            <div class="wa-avatar" style="background: linear-gradient(135deg, #0284c7, #38bdf8);">
-                                <span class="material-icons-round">psychology</span>
-                            </div>
-                            <div class="wa-info">
-                                <div class="wa-header">
-                                    <h4>Non-Fiksi & Self Dev</h4>
-                                    <span class="wa-members">215 anggota</span>
-                                </div>
-                                <div class="wa-message">
-                                    <p>Tingkatkan diri lewat buku non-fiksi</p>
-                                </div>
-                            </div>
-                            <button class="btn-sm-outline" style="margin-left: 10px;">Gabung</button>
-                        </div>
-                        <div class="wa-item">
-                            <div class="wa-avatar" style="background: linear-gradient(135deg, #059669, #34d399);">
-                                <span class="material-icons-round">child_care</span>
-                            </div>
-                            <div class="wa-info">
-                                <div class="wa-header">
-                                    <h4>Cerita Anak Nusantara</h4>
-                                    <span class="wa-members">89 anggota</span>
-                                </div>
-                                <div class="wa-message">
-                                    <p>Mendongeng dan rekomendasi buku anak</p>
-                                </div>
-                            </div>
-                            <button class="btn-sm-outline" style="margin-left: 10px;">Gabung</button>
-                        </div>
-                    </div>
+                <div class="tab-panel" id="komunitas-trending-panel" role="tabpanel" aria-labelledby="tab-kom-trending" data-tab-group="komunitas">
+                    <div id="komunitas-trending"></div>
                 </div>
-
-                <!-- Tab: Trending -->
-                <div class="komunitas-content" id="komunitas-trending">
-                    <div style="padding: 0 20px 10px;">
-                        <p style="font-size: 12px; color: var(--text-muted);">Diperbarui setiap minggu berdasarkan
-                            aktivitas komunitas</p>
-                    </div>
-
-                    <!-- Rank 1 Hero Card -->
-                    <div class="trending-book-hero" onclick="showPage('page-detail-buku')">
-                        <div class="trending-book-hero-rank">#1 Trending Minggu Ini</div>
-                        <div class="trending-book-hero-body">
-                            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=90&h=130&fit=crop"
-                                class="trending-book-hero-cover" alt="">
-                            <div class="trending-book-hero-info">
-                                <h3>Laut Bercerita</h3>
-                                <p class="book-author" style="margin-top:4px;">Leila S. Chudori</p>
-                                <span class="trending-genre-chip">Fiksi Sejarah</span>
-                                <div class="trending-book-stats" style="margin-top:10px;">
-                                    <span><span class="material-icons-round"
-                                            style="font-size:14px;color:var(--primary)">groups</span> 18
-                                        komunitas</span>
-                                    <span><span class="material-icons-round"
-                                            style="font-size:14px;color:var(--star)">star</span> 4.8</span>
-                                </div>
-                                <p class="trending-book-reason">💬 "Wajib baca bulan ini!" – Book Club UGM</p>
-                            </div>
-                        </div>
-                        <button class="btn-sm-primary" style="width:100%;justify-content:center;margin-top:12px;">Pinjam
-                            Sekarang</button>
-                    </div>
-
-                    <!-- List ranks -->
-                    <div style="padding: 16px 20px 8px;">
-                        <h4 class="komunitas-section-title" style="margin-bottom:0;">Rekomendasi Lainnya</h4>
-                    </div>
-
-                    <div class="trending-book-list-item" onclick="showPage('page-detail-buku')">
-                        <div class="trending-book-rank">2</div>
-                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=60&h=84&fit=crop"
-                            class="trending-book-cover" alt="">
-                        <div class="trending-book-info">
-                            <h4>Gadis Kretek</h4>
-                            <p class="book-author">Ratih Kumala</p>
-                            <div class="trending-book-stats">
-                                <span><span class="material-icons-round"
-                                        style="font-size:13px;color:var(--primary)">groups</span> 14 komunitas</span>
-                                <span><span class="material-icons-round"
-                                        style="font-size:13px;color:var(--star)">star</span> 4.6</span>
-                            </div>
-                            <div class="trending-communities-avatars">
-                                <div class="tca" style="background:linear-gradient(135deg,#0e7490,#06b6d4)"></div>
-                                <div class="tca" style="background:linear-gradient(135deg,#7c3aed,#a78bfa)"></div>
-                                <div class="tca" style="background:linear-gradient(135deg,#ea580c,#f97316)"></div>
-                                <span style="font-size:11px;color:var(--text-muted);margin-left:4px;">+11 lainnya</span>
-                            </div>
-                        </div>
-                        <span class="material-icons-round"
-                            style="color:var(--text-muted);font-size:20px;">chevron_right</span>
-                    </div>
-
-                    <div class="trending-book-list-item" onclick="showPage('page-detail-buku')">
-                        <div class="trending-book-rank">3</div>
-                        <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=60&h=84&fit=crop"
-                            class="trending-book-cover" alt="">
-                        <div class="trending-book-info">
-                            <h4>Negeri 5 Menara</h4>
-                            <p class="book-author">A. Fuadi</p>
-                            <div class="trending-book-stats">
-                                <span><span class="material-icons-round"
-                                        style="font-size:13px;color:var(--primary)">groups</span> 11 komunitas</span>
-                                <span><span class="material-icons-round"
-                                        style="font-size:13px;color:var(--star)">star</span> 4.5</span>
-                            </div>
-                            <div class="trending-communities-avatars">
-                                <div class="tca" style="background:linear-gradient(135deg,#059669,#34d399)"></div>
-                                <div class="tca" style="background:linear-gradient(135deg,#0284c7,#38bdf8)"></div>
-                                <span style="font-size:11px;color:var(--text-muted);margin-left:4px;">+9 lainnya</span>
-                            </div>
-                        </div>
-                        <span class="material-icons-round"
-                            style="color:var(--text-muted);font-size:20px;">chevron_right</span>
-                    </div>
-
-                    <div class="trending-book-list-item" onclick="showPage('page-detail-buku')">
-                        <div class="trending-book-rank">4</div>
-                        <img src="https://images.unsplash.com/photo-1476275466078-4007374efbbe?w=60&h=84&fit=crop"
-                            class="trending-book-cover" alt="">
-                        <div class="trending-book-info">
-                            <h4>Bumi Manusia</h4>
-                            <p class="book-author">Pramoedya Ananta Toer</p>
-                            <div class="trending-book-stats">
-                                <span><span class="material-icons-round"
-                                        style="font-size:13px;color:var(--primary)">groups</span> 9 komunitas</span>
-                                <span><span class="material-icons-round"
-                                        style="font-size:13px;color:var(--star)">star</span> 4.9</span>
-                            </div>
-                            <div class="trending-communities-avatars">
-                                <div class="tca" style="background:linear-gradient(135deg,#ea580c,#f97316)"></div>
-                                <div class="tca" style="background:linear-gradient(135deg,#7c3aed,#a78bfa)"></div>
-                                <span style="font-size:11px;color:var(--text-muted);margin-left:4px;">+7 lainnya</span>
-                            </div>
-                        </div>
-                        <span class="material-icons-round"
-                            style="color:var(--text-muted);font-size:20px;">chevron_right</span>
-                    </div>
-
-                    <div class="trending-book-list-item" onclick="showPage('page-detail-buku')">
-                        <div class="trending-book-rank">5</div>
-                        <img src="https://images.unsplash.com/photo-1524578271613-d550eacf6090?w=60&h=84&fit=crop"
-                            class="trending-book-cover" alt="">
-                        <div class="trending-book-info">
-                            <h4>Perahu Kertas</h4>
-                            <p class="book-author">Dee Lestari</p>
-                            <div class="trending-book-stats">
-                                <span><span class="material-icons-round"
-                                        style="font-size:13px;color:var(--primary)">groups</span> 7 komunitas</span>
-                                <span><span class="material-icons-round"
-                                        style="font-size:13px;color:var(--star)">star</span> 4.4</span>
-                            </div>
-                            <div class="trending-communities-avatars">
-                                <div class="tca" style="background:linear-gradient(135deg,#0e7490,#06b6d4)"></div>
-                                <span style="font-size:11px;color:var(--text-muted);margin-left:4px;">+6 lainnya</span>
-                            </div>
-                        </div>
-                        <span class="material-icons-round"
-                            style="color:var(--text-muted);font-size:20px;">chevron_right</span>
-                    </div>
-                </div>
-
-                <div style="height:90px"></div>
             </div>
         </div>
 
-        <!-- ============ PAGE: PROFIL ============ -->
+        <!-- PAGE: PROFIL -->
         <div class="page" id="page-profil">
             <div class="page-scroll">
-                <div class="profile-header">
-                    <div class="profile-avatar">
-                        <span class="material-icons-round" style="font-size:48px;color:#fff">person</span>
-                    </div>
-                    <h2 class="profile-name">Andi Pratama</h2>
-                    <p class="profile-username">@andipratama</p>
+                <div class="profile-head">
+                    <span id="profile-avatar" class="avatar avatar--xl" aria-hidden="true">AP</span>
+                    <h1 class="page-title profile-name" id="profile-name">Andi Pratama</h1>
+                    <p class="profile-username" id="profile-username">@andipratama</p>
+                    <p class="profile-bio" id="profile-bio"></p>
                     <div class="profile-stats">
-                        <div class="stat"><strong>24</strong><span>Pengikut</span></div>
-                        <div class="stat"><strong>18</strong><span>Mengikuti</span></div>
-                    </div>
-                    <button class="btn-outline-profile" onclick="showPage('page-edit-profil')">Ubah Profil</button>
-                </div>
-
-                <div class="profile-menu">
-                    <div class="menu-item" onclick="showPage('page-pertemanan')">
-                        <span class="material-icons-round menu-icon">people</span>
-                        <span>Pertemanan</span>
-                        <span class="material-icons-round chevron-right">chevron_right</span>
-                    </div>
-                    <div class="menu-item" onclick="showPage('page-bantuan')">
-                        <span class="material-icons-round menu-icon">help_outline</span>
-                        <span>Bantuan</span>
-                        <span class="material-icons-round chevron-right">chevron_right</span>
-                    </div>
-                    <div class="menu-item" onclick="showPage('page-pengaturan')">
-                        <span class="material-icons-round menu-icon">settings</span>
-                        <span>Pengaturan</span>
-                        <span class="material-icons-round chevron-right">chevron_right</span>
-                    </div>
-                    <div class="menu-item" onclick="showPage('page-syarat')">
-                        <span class="material-icons-round menu-icon">description</span>
-                        <span>Syarat & Ketentuan</span>
-                        <span class="material-icons-round chevron-right">chevron_right</span>
-                    </div>
-                    <div class="menu-item" onclick="showPage('page-kebijakan')">
-                        <span class="material-icons-round menu-icon">shield</span>
-                        <span>Kebijakan Privasi</span>
-                        <span class="material-icons-round chevron-right">chevron_right</span>
-                    </div>
-                    <div class="menu-item"
-                        style="margin-top: 24px; border-bottom: none; border-radius: var(--radius-md); background: #fee2e2;">
-                        <div class="menu-icon-wrap" style="background: transparent; color: #ef4444;">
-                            <span class="material-icons-round">logout</span>
-                        </div>
-                        <span style="color: #ef4444; font-weight: 700;">Keluar</span>
-                    </div>
-                </div>
-
-                <div style="height:90px"></div>
-            </div>
-        </div>
-
-        <!-- ============ PAGE: EDIT PROFIL ============ -->
-        <div class="page" id="page-edit-profil">
-            <div class="beranda-header">
-                <button class="icon-btn" onclick="showPage('page-profil')">
-                    <span class="material-icons-round">arrow_back</span>
-                </button>
-                <h1 class="page-title" style="flex:1; margin-left: 12px;">Ubah Profil</h1>
-                <button class="btn-sm-primary" style="padding: 6px 12px;"
-                    onclick="showPage('page-profil')">Simpan</button>
-            </div>
-            <div class="page-scroll" style="padding-top: 16px;">
-                <div style="display: flex; justify-content: center; margin-bottom: 32px; position: relative;">
-                    <div class="profile-avatar" style="width: 100px; height: 100px;">
-                        <span class="material-icons-round" style="font-size: 56px; color: #fff;">person</span>
-                    </div>
-                    <button class="edit-avatar-btn">
-                        <span class="material-icons-round">camera_alt</span>
-                    </button>
-                </div>
-
-                <div class="edit-form">
-                    <div class="form-group">
-                        <label>Nama Lengkap</label>
-                        <input type="text" value="Andi Pratama" placeholder="Silakan isikan nama Anda">
-                    </div>
-                    <div class="form-group">
-                        <label>Nama Pengguna (Username)</label>
-                        <input type="text" value="andipratama" placeholder="Silakan isikan username Anda">
-                    </div>
-                    <div class="form-group">
-                        <label>Jenis Kelamin</label>
-                        <select>
-                            <option value="L">Laki-laki</option>
-                            <option value="P">Perempuan</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label>Nomor Ponsel</label>
-                        <input type="tel" value="081234567890" placeholder="Silakan isikan nomor ponsel Anda">
-                    </div>
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" value="andi.pratama@email.com"
-                            placeholder="Silakan isikan email pribadi Anda">
-                    </div>
-                    <div class="form-group">
-                        <label>Bio / Deskripsi</label>
-                        <textarea placeholder="Ceritakan sedikit tentang dirimu..."
-                            rows="3">Penikmat buku fiksi sejarah dan literatur klasik. Mari berdiskusi!</textarea>
-                    </div>
-                </div>
-                <div style="height:90px"></div>
-            </div>
-        </div>
-
-        <!-- ============ PAGE: PERTEMANAN ============ -->
-        <div class="page" id="page-pertemanan">
-            <div class="beranda-header">
-                <button class="icon-btn" onclick="showPage('page-profil')">
-                    <span class="material-icons-round">arrow_back</span>
-                </button>
-                <h1 class="page-title" style="flex:1; margin-left: 12px; text-align: left;">Pengikut</h1>
-            </div>
-            <div class="page-scroll">
-                <div class="rak-tabs" style="display: flex; border-bottom: 1px solid var(--border); background: #fff;">
-                    <div class="rak-tab active"
-                        style="flex: 1; text-align: center; padding: 12px 0; font-weight: 600; color: var(--primary); border-bottom: 2px solid var(--primary);">
-                        Pengikut</div>
-                    <div class="rak-tab"
-                        style="flex: 1; text-align: center; padding: 12px 0; font-weight: 600; color: var(--text-secondary);">
-                        Mengikuti</div>
-                </div>
-                <div class="empty-state"
-                    style="margin-top: 30px; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 32px;">
-                    <span class="material-icons-round"
-                        style="font-size: 80px; color: #6b7280; margin-bottom: 16px;">people</span>
-                    <h3 style="font-size: 16px; margin-bottom: 8px; color: var(--text);">Maaf, saat ini belum ada
-                        pengguna iPusnas yang mengikuti Anda</h3>
-                    <p style="font-size: 13px; color: var(--primary); margin-bottom: 4px; font-weight: 500;">Mulai ikuti
-                        aktivitas pengguna lain dan dapatkan follback</p>
-                    <p style="font-size: 13px; color: var(--text-secondary);">Kesempatan Anda mencari lebih banyak teman
-                        di Platform iPusnas :)</p>
-                </div>
-
-                <div class="contact-recommendations" style="margin-top: 40px; padding: 0 20px;">
-                    <h3 style="font-size: 15px; margin-bottom: 16px; font-weight: 700; color: var(--text);">Rekomendasi
-                        Teman dari Kontak</h3>
-
-                    <div class="user-item" style="display: flex; align-items: center; margin-bottom: 16px;">
-                        <div class="user-avatar"
-                            style="width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #f43f5e, #fb7185); color: #fff; display: flex; justify-content: center; align-items: center; font-weight: bold; margin-right: 12px;">
-                            S</div>
-                        <div class="user-info" style="flex: 1;">
-                            <h4 style="font-size: 14px; font-weight: 600;">Siti Aminah</h4>
-                            <p style="font-size: 12px; color: var(--text-secondary);">@sitiaminah22</p>
-                        </div>
-                        <button class="btn-sm-primary" style="padding: 6px 16px;">Ikuti</button>
-                    </div>
-
-                    <div class="user-item" style="display: flex; align-items: center; margin-bottom: 16px;">
-                        <div class="user-avatar"
-                            style="width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #3b82f6, #60a5fa); color: #fff; display: flex; justify-content: center; align-items: center; font-weight: bold; margin-right: 12px;">
-                            B</div>
-                        <div class="user-info" style="flex: 1;">
-                            <h4 style="font-size: 14px; font-weight: 600;">Budi Santoso</h4>
-                            <p style="font-size: 12px; color: var(--text-secondary);">@budisantoso_id</p>
-                        </div>
-                        <button class="btn-sm-primary" style="padding: 6px 16px;">Ikuti</button>
-                    </div>
-
-                    <div class="user-item" style="display: flex; align-items: center; margin-bottom: 16px;">
-                        <div class="user-avatar"
-                            style="width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #10b981, #34d399); color: #fff; display: flex; justify-content: center; align-items: center; font-weight: bold; margin-right: 12px;">
-                            D</div>
-                        <div class="user-info" style="flex: 1;">
-                            <h4 style="font-size: 14px; font-weight: 600;">Dewi Lestari</h4>
-                            <p style="font-size: 12px; color: var(--text-secondary);">@dewilestari</p>
-                        </div>
-                        <button class="btn-sm-primary" style="padding: 6px 16px;">Ikuti</button>
-                    </div>
-                </div>
-                <div style="height: 60px;"></div>
-            </div>
-        </div>
-
-        <!-- ============ PAGE: BANTUAN ============ -->
-        <div class="page" id="page-bantuan">
-            <div class="beranda-header">
-                <button class="icon-btn" onclick="showPage('page-profil')">
-                    <span class="material-icons-round">arrow_back</span>
-                </button>
-                <h1 class="page-title" style="flex:1; margin-left: 12px; text-align: left;">Bantuan</h1>
-            </div>
-            <div class="page-scroll" style="padding: 20px;">
-                <div class="search-bar" style="margin-bottom: 24px; position: relative;">
-                    <span class="material-icons-round"
-                        style="position: absolute; left: 12px; top: 10px; color: var(--text-muted);">search</span>
-                    <input type="text" placeholder="Cari topik bantuan..."
-                        style="width: 100%; padding: 12px 12px 12px 40px; border-radius: var(--radius-md); border: 1px solid var(--border); background: var(--surface-2); font-family: inherit;">
-                </div>
-                <h3 style="font-size: 16px; margin-bottom: 16px; font-weight: 700;">Topik Populer</h3>
-                <div class="faq-list">
-                    <div class="faq-item"
-                        style="padding: 16px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; cursor: pointer;">
-                        <span style="font-size: 14px; font-weight: 500;">Cara meminjam dan mengembalikan buku</span>
-                        <span class="material-icons-round" style="color: var(--text-muted);">chevron_right</span>
-                    </div>
-                    <div class="faq-item"
-                        style="padding: 16px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; cursor: pointer;">
-                        <span style="font-size: 14px; font-weight: 500;">Mengatasi aplikasi sering error atau lag</span>
-                        <span class="material-icons-round" style="color: var(--text-muted);">chevron_right</span>
-                    </div>
-                    <div class="faq-item"
-                        style="padding: 16px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; cursor: pointer;">
-                        <span style="font-size: 14px; font-weight: 500;">Berapa batas maksimal peminjaman?</span>
-                        <span class="material-icons-round" style="color: var(--text-muted);">chevron_right</span>
-                    </div>
-                    <div class="faq-item"
-                        style="padding: 16px 0; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; cursor: pointer;">
-                        <span style="font-size: 14px; font-weight: 500;">Cara bergabung dengan komunitas</span>
-                        <span class="material-icons-round" style="color: var(--text-muted);">chevron_right</span>
-                    </div>
-                </div>
-                <button class="btn-outline-profile"
-                    style="width: 100%; margin-top: 32px; display: flex; justify-content: center; align-items: center; gap: 8px;">
-                    <span class="material-icons-round" style="font-size: 18px;">chat</span> Hubungi Customer Service
-                </button>
-            </div>
-        </div>
-
-        <!-- ============ PAGE: PENGATURAN ============ -->
-        <div class="page" id="page-pengaturan">
-            <div class="beranda-header">
-                <button class="icon-btn" onclick="showPage('page-profil')">
-                    <span class="material-icons-round">arrow_back</span>
-                </button>
-                <h1 class="page-title" style="flex:1; margin-left: 12px; text-align: left;">Pengaturan</h1>
-            </div>
-            <div class="page-scroll">
-                <div class="settings-group" style="padding: 20px; border-bottom: 8px solid var(--surface-2);">
-                    <h3
-                        style="font-size: 13px; color: var(--primary); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700;">
-                        Akun</h3>
-                    <div class="setting-item"
-                        style="padding: 14px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); cursor: pointer;">
-                        <span style="font-size: 15px; font-weight: 500;">Ubah Kata Sandi</span>
-                        <span class="material-icons-round" style="color: var(--text-muted);">chevron_right</span>
-                    </div>
-                    <div class="setting-item"
-                        style="padding: 14px 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-                        <span style="font-size: 15px; font-weight: 500; color: #dc2626;">Hapus Akun</span>
-                        <span class="material-icons-round" style="color: var(--text-muted);">chevron_right</span>
-                    </div>
-                </div>
-                <div class="settings-group" style="padding: 20px; border-bottom: 8px solid var(--surface-2);">
-                    <h3
-                        style="font-size: 13px; color: var(--primary); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700;">
-                        Notifikasi</h3>
-                    <div class="setting-item"
-                        style="padding: 14px 0; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border);">
-                        <span style="font-size: 15px; font-weight: 500;">Notifikasi Push</span>
-                        <div class="toggle"
-                            style="width: 44px; height: 24px; background: var(--primary); border-radius: 12px; position: relative; cursor: pointer;">
-                            <div
-                                style="width: 20px; height: 20px; background: #fff; border-radius: 50%; position: absolute; right: 2px; top: 2px; box-shadow: var(--shadow-sm);">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="setting-item"
-                        style="padding: 14px 0; display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-size: 15px; font-weight: 500;">Notifikasi Email</span>
-                        <div class="toggle"
-                            style="width: 44px; height: 24px; background: #e5e7eb; border-radius: 12px; position: relative; cursor: pointer;">
-                            <div
-                                style="width: 20px; height: 20px; background: #fff; border-radius: 50%; position: absolute; left: 2px; top: 2px; box-shadow: var(--shadow-sm);">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="settings-group" style="padding: 20px;">
-                    <h3
-                        style="font-size: 13px; color: var(--primary); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700;">
-                        Preferensi</h3>
-                    <div class="setting-item theme-setting">
-                        <div>
-                            <span class="setting-label">Mode Gelap</span>
-                            <small class="setting-description">Sesuaikan tampilan aplikasi dengan suasana membaca</small>
-                        </div>
-                        <button class="theme-toggle" type="button" role="switch" aria-checked="false"
-                            aria-label="Aktifkan mode gelap" onclick="toggleTheme()">
-                            <span></span>
+                        <button type="button" class="profile-stat" data-action="go" data-page="page-pertemanan">
+                            <strong id="stat-followers">0</strong><span>Pengikut</span>
+                        </button>
+                        <button type="button" class="profile-stat" data-action="go" data-page="page-pertemanan">
+                            <strong id="stat-following">0</strong><span>Mengikuti</span>
                         </button>
                     </div>
-                    <div class="setting-item"
-                        style="padding: 14px 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-                        <span style="font-size: 15px; font-weight: 500;">Bahasa</span>
-                        <div style="display: flex; align-items: center; gap: 4px; color: var(--text-secondary);">
-                            <span style="font-size: 14px;">Indonesia</span>
-                            <span class="material-icons-round">chevron_right</span>
-                        </div>
+                    <button type="button" class="btn btn--secondary btn--sm" data-action="go" data-page="page-edit-profil">Ubah profil</button>
+                </div>
+
+                <nav class="profile-menu" aria-label="Menu profil">
+                    <button type="button" class="menu-item" data-action="go" data-page="page-pertemanan">
+                        <span class="material-symbols-rounded" aria-hidden="true">group</span>
+                        <span class="menu-item__label">Pertemanan</span>
+                        <span class="material-symbols-rounded menu-item__chevron" aria-hidden="true">chevron_right</span>
+                    </button>
+                    <button type="button" class="menu-item" data-action="go" data-page="page-bantuan">
+                        <span class="material-symbols-rounded" aria-hidden="true">help</span>
+                        <span class="menu-item__label">Bantuan</span>
+                        <span class="material-symbols-rounded menu-item__chevron" aria-hidden="true">chevron_right</span>
+                    </button>
+                    <button type="button" class="menu-item" data-action="go" data-page="page-pengaturan">
+                        <span class="material-symbols-rounded" aria-hidden="true">settings</span>
+                        <span class="menu-item__label">Pengaturan</span>
+                        <span class="material-symbols-rounded menu-item__chevron" aria-hidden="true">chevron_right</span>
+                    </button>
+                    <button type="button" class="menu-item" data-action="go" data-page="page-syarat">
+                        <span class="material-symbols-rounded" aria-hidden="true">description</span>
+                        <span class="menu-item__label">Syarat dan ketentuan</span>
+                        <span class="material-symbols-rounded menu-item__chevron" aria-hidden="true">chevron_right</span>
+                    </button>
+                    <button type="button" class="menu-item" data-action="go" data-page="page-kebijakan">
+                        <span class="material-symbols-rounded" aria-hidden="true">shield</span>
+                        <span class="menu-item__label">Kebijakan privasi</span>
+                        <span class="material-symbols-rounded menu-item__chevron" aria-hidden="true">chevron_right</span>
+                    </button>
+                </nav>
+                <div class="profile-signout">
+                    <button type="button" class="btn btn--danger-text" data-action="not-in-prototype" data-label="Keluar akun">Keluar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE: EDIT PROFIL -->
+        <div class="page" id="page-edit-profil">
+            <div class="page-scroll">
+                <div class="topbar">
+                    <button type="button" class="icon-btn" aria-label="Kembali" data-action="go" data-page="page-profil">
+                        <span class="material-symbols-rounded" aria-hidden="true">arrow_back</span>
+                    </button>
+                    <h2 class="topbar-title">Ubah profil</h2>
+                    <button type="button" class="link" data-action="save-profile">Simpan</button>
+                </div>
+                <div class="edit-avatar-wrap">
+                    <span class="avatar avatar--xl" style="--avatar-bg: var(--avatar-1)" aria-hidden="true">AP</span>
+                    <button type="button" class="edit-avatar-btn" aria-label="Ganti foto" data-action="not-in-prototype" data-label="Ganti foto profil">
+                        <span class="material-symbols-rounded" aria-hidden="true">photo_camera</span>
+                    </button>
+                </div>
+                <div class="edit-form">
+                    <div class="form-group">
+                        <label for="edit-name">Nama lengkap</label>
+                        <input id="edit-name" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-username">Nama pengguna</label>
+                        <input id="edit-username" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-email">Email</label>
+                        <input id="edit-email" type="email" value="andi.pratama@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="edit-bio">Bio</label>
+                        <textarea id="edit-bio" rows="3"></textarea>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- ============ PAGE: SYARAT & KETENTUAN ============ -->
+        <!-- PAGE: PERTEMANAN -->
+        <div class="page" id="page-pertemanan">
+            <div class="page-scroll">
+                <div class="topbar">
+                    <button type="button" class="icon-btn" aria-label="Kembali" data-action="go" data-page="page-profil">
+                        <span class="material-symbols-rounded" aria-hidden="true">arrow_back</span>
+                    </button>
+                    <h2 class="topbar-title">Pertemanan</h2>
+                    <span class="topbar-spacer"></span>
+                </div>
+                <div class="sub-tabs" role="tablist" aria-label="Pertemanan">
+                    <button type="button" class="sub-tab" role="tab" id="tab-pengikut" aria-selected="true" aria-controls="pt-pengikut" data-tab-group="pertemanan" data-panel="pt-pengikut">Pengikut</button>
+                    <button type="button" class="sub-tab" role="tab" id="tab-mengikuti" aria-selected="false" tabindex="-1" aria-controls="pt-mengikuti" data-tab-group="pertemanan" data-panel="pt-mengikuti">Mengikuti</button>
+                </div>
+                <div class="tab-panel active" id="pt-pengikut" role="tabpanel" aria-labelledby="tab-pengikut" data-tab-group="pertemanan">
+                    <div id="pertemanan-followers"></div>
+                </div>
+                <div class="tab-panel" id="pt-mengikuti" role="tabpanel" aria-labelledby="tab-mengikuti" data-tab-group="pertemanan">
+                    <div id="pertemanan-following"></div>
+                </div>
+                <section class="section">
+                    <h2 class="section-title">Mungkin kamu kenal</h2>
+                    <div id="pertemanan-suggest" class="mt-3"></div>
+                </section>
+            </div>
+        </div>
+
+        <!-- PAGE: BANTUAN -->
+        <div class="page" id="page-bantuan">
+            <div class="page-scroll">
+                <div class="topbar">
+                    <button type="button" class="icon-btn" aria-label="Kembali" data-action="go" data-page="page-profil">
+                        <span class="material-symbols-rounded" aria-hidden="true">arrow_back</span>
+                    </button>
+                    <h2 class="topbar-title">Bantuan</h2>
+                    <span class="topbar-spacer"></span>
+                </div>
+                <div class="section">
+                    <div class="search-bar">
+                        <span class="material-symbols-rounded" aria-hidden="true">search</span>
+                        <label class="sr-only" for="bantuan-search">Cari bantuan</label>
+                        <input id="bantuan-search" type="text" placeholder="Cari pertanyaan…">
+                    </div>
+                </div>
+                <section class="section">
+                    <h2 class="section-title">Sering ditanyakan</h2>
+                    <div class="mt-3">
+                        <details class="faq-item">
+                            <summary>Cara meminjam dan mengembalikan buku <span class="material-symbols-rounded" aria-hidden="true">expand_more</span></summary>
+                            <p class="faq-item__answer">Buka halaman detail buku, lalu tekan Pinjam kalau tersedia. Buku masuk ke Rak saya dan kembali otomatis setelah masa pinjam habis, jadi tidak ada denda.</p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>Aplikasi lambat atau keluar sendiri <span class="material-symbols-rounded" aria-hidden="true">expand_more</span></summary>
+                            <p class="faq-item__answer">Tutup aplikasi, pastikan versinya terbaru, lalu buka lagi. Kalau masih berlanjut, kirim keluhan lewat halaman layanan pelanggan dengan menyebutkan tipe ponselmu.</p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>Berapa buku yang bisa dipinjam sekaligus <span class="material-symbols-rounded" aria-hidden="true">expand_more</span></summary>
+                            <p class="faq-item__answer">Kamu bisa meminjam sampai lima judul dalam satu waktu. Setelah salah satu kembali, slotnya terbuka lagi.</p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>Cara bergabung dengan komunitas <span class="material-symbols-rounded" aria-hidden="true">expand_more</span></summary>
+                            <p class="faq-item__answer">Buka tab Komunitas, pilih Cari komunitas, lalu tekan Gabung. Komunitas yang kamu ikuti muncul di tab Komunitas saya.</p>
+                        </details>
+                    </div>
+                    <button type="button" class="btn btn--secondary btn--block mt-5" data-action="not-in-prototype" data-label="Layanan pelanggan">
+                        <span class="material-symbols-rounded" aria-hidden="true">chat</span> Hubungi layanan pelanggan
+                    </button>
+                </section>
+            </div>
+        </div>
+
+        <!-- PAGE: PENGATURAN -->
+        <div class="page" id="page-pengaturan">
+            <div class="page-scroll">
+                <div class="topbar">
+                    <button type="button" class="icon-btn" aria-label="Kembali" data-action="go" data-page="page-profil">
+                        <span class="material-symbols-rounded" aria-hidden="true">arrow_back</span>
+                    </button>
+                    <h2 class="topbar-title">Pengaturan</h2>
+                    <span class="topbar-spacer"></span>
+                </div>
+                <div class="settings-group">
+                    <h3 class="settings-group__title">Akun</h3>
+                    <button type="button" class="setting-item" data-action="not-in-prototype" data-label="Ubah kata sandi">
+                        <span>Ubah kata sandi</span>
+                        <span class="material-symbols-rounded menu-item__chevron" aria-hidden="true">chevron_right</span>
+                    </button>
+                    <button type="button" class="setting-item setting-item--danger" data-action="not-in-prototype" data-label="Hapus akun">
+                        <span>Hapus akun</span>
+                        <span class="material-symbols-rounded menu-item__chevron" aria-hidden="true">chevron_right</span>
+                    </button>
+                </div>
+                <div class="settings-group">
+                    <h3 class="settings-group__title">Notifikasi</h3>
+                    <label class="setting-item">
+                        <span>Notifikasi push</span>
+                        <button type="button" class="switch" id="notif-push-switch" role="switch" aria-checked="true" aria-label="Notifikasi push"></button>
+                    </label>
+                    <label class="setting-item">
+                        <span>Notifikasi email</span>
+                        <button type="button" class="switch" id="notif-email-switch" role="switch" aria-checked="false" aria-label="Notifikasi email"></button>
+                    </label>
+                </div>
+                <div class="settings-group">
+                    <h3 class="settings-group__title">Tampilan</h3>
+                    <label class="setting-item">
+                        <span class="setting-item__text">
+                            <span>Mode gelap</span>
+                            <span class="setting-item__desc">Lebih nyaman untuk membaca malam hari</span>
+                        </span>
+                        <button type="button" class="switch" id="theme-switch" role="switch" aria-checked="false" aria-label="Aktifkan mode gelap"></button>
+                    </label>
+                    <button type="button" class="setting-item" data-action="not-in-prototype" data-label="Bahasa">
+                        <span>Bahasa</span>
+                        <span class="setting-item__value">Indonesia <span class="material-symbols-rounded" aria-hidden="true">chevron_right</span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE: SYARAT DAN KETENTUAN -->
         <div class="page" id="page-syarat">
-            <div class="beranda-header">
-                <button class="icon-btn" onclick="showPage('page-profil')">
-                    <span class="material-icons-round">arrow_back</span>
-                </button>
-                <h1 class="page-title" style="flex:1; margin-left: 12px; text-align: left;">Syarat & Ketentuan</h1>
-            </div>
-            <div class="page-scroll"
-                style="padding: 20px; color: var(--text-secondary); line-height: 1.6; font-size: 14px;">
-                <h3 style="font-size: 16px; color: var(--text); margin-bottom: 12px;">1. Ketentuan Umum</h3>
-                <p style="margin-bottom: 16px;">Selamat datang di iPusnas. Dengan menggunakan aplikasi ini, Anda setuju
-                    untuk terikat oleh syarat dan ketentuan yang berlaku. Harap membaca dengan cermat sebelum
-                    menggunakan layanan kami.</p>
-
-                <h3 style="font-size: 16px; color: var(--text); margin-bottom: 12px;">2. Akun Pengguna</h3>
-                <p style="margin-bottom: 16px;">Setiap pengguna wajib mendaftar menggunakan identitas yang valid. Anda
-                    bertanggung jawab menjaga kerahasiaan kata sandi dan akun Anda.</p>
-
-                <h3 style="font-size: 16px; color: var(--text); margin-bottom: 12px;">3. Peminjaman Buku</h3>
-                <p style="margin-bottom: 16px;">Buku elektronik dapat dipinjam selama periode tertentu yang telah
-                    ditetapkan oleh Perpustakaan Nasional. Buku akan otomatis kembali setelah masa peminjaman habis.</p>
-                <p style="margin-bottom: 32px;">Pengguna diharapkan tidak melakukan tindakan yang merugikan sistem
-                    aplikasi, termasuk membajak atau menyalin konten yang dilindungi hak cipta.</p>
-                <button class="btn-sm-primary" style="width: 100%; justify-content: center; padding: 12px;"
-                    onclick="showPage('page-profil')">Saya Mengerti</button>
-                <div style="height: 40px;"></div>
+            <div class="page-scroll">
+                <div class="topbar">
+                    <button type="button" class="icon-btn" aria-label="Kembali" data-action="go" data-page="page-profil">
+                        <span class="material-symbols-rounded" aria-hidden="true">arrow_back</span>
+                    </button>
+                    <h2 class="topbar-title">Syarat dan ketentuan</h2>
+                    <span class="topbar-spacer"></span>
+                </div>
+                <div class="doc">
+                    <h3>1. Ketentuan umum</h3>
+                    <p>Dengan menggunakan iPusnas, Anda setuju untuk terikat pada syarat dan ketentuan yang berlaku. Harap membaca dokumen ini sebelum menggunakan layanan.</p>
+                    <h3>2. Akun pengguna</h3>
+                    <p>Setiap pengguna mendaftar dengan identitas yang sah. Anda bertanggung jawab menjaga kerahasiaan kata sandi dan aktivitas pada akun Anda.</p>
+                    <h3>3. Peminjaman buku</h3>
+                    <p>Buku elektronik dapat dipinjam untuk jangka waktu tertentu yang ditetapkan Perpustakaan Nasional, dan akan kembali otomatis setelah masa pinjam habis.</p>
+                    <p>Pengguna tidak diperkenankan menyalin, menggandakan, atau menyebarkan konten yang dilindungi hak cipta.</p>
+                    <button type="button" class="btn btn--secondary btn--block" data-action="go" data-page="page-profil">Saya mengerti</button>
+                </div>
             </div>
         </div>
 
-        <!-- ============ PAGE: KEBIJAKAN PRIVASI ============ -->
+        <!-- PAGE: KEBIJAKAN PRIVASI -->
         <div class="page" id="page-kebijakan">
-            <div class="beranda-header">
-                <button class="icon-btn" onclick="showPage('page-profil')">
-                    <span class="material-icons-round">arrow_back</span>
-                </button>
-                <h1 class="page-title" style="flex:1; margin-left: 12px; text-align: left;">Kebijakan Privasi</h1>
-            </div>
-            <div class="page-scroll"
-                style="padding: 20px; color: var(--text-secondary); line-height: 1.6; font-size: 14px;">
-                <h3 style="font-size: 16px; color: var(--text); margin-bottom: 12px;">Pengumpulan Data</h3>
-                <p style="margin-bottom: 16px;">iPusnas mengumpulkan data pribadi Anda (seperti nama, email, nomor
-                    ponsel) saat Anda mendaftar. Data ini digunakan semata-mata untuk tujuan administrasi akun dan
-                    penyediaan layanan peminjaman buku elektronik yang optimal.</p>
-
-                <h3 style="font-size: 16px; color: var(--text); margin-bottom: 12px;">Penggunaan Data</h3>
-                <p style="margin-bottom: 16px;">Kami menggunakan informasi yang dikumpulkan untuk mempersonalisasi
-                    rekomendasi buku, meningkatkan kualitas layanan, serta menghubungi Anda terkait informasi pembaruan
-                    penting atau isu layanan.</p>
-
-                <h3 style="font-size: 16px; color: var(--text); margin-bottom: 12px;">Keamanan Data</h3>
-                <p style="margin-bottom: 32px;">Kami berkomitmen menjaga keamanan data Anda dengan standar enkripsi yang
-                    berlaku, sehingga informasi pribadi Anda tidak akan dibagikan kepada pihak ketiga tanpa persetujuan
-                    Anda.</p>
-                <button class="btn-sm-primary" style="width: 100%; justify-content: center; padding: 12px;"
-                    onclick="showPage('page-profil')">Saya Mengerti</button>
-                <div style="height: 40px;"></div>
+            <div class="page-scroll">
+                <div class="topbar">
+                    <button type="button" class="icon-btn" aria-label="Kembali" data-action="go" data-page="page-profil">
+                        <span class="material-symbols-rounded" aria-hidden="true">arrow_back</span>
+                    </button>
+                    <h2 class="topbar-title">Kebijakan privasi</h2>
+                    <span class="topbar-spacer"></span>
+                </div>
+                <div class="doc">
+                    <h3>Pengumpulan data</h3>
+                    <p>iPusnas mengumpulkan data pribadi Anda, seperti nama, email, dan nomor ponsel, saat Anda mendaftar. Data ini digunakan untuk administrasi akun dan layanan peminjaman buku elektronik.</p>
+                    <h3>Penggunaan data</h3>
+                    <p>Informasi yang dikumpulkan dipakai untuk menyusun saran bacaan dan menghubungi Anda terkait pembaruan atau gangguan layanan.</p>
+                    <h3>Keamanan data</h3>
+                    <p>Kami menjaga keamanan data dengan standar enkripsi yang berlaku. Informasi pribadi Anda tidak dibagikan kepada pihak ketiga tanpa persetujuan Anda.</p>
+                    <button type="button" class="btn btn--secondary btn--block" data-action="go" data-page="page-profil">Saya mengerti</button>
+                </div>
             </div>
         </div>
-        <!-- ============ PAGE: EBOOK READER ============ -->
+
+        <!-- PAGE: EBOOK READER -->
         <div class="page" id="page-ebook-reader">
             <div class="ebook-reader-page">
                 <div class="ebook-reader-topbar">
-                    <button class="icon-btn" onclick="goBack()" aria-label="Kembali">
-                        <span class="material-icons-round">arrow_back</span>
+                    <button type="button" class="icon-btn" aria-label="Kembali" data-action="back">
+                        <span class="material-symbols-rounded" aria-hidden="true">arrow_back</span>
                     </button>
-                    <div>
+                    <div class="ebook-reader-topbar__body">
                         <h2>Gadis Kretek</h2>
                         <p>Ratih Kumala</p>
                     </div>
-                    <button class="icon-btn" aria-label="Opsi membaca">
-                        <span class="material-icons-round">more_vert</span>
+                    <button type="button" class="icon-btn" aria-label="Opsi membaca" data-action="not-in-prototype" data-label="Opsi membaca">
+                        <span class="material-symbols-rounded" aria-hidden="true">more_vert</span>
                     </button>
                 </div>
-                <iframe class="ebook-frame" src="ebook-gadis-kretek.html" title="Gadis Kretek"></iframe>
+                <iframe class="ebook-frame" src="ebook-gadis-kretek.html" title="Cuplikan Gadis Kretek"></iframe>
             </div>
         </div>
 
-        <!-- ============ BOTTOM NAV ============ -->
-        <nav class="bottom-nav">
-            <button class="nav-item active" onclick="switchTab(this, 'page-beranda')">
-                <span class="material-icons-round">home</span>
+        <!-- BOTTOM NAV -->
+        <nav class="bottom-nav" aria-label="Navigasi utama">
+            <button type="button" class="nav-item active" data-page="page-beranda">
+                <span class="material-symbols-rounded" aria-hidden="true">home</span>
                 <span class="nav-label">Beranda</span>
             </button>
-            <button class="nav-item" onclick="switchTab(this, 'page-rak-saya')">
-                <span class="material-icons-round">menu_book</span>
-                <span class="nav-label">Rak Saya</span>
+            <button type="button" class="nav-item" data-page="page-rak-saya">
+                <span class="material-symbols-rounded" aria-hidden="true">menu_book</span>
+                <span class="nav-label">Rak saya</span>
             </button>
-            <button class="nav-item" onclick="switchTab(this, 'page-komunitas')">
-                <span class="material-icons-round">groups</span>
+            <button type="button" class="nav-item" data-page="page-komunitas">
+                <span class="material-symbols-rounded" aria-hidden="true">group</span>
                 <span class="nav-label">Komunitas</span>
             </button>
-            <button class="nav-item" onclick="switchTab(this, 'page-profil')">
-                <span class="material-icons-round">person</span>
+            <button type="button" class="nav-item" data-page="page-profil">
+                <span class="material-symbols-rounded" aria-hidden="true">person</span>
                 <span class="nav-label">Profil</span>
             </button>
         </nav>
-        <!-- ============ FILTER SHEET (TOP DROPDOWN) ============ -->
-        <div class="filter-sheet-overlay" id="filter-sheet-overlay" onclick="closeFilterSheet()"></div>
-        <div class="filter-sheet" id="filter-sheet">
+
+        <!-- FILTER SHEET -->
+        <div class="sheet-scrim" id="sheet-scrim"></div>
+        <div class="filter-sheet" id="filter-sheet" role="dialog" aria-modal="true" aria-labelledby="filter-sheet-title" aria-hidden="true">
+            <div class="filter-sheet__handle"></div>
             <div class="filter-sheet-header">
-                <h3 style="font-size:16px; font-weight:700">Filter & Urutkan</h3>
-                <button class="icon-btn" onclick="closeFilterSheet()"
-                    style="background:none; border:none; box-shadow:none;">
-                    <span class="material-icons-round">close</span>
+                <h3 id="filter-sheet-title">Filter dan urutkan</h3>
+                <button type="button" class="icon-btn" aria-label="Tutup" data-action="close-filter">
+                    <span class="material-symbols-rounded" aria-hidden="true">close</span>
                 </button>
             </div>
             <div class="filter-sheet-body">
-                <!-- Urutkan -->
                 <div class="filter-section">
                     <h4 class="filter-section-title">Urutkan</h4>
-                    <div class="radio-group-vertical">
-                        <label class="radio-item"><input type="radio" name="sort_bs" checked> Relevansi</label>
-                        <label class="radio-item"><input type="radio" name="sort_bs"> A - Z</label>
-                        <label class="radio-item"><input type="radio" name="sort_bs"> Z - A</label>
-                        <label class="radio-item"><input type="radio" name="sort_bs"> Rating Tertinggi</label>
-                        <label class="radio-item"><input type="radio" name="sort_bs"> Rating Terendah</label>
-                        <label class="radio-item"><input type="radio" name="sort_bs"> Paling Baru</label>
-                        <label class="radio-item"><input type="radio" name="sort_bs"> Paling Lama</label>
+                    <div class="radio-group">
+                        <label class="radio-item"><input type="radio" name="sort" value="relevansi" checked> Relevansi</label>
+                        <label class="radio-item"><input type="radio" name="sort" value="judul-az"> Judul A–Z</label>
+                        <label class="radio-item"><input type="radio" name="sort" value="judul-za"> Judul Z–A</label>
+                        <label class="radio-item"><input type="radio" name="sort" value="rating-tinggi"> Rating tertinggi</label>
+                        <label class="radio-item"><input type="radio" name="sort" value="rating-rendah"> Rating terendah</label>
+                        <label class="radio-item"><input type="radio" name="sort" value="terbaru"> Paling baru</label>
                     </div>
                 </div>
-                <!-- Filter Kategori -->
                 <div class="filter-section">
-                    <h4 class="filter-section-title">Kategori / Genre</h4>
-                    <div class="chip-group-wrap">
-                        <button class="chip active">Semua</button>
-                        <button class="chip">Fiksi</button>
-                        <button class="chip">Non-Fiksi</button>
-                        <button class="chip">Anak</button>
-                        <button class="chip">Sejarah</button>
-                        <button class="chip">Sastra</button>
-                        <button class="chip">Pengembangan Diri</button>
+                    <h4 class="filter-section-title">Genre</h4>
+                    <div class="chip-wrap">
+                        <button type="button" class="chip" data-genre="semua" aria-pressed="true">Semua</button>
+                        <button type="button" class="chip" data-genre="fiksi" aria-pressed="false">Fiksi</button>
+                        <button type="button" class="chip" data-genre="sejarah" aria-pressed="false">Sejarah</button>
+                        <button type="button" class="chip" data-genre="sastra" aria-pressed="false">Sastra</button>
+                        <button type="button" class="chip" data-genre="ilmiah" aria-pressed="false">Ilmiah</button>
                     </div>
                 </div>
-                <!-- Filter Rating -->
                 <div class="filter-section">
                     <h4 class="filter-section-title">Rating</h4>
-                    <div class="chip-group-wrap">
-                        <button class="chip">Bintang 4.5+</button>
-                        <button class="chip">Bintang 4.0+</button>
+                    <div class="chip-wrap">
+                        <button type="button" class="chip" data-rating="4.5" aria-pressed="false">4,5 ke atas</button>
+                        <button type="button" class="chip" data-rating="4" aria-pressed="false">4,0 ke atas</button>
                     </div>
                 </div>
             </div>
             <div class="filter-sheet-footer">
-                <button class="btn-sm-outline" onclick="closeFilterSheet()"
-                    style="flex:1; justify-content:center;">Reset</button>
-                <button class="btn-sm-primary" onclick="applyFilter()"
-                    style="flex:2; justify-content:center;">Terapkan</button>
+                <button type="button" class="btn btn--secondary" data-action="reset-filter">Atur ulang</button>
+                <button type="button" class="btn btn--primary" data-action="apply-filter">Terapkan</button>
             </div>
         </div>
+
+        <!-- TOAST -->
+        <div class="toast" id="toast" role="status" aria-live="polite"></div>
     </div>
+
+    <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
 
