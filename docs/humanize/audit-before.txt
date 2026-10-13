@@ -1,0 +1,1193 @@
+data.js:0                     D01  data.js belum ada
+ebook-gadis-kretek.html:9     A03  literal warna "#172033" di ebook-gadis-kretek.html (pakai token/kelas)
+ebook-gadis-kretek.html:10    A02  hex terlarang #6b7280 (daftar ┬º4.1)
+ebook-gadis-kretek.html:10    A03  literal warna "#6b7280" di ebook-gadis-kretek.html (pakai token/kelas)
+ebook-gadis-kretek.html:11    A03  literal warna "#fffdf8" di ebook-gadis-kretek.html (pakai token/kelas)
+ebook-gadis-kretek.html:12    A03  literal warna "#e8e1d5" di ebook-gadis-kretek.html (pakai token/kelas)
+ebook-gadis-kretek.html:18    A03  literal warna "#e8edf0" di ebook-gadis-kretek.html (pakai token/kelas)
+ebook-gadis-kretek.html:69    A27  kelas HTML ".book-page" tanpa definisi CSS/JS
+ebook-gadis-kretek.html:70    A27  kelas HTML ".book-kicker" tanpa definisi CSS/JS
+ebook-gadis-kretek.html:72    A27  kelas HTML ".author" tanpa definisi CSS/JS
+ebook-gadis-kretek.html:73    A27  kelas HTML ".chapter" tanpa definisi CSS/JS
+ebook-gadis-kretek.html:77    A27  kelas HTML ".notice" tanpa definisi CSS/JS
+index.html:10                 A01  font Inter dilarang (pakai Gantari/Literata)
+index.html:19                 A28  jam klise "09:41"
+index.html:21                 A15  style inline non-token "font-size:14px"
+index.html:22                 A15  style inline non-token "font-size:14px"
+index.html:23                 A15  style inline non-token "font-size:14px"
+index.html:32                 A17  <img> tanpa width/height
+index.html:33                 A15  style inline non-token "height:75%;width: 35%; object-fit: conta"
+index.html:44                 A33  tiga titik "..." (pakai "ΓÇª" U+2026)
+index.html:46                 A16  handler inline "onclick=""
+index.html:58                 A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:58                 A17  <img> tanpa width/height
+index.html:62                 A19  frasa terlarang "review buku" (┬º8.2)
+index.html:70                 A12  emoji/simbol dekoratif pada teks "ΓÖú ΓÖú ΓÖú"
+index.html:87                 A32 (warn)  kemungkinan Title Case "Sedang Kamu Baca" (3 kata kapital)
+index.html:88                 A16  handler inline "onclick=""
+index.html:89                 A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:89                 A17  <img> tanpa width/height
+index.html:92                 A32 (warn)  kemungkinan Title Case "Gadis Kretek" (2 kata kapital)
+index.html:95                 A15  style inline non-token "width:65%"
+index.html:108                A32 (warn)  kemungkinan Title Case "Hari Kunjung Perpustakaan" (3 kata kapital)
+index.html:109                A19  frasa terlarang "poin baca" (┬º8.2)
+index.html:109                A20  tanda seru pada teks "Pinjam e-book lebih mudah, kum"
+index.html:111                A12  emoji/simbol dekoratif pada teks "≡ƒôÜ"
+index.html:117                A32 (warn)  kemungkinan Title Case "Rekomendasi Untukmu" (2 kata kapital)
+index.html:118                A16  href="#" (tautan kosong)
+index.html:119                A16  handler inline "onclick=""
+index.html:122                A16  handler inline "onclick=""
+index.html:124                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:124                A17  alt generik "Cover"
+index.html:124                A17  <img> tanpa width/height
+index.html:127                A32 (warn)  kemungkinan Title Case "Cantik Itu Luka" (3 kata kapital)
+index.html:131                A16  handler inline "onclick=""
+index.html:133                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:133                A17  alt generik "Cover"
+index.html:133                A17  <img> tanpa width/height
+index.html:136                A32 (warn)  kemungkinan Title Case "Laut Bercerita" (2 kata kapital)
+index.html:140                A16  handler inline "onclick=""
+index.html:142                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:142                A17  alt generik "Cover"
+index.html:142                A17  <img> tanpa width/height
+index.html:155                A32 (warn)  kemungkinan Title Case "Populer Minggu Ini" (3 kata kapital)
+index.html:156                A16  href="#" (tautan kosong)
+index.html:157                A16  handler inline "onclick=""
+index.html:160                A16  handler inline "onclick=""
+index.html:161                A27  kelas HTML ".popular" tanpa definisi CSS/JS
+index.html:162                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:162                A17  alt generik "Cover"
+index.html:162                A17  <img> tanpa width/height
+index.html:165                A32 (warn)  kemungkinan Title Case "Aroma Melati" (2 kata kapital)
+index.html:169                A16  handler inline "onclick=""
+index.html:171                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:171                A17  alt generik "Cover"
+index.html:171                A17  <img> tanpa width/height
+index.html:178                A16  handler inline "onclick=""
+index.html:180                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:180                A17  alt generik "Cover"
+index.html:180                A17  <img> tanpa width/height
+index.html:183                A32 (warn)  kemungkinan Title Case "Laskar Pelangi" (2 kata kapital)
+index.html:194                A16  handler inline "onclick=""
+index.html:194                A16  href="#" (tautan kosong)
+index.html:198                A16  handler inline "onclick=""
+index.html:200                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:200                A17  alt generik "Cover"
+index.html:200                A17  <img> tanpa width/height
+index.html:203                A32 (warn)  kemungkinan Title Case "Gadis Kretek" (2 kata kapital)
+index.html:207                A16  handler inline "onclick=""
+index.html:209                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:209                A17  alt generik "Cover"
+index.html:209                A17  <img> tanpa width/height
+index.html:216                A16  handler inline "onclick=""
+index.html:218                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:218                A17  alt generik "Cover"
+index.html:218                A17  <img> tanpa width/height
+index.html:221                A32 (warn)  kemungkinan Title Case "Aroma Karsa" (2 kata kapital)
+index.html:228                A15  style inline non-token "height:90px"
+index.html:228                A31  spacer div dengan height
+index.html:236                A16  handler inline "onclick=""
+index.html:239                A32 (warn)  kemungkinan Title Case "Rekomendasi Untukmu" (2 kata kapital)
+index.html:240                A15  style inline non-token "width:40px"
+index.html:244                A15  style inline non-token "margin-top: 4px;"
+index.html:246                A16  handler inline "onclick=""
+index.html:254                A16  handler inline "onclick=""
+index.html:255                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:255                A17  alt generik "Cover"
+index.html:255                A17  <img> tanpa width/height
+index.html:258                A32 (warn)  kemungkinan Title Case "Cantik Itu Luka" (3 kata kapital)
+index.html:265                A16  handler inline "onclick=""
+index.html:266                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:266                A17  alt generik "Cover"
+index.html:266                A17  <img> tanpa width/height
+index.html:269                A32 (warn)  kemungkinan Title Case "Laut Bercerita" (2 kata kapital)
+index.html:276                A16  handler inline "onclick=""
+index.html:277                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:277                A17  alt generik "Cover"
+index.html:277                A17  <img> tanpa width/height
+index.html:287                A16  handler inline "onclick=""
+index.html:288                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:288                A17  alt generik "Cover"
+index.html:288                A17  <img> tanpa width/height
+index.html:291                A32 (warn)  kemungkinan Title Case "Gadis Kretek" (2 kata kapital)
+index.html:298                A16  handler inline "onclick=""
+index.html:299                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:299                A17  alt generik "Cover"
+index.html:299                A17  <img> tanpa width/height
+index.html:302                A32 (warn)  kemungkinan Title Case "Aroma Melati" (2 kata kapital)
+index.html:309                A16  handler inline "onclick=""
+index.html:310                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:310                A17  alt generik "Cover"
+index.html:310                A17  <img> tanpa width/height
+index.html:320                A16  handler inline "onclick=""
+index.html:321                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:321                A17  alt generik "Cover"
+index.html:321                A17  <img> tanpa width/height
+index.html:324                A32 (warn)  kemungkinan Title Case "Laskar Pelangi" (2 kata kapital)
+index.html:331                A16  handler inline "onclick=""
+index.html:332                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:332                A17  alt generik "Cover"
+index.html:332                A17  <img> tanpa width/height
+index.html:344                A15  style inline non-token "height:90px"
+index.html:344                A31  spacer div dengan height
+index.html:352                A16  handler inline "onclick=""
+index.html:355                A32 (warn)  kemungkinan Title Case "Detail Buku" (2 kata kapital)
+index.html:363                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:363                A17  <img> tanpa width/height
+index.html:368                A32 (warn)  kemungkinan Title Case "Laut Bercerita" (2 kata kapital)
+index.html:376                A16  href="#" (tautan kosong)
+index.html:385                A16  href="#" (tautan kosong)
+index.html:385                A33  tiga titik "..." (pakai "ΓÇª" U+2026)
+index.html:399                A16  handler inline "onclick=""
+index.html:400                A15  style inline non-token "margin-bottom:0"
+index.html:400                A32 (warn)  kemungkinan Title Case "Info Detail Buku" (3 kata kapital)
+index.html:422                A32 (warn)  kemungkinan Title Case "Ulasan Pembaca" (2 kata kapital)
+index.html:423                A16  href="#" (tautan kosong)
+index.html:440                A19  frasa terlarang "luar biasa" (┬º8.2)
+index.html:440                A19  frasa terlarang "terbaik" (┬º8.2)
+index.html:445                A03  literal warna "#e8913a" di index.html (pakai token/kelas)
+index.html:445                A03  literal warna "#e85d3a" di index.html (pakai token/kelas)
+index.html:445                A15  style inline non-token "background:linear-gradient(135deg,#e8913"
+index.html:464                A29  komentar jejak generator "(NEW)"
+index.html:467                A19  frasa terlarang "seru" (┬º8.2)
+index.html:467                A32 (warn)  kemungkinan Title Case "Buku Serupa" (2 kata kapital)
+index.html:468                A16  href="#" (tautan kosong)
+index.html:471                A16  handler inline "onclick=""
+index.html:473                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:473                A17  alt generik "Cover"
+index.html:473                A17  <img> tanpa width/height
+index.html:476                A32 (warn)  kemungkinan Title Case "Cantik Itu Luka" (3 kata kapital)
+index.html:480                A16  handler inline "onclick=""
+index.html:482                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:482                A17  alt generik "Cover"
+index.html:482                A17  <img> tanpa width/height
+index.html:489                A16  handler inline "onclick=""
+index.html:491                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:491                A17  alt generik "Cover"
+index.html:491                A17  <img> tanpa width/height
+index.html:494                A32 (warn)  kemungkinan Title Case "Laskar Pelangi" (2 kata kapital)
+index.html:501                A15  style inline non-token "height:100px"
+index.html:501                A31  spacer div dengan height
+index.html:509                A19  frasa terlarang "antrian" (┬º8.2)
+index.html:509                A32 (warn)  kemungkinan Title Case "Masuk Antrian Pinjam" (3 kata kapital)
+index.html:509                A33  ejaan "antrian" (pakai "antrean")
+index.html:516                A15  style inline non-token "padding-top:12px"
+index.html:517                A32 (warn)  kemungkinan Title Case "Rak Buku Saya" (3 kata kapital)
+index.html:522                A16  handler inline "onclick=""
+index.html:523                A16  handler inline "onclick=""
+index.html:523                A19  frasa terlarang "antrian" (┬º8.2)
+index.html:523                A33  ejaan "antrian" (pakai "antrean")
+index.html:523                A33  ejaan "antrian" (pakai "antrean")
+index.html:525                A16  handler inline "onclick=""
+index.html:530                A16  handler inline "onclick=""
+index.html:531                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:531                A17  alt generik "Cover"
+index.html:531                A17  <img> tanpa width/height
+index.html:534                A32 (warn)  kemungkinan Title Case "Gadis Kretek" (2 kata kapital)
+index.html:540                A16  handler inline "onclick=""
+index.html:541                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:541                A17  alt generik "Cover"
+index.html:541                A17  <img> tanpa width/height
+index.html:544                A32 (warn)  kemungkinan Title Case "Negeri 5 Menara" (2 kata kapital)
+index.html:551                A15  style inline non-token "margin-top:24px"
+index.html:552                A32 (warn)  kemungkinan Title Case "Rekomendasi Tambahan Untukmu" (3 kata kapital)
+index.html:554                A16  handler inline "onclick=""
+index.html:556                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:556                A17  alt generik "Cover"
+index.html:556                A17  <img> tanpa width/height
+index.html:559                A32 (warn)  kemungkinan Title Case "Laskar Pelangi" (2 kata kapital)
+index.html:562                A16  handler inline "onclick=""
+index.html:564                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:564                A17  alt generik "Cover"
+index.html:564                A17  <img> tanpa width/height
+index.html:567                A32 (warn)  kemungkinan Title Case "Bumi Manusia" (2 kata kapital)
+index.html:574                A33  ejaan "antrian" (pakai "antrean")
+index.html:575                A33  ejaan "antrian" (pakai "antrean")
+index.html:577                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:577                A17  alt generik "Cover"
+index.html:577                A17  <img> tanpa width/height
+index.html:580                A32 (warn)  kemungkinan Title Case "Laut Bercerita" (2 kata kapital)
+index.html:584                A15  style inline non-token "font-size:16px;color:var(--primary)"
+index.html:585                A19  frasa terlarang "antrian" (┬º8.2)
+index.html:585                A33  ejaan "antrian" (pakai "antrean")
+index.html:591                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:591                A17  alt generik "Cover"
+index.html:591                A17  <img> tanpa width/height
+index.html:594                A32 (warn)  kemungkinan Title Case "Cantik Itu Luka" (3 kata kapital)
+index.html:598                A15  style inline non-token "font-size:16px;color:var(--primary)"
+index.html:599                A19  frasa terlarang "antrian" (┬º8.2)
+index.html:599                A33  ejaan "antrian" (pakai "antrean")
+index.html:605                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:605                A17  alt generik "Cover"
+index.html:605                A17  <img> tanpa width/height
+index.html:612                A15  style inline non-token "font-size:16px;color:var(--primary)"
+index.html:613                A19  frasa terlarang "antrian" (┬º8.2)
+index.html:613                A33  ejaan "antrian" (pakai "antrean")
+index.html:615                A19  frasa terlarang "hampir tersedia" (┬º8.2)
+index.html:615                A20  tanda seru pada teks "Hampir tersedia!"
+index.html:619                A15  style inline non-token "display:none"
+index.html:620                A02  hex terlarang #cbd5e1 (daftar ┬º4.1)
+index.html:620                A03  literal warna "#cbd5e1" di index.html (pakai token/kelas)
+index.html:620                A15  style inline non-token "font-size:48px;color:#cbd5e1"
+index.html:621                A19  frasa terlarang "antrian" (┬º8.2)
+index.html:621                A33  ejaan "antrian" (pakai "antrean")
+index.html:632                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:632                A17  alt generik "Cover"
+index.html:632                A17  <img> tanpa width/height
+index.html:635                A32 (warn)  kemungkinan Title Case "Gadis Kretek" (2 kata kapital)
+index.html:638                A15  style inline non-token "font-size:14px"
+index.html:649                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:649                A17  alt generik "Cover"
+index.html:649                A17  <img> tanpa width/height
+index.html:652                A32 (warn)  kemungkinan Title Case "Negeri 5 Menara" (2 kata kapital)
+index.html:655                A15  style inline non-token "font-size:14px"
+index.html:662                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:662                A17  alt generik "Cover"
+index.html:662                A17  <img> tanpa width/height
+index.html:665                A32 (warn)  kemungkinan Title Case "Aroma Melati" (2 kata kapital)
+index.html:668                A15  style inline non-token "font-size:14px"
+index.html:679                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:679                A17  alt generik "Cover"
+index.html:679                A17  <img> tanpa width/height
+index.html:685                A15  style inline non-token "font-size:14px"
+index.html:694                A15  style inline non-token "height:90px"
+index.html:694                A31  spacer div dengan height
+index.html:701                A15  style inline non-token "padding-top:12px"
+index.html:707                A16  handler inline "onclick=""
+index.html:707                A32 (warn)  kemungkinan Title Case "Komunitas
+                        Saya" (2 kata kapital)
+index.html:709                A16  handler inline "onclick=""
+index.html:709                A32 (warn)  kemungkinan Title Case "Cari Komunitas" (2 kata kapital)
+index.html:710                A16  handler inline "onclick=""
+index.html:715                A15  style inline non-token "text-align: center; padding: 60px 20px;"
+index.html:715                A27  kelas HTML ".empty-state" tanpa definisi CSS/JS
+index.html:716                A15  style inline non-token "font-size: 16px; color: var(--text); mar"
+index.html:716                A32 (warn)  kemungkinan Title Case "Belum Ada Komunitas" (3 kata kapital)
+index.html:718                A15  style inline non-token "font-size: 14px; color: var(--text-secon"
+index.html:718                A19  frasa terlarang "yuk" (┬º8.2)
+index.html:718                A20  tanda seru pada teks "Kamu belum bergabung dengan ko"
+index.html:721                A15  style inline non-token "width: auto; padding: 12px 24px;"
+index.html:721                A32 (warn)  kemungkinan Title Case "Cari Komunitas
+                        " (3 kata kapital)
+index.html:722                A16  handler inline "onclick=""
+index.html:722                A19  frasa terlarang "sekarang" (┬º8.2)
+index.html:729                A15  style inline non-token "margin: 0 20px 16px;"
+index.html:731                A33  tiga titik "..." (pakai "ΓÇª" U+2026)
+index.html:734                A15  style inline non-token "margin: 0 20px 12px;"
+index.html:734                A32 (warn)  kemungkinan Title Case "Rekomendasi Komunitas" (2 kata kapital)
+index.html:737                A02  hex terlarang #0e7490 (daftar ┬º4.1)
+index.html:737                A02  hex terlarang #06b6d4 (daftar ┬º4.1)
+index.html:737                A03  literal warna "#0e7490" di index.html (pakai token/kelas)
+index.html:737                A03  literal warna "#06b6d4" di index.html (pakai token/kelas)
+index.html:737                A15  style inline non-token "background: linear-gradient(135deg, #0e7"
+index.html:742                A32 (warn)  kemungkinan Title Case "Pecinta Fiksi Sejarah" (3 kata kapital)
+index.html:746                A19  frasa terlarang "seru" (┬º8.2)
+index.html:746                A19  frasa terlarang "dll." (┬º8.2)
+index.html:749                A15  style inline non-token "margin-left: 10px;"
+index.html:752                A02  hex terlarang #ea580c (daftar ┬º4.1)
+index.html:752                A02  hex terlarang #f97316 (daftar ┬º4.1)
+index.html:752                A03  literal warna "#ea580c" di index.html (pakai token/kelas)
+index.html:752                A03  literal warna "#f97316" di index.html (pakai token/kelas)
+index.html:752                A15  style inline non-token "background: linear-gradient(135deg, #ea5"
+index.html:757                A32 (warn)  kemungkinan Title Case "Sastra Indonesia Modern" (3 kata kapital)
+index.html:764                A15  style inline non-token "margin-left: 10px;"
+index.html:767                A02  hex terlarang #0284c7 (daftar ┬º4.1)
+index.html:767                A02  hex terlarang #38bdf8 (daftar ┬º4.1)
+index.html:767                A03  literal warna "#0284c7" di index.html (pakai token/kelas)
+index.html:767                A03  literal warna "#38bdf8" di index.html (pakai token/kelas)
+index.html:767                A15  style inline non-token "background: linear-gradient(135deg, #028"
+index.html:772                A19  frasa terlarang "self dev" (┬º8.2)
+index.html:772                A32 (warn)  kemungkinan Title Case "Non-Fiksi & Self Dev" (3 kata kapital)
+index.html:776                A19  frasa terlarang "tingkatkan" (┬º8.2)
+index.html:779                A15  style inline non-token "margin-left: 10px;"
+index.html:782                A02  hex terlarang #059669 (daftar ┬º4.1)
+index.html:782                A02  hex terlarang #34d399 (daftar ┬º4.1)
+index.html:782                A03  literal warna "#059669" di index.html (pakai token/kelas)
+index.html:782                A03  literal warna "#34d399" di index.html (pakai token/kelas)
+index.html:782                A15  style inline non-token "background: linear-gradient(135deg, #059"
+index.html:787                A32 (warn)  kemungkinan Title Case "Cerita Anak Nusantara" (3 kata kapital)
+index.html:794                A15  style inline non-token "margin-left: 10px;"
+index.html:801                A15  style inline non-token "padding: 0 20px 10px;"
+index.html:802                A15  style inline non-token "font-size: 12px; color: var(--text-muted"
+index.html:807                A16  handler inline "onclick=""
+index.html:810                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:810                A17  alt generik ""
+index.html:810                A17  <img> tanpa width/height
+index.html:813                A32 (warn)  kemungkinan Title Case "Laut Bercerita" (2 kata kapital)
+index.html:814                A15  style inline non-token "margin-top:4px;"
+index.html:816                A15  style inline non-token "margin-top:10px;"
+index.html:818                A15  style inline non-token "font-size:14px;color:var(--primary)"
+index.html:821                A15  style inline non-token "font-size:14px;color:var(--star)"
+index.html:823                A12  emoji/simbol dekoratif pada teks "≡ƒÆ¼ "Wajib baca bulan ini!" ΓÇô B"
+index.html:823                A19  frasa terlarang "wajib baca" (┬º8.2)
+index.html:823                A20  tanda seru pada teks "≡ƒÆ¼ "Wajib baca bulan ini!" ΓÇô B"
+index.html:826                A15  style inline non-token "width:100%;justify-content:center;margin"
+index.html:826                A19  frasa terlarang "sekarang" (┬º8.2)
+index.html:826                A32 (warn)  kemungkinan Title Case "Pinjam
+                            Seka" (2 kata kapital)
+index.html:831                A15  style inline non-token "padding: 16px 20px 8px;"
+index.html:832                A15  style inline non-token "margin-bottom:0;"
+index.html:832                A32 (warn)  kemungkinan Title Case "Rekomendasi Lainnya" (2 kata kapital)
+index.html:835                A16  handler inline "onclick=""
+index.html:837                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:837                A17  alt generik ""
+index.html:837                A17  <img> tanpa width/height
+index.html:840                A32 (warn)  kemungkinan Title Case "Gadis Kretek" (2 kata kapital)
+index.html:844                A15  style inline non-token "font-size:13px;color:var(--primary)"
+index.html:846                A15  style inline non-token "font-size:13px;color:var(--star)"
+index.html:849                A02  hex terlarang #0e7490 (daftar ┬º4.1)
+index.html:849                A02  hex terlarang #06b6d4 (daftar ┬º4.1)
+index.html:849                A03  literal warna "#0e7490" di index.html (pakai token/kelas)
+index.html:849                A03  literal warna "#06b6d4" di index.html (pakai token/kelas)
+index.html:849                A15  style inline non-token "background:linear-gradient(135deg,#0e749"
+index.html:850                A02  hex terlarang #7c3aed (daftar ┬º4.1)
+index.html:850                A02  hex terlarang #a78bfa (daftar ┬º4.1)
+index.html:850                A03  literal warna "#7c3aed" di index.html (pakai token/kelas)
+index.html:850                A03  literal warna "#a78bfa" di index.html (pakai token/kelas)
+index.html:850                A15  style inline non-token "background:linear-gradient(135deg,#7c3ae"
+index.html:851                A02  hex terlarang #ea580c (daftar ┬º4.1)
+index.html:851                A02  hex terlarang #f97316 (daftar ┬º4.1)
+index.html:851                A03  literal warna "#ea580c" di index.html (pakai token/kelas)
+index.html:851                A03  literal warna "#f97316" di index.html (pakai token/kelas)
+index.html:851                A15  style inline non-token "background:linear-gradient(135deg,#ea580"
+index.html:852                A15  style inline non-token "font-size:11px;color:var(--text-muted);m"
+index.html:856                A15  style inline non-token "color:var(--text-muted);font-size:20px;"
+index.html:859                A16  handler inline "onclick=""
+index.html:861                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:861                A17  alt generik ""
+index.html:861                A17  <img> tanpa width/height
+index.html:864                A32 (warn)  kemungkinan Title Case "Negeri 5 Menara" (2 kata kapital)
+index.html:868                A15  style inline non-token "font-size:13px;color:var(--primary)"
+index.html:870                A15  style inline non-token "font-size:13px;color:var(--star)"
+index.html:873                A02  hex terlarang #059669 (daftar ┬º4.1)
+index.html:873                A02  hex terlarang #34d399 (daftar ┬º4.1)
+index.html:873                A03  literal warna "#059669" di index.html (pakai token/kelas)
+index.html:873                A03  literal warna "#34d399" di index.html (pakai token/kelas)
+index.html:873                A15  style inline non-token "background:linear-gradient(135deg,#05966"
+index.html:874                A02  hex terlarang #0284c7 (daftar ┬º4.1)
+index.html:874                A02  hex terlarang #38bdf8 (daftar ┬º4.1)
+index.html:874                A03  literal warna "#0284c7" di index.html (pakai token/kelas)
+index.html:874                A03  literal warna "#38bdf8" di index.html (pakai token/kelas)
+index.html:874                A15  style inline non-token "background:linear-gradient(135deg,#0284c"
+index.html:875                A15  style inline non-token "font-size:11px;color:var(--text-muted);m"
+index.html:879                A15  style inline non-token "color:var(--text-muted);font-size:20px;"
+index.html:882                A16  handler inline "onclick=""
+index.html:884                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:884                A17  alt generik ""
+index.html:884                A17  <img> tanpa width/height
+index.html:887                A32 (warn)  kemungkinan Title Case "Bumi Manusia" (2 kata kapital)
+index.html:891                A15  style inline non-token "font-size:13px;color:var(--primary)"
+index.html:893                A15  style inline non-token "font-size:13px;color:var(--star)"
+index.html:896                A02  hex terlarang #ea580c (daftar ┬º4.1)
+index.html:896                A02  hex terlarang #f97316 (daftar ┬º4.1)
+index.html:896                A03  literal warna "#ea580c" di index.html (pakai token/kelas)
+index.html:896                A03  literal warna "#f97316" di index.html (pakai token/kelas)
+index.html:896                A15  style inline non-token "background:linear-gradient(135deg,#ea580"
+index.html:897                A02  hex terlarang #7c3aed (daftar ┬º4.1)
+index.html:897                A02  hex terlarang #a78bfa (daftar ┬º4.1)
+index.html:897                A03  literal warna "#7c3aed" di index.html (pakai token/kelas)
+index.html:897                A03  literal warna "#a78bfa" di index.html (pakai token/kelas)
+index.html:897                A15  style inline non-token "background:linear-gradient(135deg,#7c3ae"
+index.html:898                A15  style inline non-token "font-size:11px;color:var(--text-muted);m"
+index.html:902                A15  style inline non-token "color:var(--text-muted);font-size:20px;"
+index.html:905                A16  handler inline "onclick=""
+index.html:907                A14  URL foto stok (unsplash/pexels/picsum) dilarang
+index.html:907                A17  alt generik ""
+index.html:907                A17  <img> tanpa width/height
+index.html:910                A32 (warn)  kemungkinan Title Case "Perahu Kertas" (2 kata kapital)
+index.html:914                A15  style inline non-token "font-size:13px;color:var(--primary)"
+index.html:916                A15  style inline non-token "font-size:13px;color:var(--star)"
+index.html:919                A02  hex terlarang #0e7490 (daftar ┬º4.1)
+index.html:919                A02  hex terlarang #06b6d4 (daftar ┬º4.1)
+index.html:919                A03  literal warna "#0e7490" di index.html (pakai token/kelas)
+index.html:919                A03  literal warna "#06b6d4" di index.html (pakai token/kelas)
+index.html:919                A15  style inline non-token "background:linear-gradient(135deg,#0e749"
+index.html:920                A15  style inline non-token "font-size:11px;color:var(--text-muted);m"
+index.html:924                A15  style inline non-token "color:var(--text-muted);font-size:20px;"
+index.html:928                A15  style inline non-token "height:90px"
+index.html:928                A31  spacer div dengan height
+index.html:937                A15  style inline non-token "font-size:48px;color:#fff"
+index.html:939                A32 (warn)  kemungkinan Title Case "Andi Pratama" (2 kata kapital)
+index.html:945                A16  handler inline "onclick=""
+index.html:945                A32 (warn)  kemungkinan Title Case "Ubah Profil" (2 kata kapital)
+index.html:949                A16  handler inline "onclick=""
+index.html:954                A16  handler inline "onclick=""
+index.html:959                A16  handler inline "onclick=""
+index.html:964                A16  handler inline "onclick=""
+index.html:969                A16  handler inline "onclick=""
+index.html:975                A02  hex terlarang #fee2e2 (daftar ┬º4.1)
+index.html:975                A03  literal warna "#fee2e2" di index.html (pakai token/kelas)
+index.html:975                A15  style inline non-token "margin-top: 24px; border-bottom: none; b"
+index.html:976                A02  hex terlarang #ef4444 (daftar ┬º4.1)
+index.html:976                A03  literal warna "#ef4444" di index.html (pakai token/kelas)
+index.html:976                A15  style inline non-token "background: transparent; color: #ef4444;"
+index.html:976                A27  kelas HTML ".menu-icon-wrap" tanpa definisi CSS/JS
+index.html:979                A02  hex terlarang #ef4444 (daftar ┬º4.1)
+index.html:979                A03  literal warna "#ef4444" di index.html (pakai token/kelas)
+index.html:979                A15  style inline non-token "color: #ef4444; font-weight: 700;"
+index.html:983                A15  style inline non-token "height:90px"
+index.html:983                A31  spacer div dengan height
+index.html:990                A16  handler inline "onclick=""
+index.html:993                A15  style inline non-token "flex:1; margin-left: 12px;"
+index.html:993                A32 (warn)  kemungkinan Title Case "Ubah Profil" (2 kata kapital)
+index.html:994                A15  style inline non-token "padding: 6px 12px;"
+index.html:995                A16  handler inline "onclick=""
+index.html:997                A15  style inline non-token "padding-top: 16px;"
+index.html:998                A15  style inline non-token "display: flex; justify-content: center; "
+index.html:999                A15  style inline non-token "width: 100px; height: 100px;"
+index.html:1000               A15  style inline non-token "font-size: 56px; color: #fff;"
+index.html:1010               A21  register "Anda" di luar dokumen legal
+index.html:1014               A21  register "Anda" di luar dokumen legal
+index.html:1025               A21  register "Anda" di luar dokumen legal
+index.html:1030               A21  register "Anda" di luar dokumen legal
+index.html:1034               A33  tiga titik "..." (pakai "ΓÇª" U+2026)
+index.html:1035               A19  frasa terlarang "mari berdiskusi" (┬º8.2)
+index.html:1035               A20  tanda seru pada teks "Penikmat buku fiksi sejarah da"
+index.html:1038               A15  style inline non-token "height:90px"
+index.html:1038               A31  spacer div dengan height
+index.html:1045               A16  handler inline "onclick=""
+index.html:1048               A15  style inline non-token "flex:1; margin-left: 12px; text-align: l"
+index.html:1051               A15  style inline non-token "display: flex; border-bottom: 1px solid "
+index.html:1051               A27  kelas HTML ".rak-tabs" tanpa definisi CSS/JS
+index.html:1052               A27  kelas HTML ".rak-tab" tanpa definisi CSS/JS
+index.html:1053               A15  style inline non-token "flex: 1; text-align: center; padding: 12"
+index.html:1056               A15  style inline non-token "flex: 1; text-align: center; padding: 12"
+index.html:1060               A15  style inline non-token "margin-top: 30px; display: flex; flex-di"
+index.html:1062               A02  hex terlarang #6b7280 (daftar ┬º4.1)
+index.html:1062               A03  literal warna "#6b7280" di index.html (pakai token/kelas)
+index.html:1062               A15  style inline non-token "font-size: 80px; color: #6b7280; margin-"
+index.html:1063               A15  style inline non-token "font-size: 16px; margin-bottom: 8px; col"
+index.html:1063               A32 (warn)  kemungkinan Title Case "Maaf, saat ini belum ada
+              " (2 kata kapital)
+index.html:1064               A21  register "Anda" di luar dokumen legal
+index.html:1065               A15  style inline non-token "font-size: 13px; color: var(--primary); "
+index.html:1065               A19  frasa terlarang "follback" (┬º8.2)
+index.html:1067               A13  emotikon pada teks "Kesempatan Anda mencari lebih "
+index.html:1067               A15  style inline non-token "font-size: 13px; color: var(--text-secon"
+index.html:1067               A19  frasa terlarang "kesempatan anda" (┬º8.2)
+index.html:1067               A19  frasa terlarang ":)" (┬º8.2)
+index.html:1067               A21  register "Anda" di luar dokumen legal
+index.html:1071               A15  style inline non-token "margin-top: 40px; padding: 0 20px;"
+index.html:1071               A27  kelas HTML ".contact-recommendations" tanpa definisi CSS/JS
+index.html:1072               A15  style inline non-token "font-size: 15px; margin-bottom: 16px; fo"
+index.html:1072               A32 (warn)  kemungkinan Title Case "Rekomendasi
+                        Tem" (3 kata kapital)
+index.html:1075               A15  style inline non-token "display: flex; align-items: center; marg"
+index.html:1075               A27  kelas HTML ".user-item" tanpa definisi CSS/JS
+index.html:1076               A27  kelas HTML ".user-avatar" tanpa definisi CSS/JS
+index.html:1077               A02  hex terlarang #f43f5e (daftar ┬º4.1)
+index.html:1077               A02  hex terlarang #fb7185 (daftar ┬º4.1)
+index.html:1077               A03  literal warna "#f43f5e" di index.html (pakai token/kelas)
+index.html:1077               A03  literal warna "#fb7185" di index.html (pakai token/kelas)
+index.html:1077               A15  style inline non-token "width: 44px; height: 44px; border-radius"
+index.html:1079               A15  style inline non-token "flex: 1;"
+index.html:1079               A27  kelas HTML ".user-info" tanpa definisi CSS/JS
+index.html:1080               A15  style inline non-token "font-size: 14px; font-weight: 600;"
+index.html:1080               A32 (warn)  kemungkinan Title Case "Siti Aminah" (2 kata kapital)
+index.html:1081               A15  style inline non-token "font-size: 12px; color: var(--text-secon"
+index.html:1083               A15  style inline non-token "padding: 6px 16px;"
+index.html:1086               A15  style inline non-token "display: flex; align-items: center; marg"
+index.html:1088               A02  hex terlarang #3b82f6 (daftar ┬º4.1)
+index.html:1088               A02  hex terlarang #60a5fa (daftar ┬º4.1)
+index.html:1088               A03  literal warna "#3b82f6" di index.html (pakai token/kelas)
+index.html:1088               A03  literal warna "#60a5fa" di index.html (pakai token/kelas)
+index.html:1088               A15  style inline non-token "width: 44px; height: 44px; border-radius"
+index.html:1090               A15  style inline non-token "flex: 1;"
+index.html:1091               A15  style inline non-token "font-size: 14px; font-weight: 600;"
+index.html:1091               A32 (warn)  kemungkinan Title Case "Budi Santoso" (2 kata kapital)
+index.html:1092               A15  style inline non-token "font-size: 12px; color: var(--text-secon"
+index.html:1094               A15  style inline non-token "padding: 6px 16px;"
+index.html:1097               A15  style inline non-token "display: flex; align-items: center; marg"
+index.html:1099               A02  hex terlarang #10b981 (daftar ┬º4.1)
+index.html:1099               A02  hex terlarang #34d399 (daftar ┬º4.1)
+index.html:1099               A03  literal warna "#10b981" di index.html (pakai token/kelas)
+index.html:1099               A03  literal warna "#34d399" di index.html (pakai token/kelas)
+index.html:1099               A15  style inline non-token "width: 44px; height: 44px; border-radius"
+index.html:1101               A15  style inline non-token "flex: 1;"
+index.html:1102               A15  style inline non-token "font-size: 14px; font-weight: 600;"
+index.html:1102               A32 (warn)  kemungkinan Title Case "Dewi Lestari" (2 kata kapital)
+index.html:1103               A15  style inline non-token "font-size: 12px; color: var(--text-secon"
+index.html:1105               A15  style inline non-token "padding: 6px 16px;"
+index.html:1108               A15  style inline non-token "height: 60px;"
+index.html:1108               A31  spacer div dengan height
+index.html:1115               A16  handler inline "onclick=""
+index.html:1118               A15  style inline non-token "flex:1; margin-left: 12px; text-align: l"
+index.html:1120               A15  style inline non-token "padding: 20px;"
+index.html:1121               A15  style inline non-token "margin-bottom: 24px; position: relative;"
+index.html:1123               A15  style inline non-token "position: absolute; left: 12px; top: 10p"
+index.html:1124               A33  tiga titik "..." (pakai "ΓÇª" U+2026)
+index.html:1125               A15  style inline non-token "width: 100%; padding: 12px 12px 12px 40p"
+index.html:1127               A15  style inline non-token "font-size: 16px; margin-bottom: 16px; fo"
+index.html:1127               A32 (warn)  kemungkinan Title Case "Topik Populer" (2 kata kapital)
+index.html:1128               A27  kelas HTML ".faq-list" tanpa definisi CSS/JS
+index.html:1129               A27  kelas HTML ".faq-item" tanpa definisi CSS/JS
+index.html:1130               A15  style inline non-token "padding: 16px 0; border-bottom: 1px soli"
+index.html:1131               A15  style inline non-token "font-size: 14px; font-weight: 500;"
+index.html:1132               A15  style inline non-token "color: var(--text-muted);"
+index.html:1135               A15  style inline non-token "padding: 16px 0; border-bottom: 1px soli"
+index.html:1136               A15  style inline non-token "font-size: 14px; font-weight: 500;"
+index.html:1137               A15  style inline non-token "color: var(--text-muted);"
+index.html:1140               A15  style inline non-token "padding: 16px 0; border-bottom: 1px soli"
+index.html:1141               A15  style inline non-token "font-size: 14px; font-weight: 500;"
+index.html:1142               A15  style inline non-token "color: var(--text-muted);"
+index.html:1145               A15  style inline non-token "padding: 16px 0; border-bottom: 1px soli"
+index.html:1146               A15  style inline non-token "font-size: 14px; font-weight: 500;"
+index.html:1147               A15  style inline non-token "color: var(--text-muted);"
+index.html:1150               A32 (warn)  kemungkinan Title Case "chat  Hubungi Customer Service" (3 kata kapital)
+index.html:1151               A15  style inline non-token "width: 100%; margin-top: 32px; display: "
+index.html:1152               A15  style inline non-token "font-size: 18px;"
+index.html:1152               A19  frasa terlarang "customer service" (┬º8.2)
+index.html:1160               A16  handler inline "onclick=""
+index.html:1163               A15  style inline non-token "flex:1; margin-left: 12px; text-align: l"
+index.html:1166               A15  style inline non-token "padding: 20px; border-bottom: 8px solid "
+index.html:1166               A27  kelas HTML ".settings-group" tanpa definisi CSS/JS
+index.html:1168               A15  style inline non-token "font-size: 13px; color: var(--primary); "
+index.html:1170               A27  kelas HTML ".setting-item" tanpa definisi CSS/JS
+index.html:1171               A15  style inline non-token "padding: 14px 0; display: flex; justify-"
+index.html:1172               A15  style inline non-token "font-size: 15px; font-weight: 500;"
+index.html:1173               A15  style inline non-token "color: var(--text-muted);"
+index.html:1176               A15  style inline non-token "padding: 14px 0; display: flex; justify-"
+index.html:1177               A02  hex terlarang #dc2626 (daftar ┬º4.1)
+index.html:1177               A03  literal warna "#dc2626" di index.html (pakai token/kelas)
+index.html:1177               A15  style inline non-token "font-size: 15px; font-weight: 500; color"
+index.html:1178               A15  style inline non-token "color: var(--text-muted);"
+index.html:1181               A15  style inline non-token "padding: 20px; border-bottom: 8px solid "
+index.html:1183               A15  style inline non-token "font-size: 13px; color: var(--primary); "
+index.html:1186               A15  style inline non-token "padding: 14px 0; display: flex; justify-"
+index.html:1187               A15  style inline non-token "font-size: 15px; font-weight: 500;"
+index.html:1188               A27  kelas HTML ".toggle" tanpa definisi CSS/JS
+index.html:1189               A15  style inline non-token "width: 44px; height: 24px; background: v"
+index.html:1190               A31  spacer div dengan height
+index.html:1191               A15  style inline non-token "width: 20px; height: 20px; background: #"
+index.html:1196               A15  style inline non-token "padding: 14px 0; display: flex; justify-"
+index.html:1197               A15  style inline non-token "font-size: 15px; font-weight: 500;"
+index.html:1199               A02  hex terlarang #e5e7eb (daftar ┬º4.1)
+index.html:1199               A03  literal warna "#e5e7eb" di index.html (pakai token/kelas)
+index.html:1199               A15  style inline non-token "width: 44px; height: 24px; background: #"
+index.html:1200               A31  spacer div dengan height
+index.html:1201               A15  style inline non-token "width: 20px; height: 20px; background: #"
+index.html:1206               A15  style inline non-token "padding: 20px;"
+index.html:1208               A15  style inline non-token "font-size: 13px; color: var(--primary); "
+index.html:1217               A16  handler inline "onclick=""
+index.html:1222               A15  style inline non-token "padding: 14px 0; display: flex; justify-"
+index.html:1223               A15  style inline non-token "font-size: 15px; font-weight: 500;"
+index.html:1224               A15  style inline non-token "display: flex; align-items: center; gap:"
+index.html:1225               A15  style inline non-token "font-size: 14px;"
+index.html:1236               A16  handler inline "onclick=""
+index.html:1239               A15  style inline non-token "flex:1; margin-left: 12px; text-align: l"
+index.html:1239               A32 (warn)  kemungkinan Title Case "Syarat & Ketentuan" (2 kata kapital)
+index.html:1242               A15  style inline non-token "padding: 20px; color: var(--text-seconda"
+index.html:1243               A15  style inline non-token "font-size: 16px; color: var(--text); mar"
+index.html:1243               A32 (warn)  kemungkinan Title Case "1. Ketentuan Umum" (2 kata kapital)
+index.html:1244               A15  style inline non-token "margin-bottom: 16px;"
+index.html:1248               A15  style inline non-token "font-size: 16px; color: var(--text); mar"
+index.html:1248               A32 (warn)  kemungkinan Title Case "2. Akun Pengguna" (2 kata kapital)
+index.html:1249               A15  style inline non-token "margin-bottom: 16px;"
+index.html:1252               A15  style inline non-token "font-size: 16px; color: var(--text); mar"
+index.html:1252               A32 (warn)  kemungkinan Title Case "3. Peminjaman Buku" (2 kata kapital)
+index.html:1253               A15  style inline non-token "margin-bottom: 16px;"
+index.html:1255               A15  style inline non-token "margin-bottom: 32px;"
+index.html:1257               A15  style inline non-token "width: 100%; justify-content: center; pa"
+index.html:1257               A32 (warn)  kemungkinan Title Case "Saya Mengerti" (2 kata kapital)
+index.html:1258               A16  handler inline "onclick=""
+index.html:1259               A15  style inline non-token "height: 40px;"
+index.html:1259               A31  spacer div dengan height
+index.html:1266               A16  handler inline "onclick=""
+index.html:1269               A15  style inline non-token "flex:1; margin-left: 12px; text-align: l"
+index.html:1269               A32 (warn)  kemungkinan Title Case "Kebijakan Privasi" (2 kata kapital)
+index.html:1272               A15  style inline non-token "padding: 20px; color: var(--text-seconda"
+index.html:1273               A15  style inline non-token "font-size: 16px; color: var(--text); mar"
+index.html:1273               A32 (warn)  kemungkinan Title Case "Pengumpulan Data" (2 kata kapital)
+index.html:1274               A15  style inline non-token "margin-bottom: 16px;"
+index.html:1274               A19  frasa terlarang "optimal" (┬º8.2)
+index.html:1278               A15  style inline non-token "font-size: 16px; color: var(--text); mar"
+index.html:1278               A32 (warn)  kemungkinan Title Case "Penggunaan Data" (2 kata kapital)
+index.html:1279               A15  style inline non-token "margin-bottom: 16px;"
+index.html:1283               A15  style inline non-token "font-size: 16px; color: var(--text); mar"
+index.html:1283               A32 (warn)  kemungkinan Title Case "Keamanan Data" (2 kata kapital)
+index.html:1284               A15  style inline non-token "margin-bottom: 32px;"
+index.html:1287               A15  style inline non-token "width: 100%; justify-content: center; pa"
+index.html:1287               A32 (warn)  kemungkinan Title Case "Saya Mengerti" (2 kata kapital)
+index.html:1288               A16  handler inline "onclick=""
+index.html:1289               A15  style inline non-token "height: 40px;"
+index.html:1289               A31  spacer div dengan height
+index.html:1296               A16  handler inline "onclick=""
+index.html:1300               A32 (warn)  kemungkinan Title Case "Gadis Kretek" (2 kata kapital)
+index.html:1313               A16  handler inline "onclick=""
+index.html:1317               A16  handler inline "onclick=""
+index.html:1317               A32 (warn)  kemungkinan Title Case "menu_book 
+                 Rak Saya" (2 kata kapital)
+index.html:1321               A16  handler inline "onclick=""
+index.html:1325               A16  handler inline "onclick=""
+index.html:1331               A16  handler inline "onclick=""
+index.html:1334               A15  style inline non-token "font-size:16px; font-weight:700"
+index.html:1334               A32 (warn)  kemungkinan Title Case "Filter & Urutkan" (2 kata kapital)
+index.html:1335               A16  handler inline "onclick=""
+index.html:1336               A15  style inline non-token "background:none; border:none; box-shadow"
+index.html:1356               A32 (warn)  kemungkinan Title Case "Kategori / Genre" (2 kata kapital)
+index.html:1364               A32 (warn)  kemungkinan Title Case "Pengembangan Diri" (2 kata kapital)
+index.html:1377               A16  handler inline "onclick=""
+index.html:1378               A15  style inline non-token "flex:1; justify-content:center;"
+index.html:1379               A16  handler inline "onclick=""
+index.html:1380               A15  style inline non-token "flex:2; justify-content:center;"
+script.js:118                 A29  komentar jejak generator "Basic chip interactions"
+script.js:145                 A29  komentar jejak generator "Bottom Sheet Logic"
+script.js:171                 A14  URL foto stok (unsplash/pexels/picsum) dilarang
+script.js:187                 A18  Math.random (acak) dilarang
+script.js:192                 A33  tiga titik "..." (pakai "ΓÇª" U+2026)
+style.css:0                   A04  jumlah gradien 15 melebihi batas 3
+style.css:0                   A11  blok @media (prefers-reduced-motion) tidak ada
+style.css:6                   A02  hex terlarang #0e7490 (daftar ┬º4.1)
+style.css:7                   A02  hex terlarang #0c4a6e (daftar ┬º4.1)
+style.css:8                   A02  hex terlarang #06b6d4 (daftar ┬º4.1)
+style.css:9                   A02  hex terlarang #ecfeff (daftar ┬º4.1)
+style.css:10                  A02  hex terlarang #cffafe (daftar ┬º4.1)
+style.css:12                  A02  hex terlarang #f8fafc (daftar ┬º4.1)
+style.css:13                  A02  hex terlarang #f1f5f9 (daftar ┬º4.1)
+style.css:14                  A02  hex terlarang #0f172a (daftar ┬º4.1)
+style.css:15                  A02  hex terlarang #64748b (daftar ┬º4.1)
+style.css:16                  A02  hex terlarang #94a3b8 (daftar ┬º4.1)
+style.css:17                  A02  hex terlarang #e2e8f0 (daftar ┬º4.1)
+style.css:18                  A02  hex terlarang #059669 (daftar ┬º4.1)
+style.css:19                  A02  hex terlarang #d97706 (daftar ┬º4.1)
+style.css:20                  A02  hex terlarang #dc2626 (daftar ┬º4.1)
+style.css:21                  A02  hex terlarang #0284c7 (daftar ┬º4.1)
+style.css:22                  A02  hex terlarang #f59e0b (daftar ┬º4.1)
+style.css:31                  A09  transition tanpa nama properti "0.2s cubic-bezier(0.4, 0, 0.2, 1)"
+style.css:35                  A02  hex terlarang #111827 (daftar ┬º4.1)
+style.css:35                  A03  literal warna "#111827" di luar blok token (selector body[data-theme="dark"])
+style.css:36                  A02  hex terlarang #1f2937 (daftar ┬º4.1)
+style.css:36                  A03  literal warna "#1f2937" di luar blok token (selector body[data-theme="dark"])
+style.css:37                  A03  literal warna "#273449" di luar blok token (selector body[data-theme="dark"])
+style.css:38                  A03  literal warna "#123b4b" di luar blok token (selector body[data-theme="dark"])
+style.css:39                  A03  literal warna "#1d5669" di luar blok token (selector body[data-theme="dark"])
+style.css:40                  A02  hex terlarang #f1f5f9 (daftar ┬º4.1)
+style.css:40                  A03  literal warna "#f1f5f9" di luar blok token (selector body[data-theme="dark"])
+style.css:41                  A02  hex terlarang #cbd5e1 (daftar ┬º4.1)
+style.css:41                  A03  literal warna "#cbd5e1" di luar blok token (selector body[data-theme="dark"])
+style.css:42                  A02  hex terlarang #94a3b8 (daftar ┬º4.1)
+style.css:42                  A03  literal warna "#94a3b8" di luar blok token (selector body[data-theme="dark"])
+style.css:43                  A02  hex terlarang #334155 (daftar ┬º4.1)
+style.css:43                  A03  literal warna "#334155" di luar blok token (selector body[data-theme="dark"])
+style.css:44                  A02  hex terlarang #020617 (daftar ┬º4.1)
+style.css:44                  A03  literal warna "#020617" di luar blok token (selector body[data-theme="dark"])
+style.css:54                  A01  font Inter dilarang (pakai Gantari/Literata)
+style.css:55                  A02  hex terlarang #e2e8f0 (daftar ┬º4.1)
+style.css:55                  A03  literal warna "#e2e8f0" di luar blok token (selector body)
+style.css:70                  A24  border-radius literal "40px" (pakai var(--radius-*) atau 0)
+style.css:73                  A02  hex terlarang #1e293b (daftar ┬º4.1)
+style.css:73                  A02  hex terlarang #334155 (daftar ┬º4.1)
+style.css:73                  A03  literal warna "#1e293b" di luar blok token (selector .phone-frame)
+style.css:73                  A03  literal warna "#334155" di luar blok token (selector .phone-frame)
+style.css:81                  A26 (warn)  nilai spasi 14px di luar skala (padding)
+style.css:81                  A26 (warn)  nilai spasi 28px di luar skala (padding)
+style.css:81                  A26 (warn)  nilai spasi 6px di luar skala (padding)
+style.css:88                  A23  font-size literal "15px" (pakai var(--fs-*))
+style.css:132                 A03  literal warna "#e8edf0" di luar blok token (selector .ebook-reader-page)
+style.css:138                 A26 (warn)  nilai spasi 10px di luar skala (gap)
+style.css:139                 A26 (warn)  nilai spasi 10px di luar skala (padding)
+style.css:139                 A26 (warn)  nilai spasi 14px di luar skala (padding)
+style.css:149                 A23  font-size literal "15px" (pakai var(--fs-*))
+style.css:154                 A23  font-size literal "11px" (pakai var(--fs-*))
+style.css:163                 A03  literal warna "#fff" di luar blok token (selector .ebook-frame)
+style.css:172                 A27  kelas CSS mati ".app-title" (tidak dipakai di HTML/JS)
+style.css:175                 A23  font-size literal "26px" (pakai var(--fs-*))
+style.css:176                 A22  font-weight 800/900 dilarang
+style.css:179                 A27  kelas CSS mati ".app-subtitle" (tidak dipakai di HTML/JS)
+style.css:182                 A23  font-size literal "12px" (pakai var(--fs-*))
+style.css:188                 A23  font-size literal "22px" (pakai var(--fs-*))
+style.css:195                 A23  font-size literal "20px" (pakai var(--fs-*))
+style.css:206                 A24  border-radius literal "50%" (pakai var(--radius-*) atau 0)
+style.css:211                 A09  transition: var(--transition) dilarang
+style.css:213                 A08  :hover di luar @media (hover: hover) ".icon-btn:hover"
+style.css:220                 A07  zoom scale(...) dilarang
+style.css:235                 A26 (warn)  nilai spasi 10px di luar skala (gap)
+style.css:240                 A09  transition: var(--transition) dilarang
+style.css:246                 A03  literal warna "rgba(14, 116, 144, 0.08)" di luar blok token (selector .search-bar:focus-within)
+style.css:251                 A23  font-size literal "20px" (pakai var(--fs-*))
+style.css:260                 A23  font-size literal "14px" (pakai var(--fs-*))
+style.css:280                 A26 (warn)  nilai spasi 17px di luar skala (padding)
+style.css:297                 A03  literal warna "#fff" di luar blok token (selector .banner-slide)
+style.css:308                 A03  literal warna "#0c4a5c" di luar blok token (selector .banner-slide-book)
+style.css:313                 A04  gradien pada selector tak-ter-allowlist ".banner-slide-bulletin"
+style.css:316                 A03  literal warna "#d8d8d8" di luar blok token (selector .banner-slide-bulletin)
+style.css:316                 A03  literal warna "#737373" di luar blok token (selector .banner-slide-bulletin)
+style.css:317                 A04  gradien pada selector tak-ter-allowlist ".banner-slide-reading"
+style.css:317                 A27  kelas CSS mati ".banner-slide-reading" (tidak dipakai di HTML/JS)
+style.css:320                 A03  literal warna "#e8793b" di luar blok token (selector .banner-slide-reading)
+style.css:320                 A03  literal warna "#b93855" di luar blok token (selector .banner-slide-reading)
+style.css:321                 A04  gradien pada selector tak-ter-allowlist ".banner-slide-community"
+style.css:321                 A27  kelas CSS mati ".banner-slide-community" (tidak dipakai di HTML/JS)
+style.css:324                 A03  literal warna "#3856a8" di luar blok token (selector .banner-slide-community)
+style.css:324                 A03  literal warna "#25346e" di luar blok token (selector .banner-slide-community)
+style.css:325                 A04  gradien pada selector tak-ter-allowlist ".reading-art,
+.community-art"
+style.css:334                 A26 (warn)  nilai spasi 5px di luar skala (gap)
+style.css:336                 A03  literal warna "rgba(255, 255, 255, 0.2)" di luar blok token (selector .reading-art,
+.community-art)
+style.css:341                 A23  font-size literal "38px" (pakai var(--fs-*))
+style.css:346                 A23  font-size literal "16px" (pakai var(--fs-*))
+style.css:351                 A23  font-size literal "10px" (pakai var(--fs-*))
+style.css:353                 A04  gradien pada selector tak-ter-allowlist ".banner-overlay"
+style.css:358                 A03  literal warna "rgba(0, 0, 0, 0.72)" di luar blok token (selector .banner-overlay)
+style.css:369                 A03  literal warna "rgba(0, 0, 0, 0.45)" di luar blok token (selector .banner-copy)
+style.css:373                 A23  font-size literal "10px" (pakai var(--fs-*))
+style.css:378                 A23  font-size literal "13px" (pakai var(--fs-*))
+style.css:380                 A04  gradien pada selector tak-ter-allowlist ".bulletin-art"
+style.css:384                 A26 (warn)  nilai spasi 9px di luar skala (padding)
+style.css:384                 A26 (warn)  nilai spasi 15px di luar skala (padding)
+style.css:385                 A03  literal warna "#176134" di luar blok token (selector .bulletin-art)
+style.css:386                 A03  literal warna "#2f7139" di luar blok token (selector .bulletin-art)
+style.css:387                 A03  literal warna "#dedede" di luar blok token (selector .bulletin-art)
+style.css:387                 A03  literal warna "#a7a7a7" di luar blok token (selector .bulletin-art)
+style.css:394                 A23  font-size literal "24px" (pakai var(--fs-*))
+style.css:401                 A26 (warn)  nilai spasi 39px di luar skala (margin-top)
+style.css:403                 A23  font-size literal "15px" (pakai var(--fs-*))
+style.css:404                 A22  font-weight 800/900 dilarang
+style.css:412                 A03  literal warna "#255c2f" di luar blok token (selector .bulletin-trees)
+style.css:413                 A23  font-size literal "38px" (pakai var(--fs-*))
+style.css:425                 A24  border-radius literal "50%" (pakai var(--radius-*) atau 0)
+style.css:426                 A03  literal warna "rgba(255, 255, 255, 0.92)" di luar blok token (selector .banner-arrow)
+style.css:430                 A07  lift translateY(-...) dilarang
+style.css:436                 A23  font-size literal "21px" (pakai var(--fs-*))
+style.css:451                 A26 (warn)  nilai spasi 7px di luar skala (gap)
+style.css:452                 A26 (warn)  nilai spasi 10px di luar skala (margin-top)
+style.css:458                 A24  border-radius literal "6px" (pakai var(--radius-*) atau 0)
+style.css:459                 A02  hex terlarang #e2e8f0 (daftar ┬º4.1)
+style.css:459                 A03  literal warna "#e2e8f0" di luar blok token (selector .banner-dots span)
+style.css:464                 A02  hex terlarang #4054b8 (daftar ┬º4.1)
+style.css:464                 A03  literal warna "#4054b8" di luar blok token (selector .banner-dots span.active)
+style.css:478                 A09  transition: var(--transition) dilarang
+style.css:480                 A08  :hover di luar @media (hover: hover) ".filter-btn-square:hover"
+style.css:495                 A03  literal warna "rgba(0, 0, 0, 0.5)" di luar blok token (selector .filter-sheet-overlay)
+style.css:513                 A24  border-radius literal "0 0 24px 24px" (pakai var(--radius-*) atau 0)
+style.css:515                 A07  lift translateY(-...) dilarang
+style.css:520                 A03  literal warna "rgba(0, 0, 0, 0.15)" di luar blok token (selector .filter-sheet)
+style.css:520                 A25  box-shadow literal "0 4px 20px rgba(0, 0, 0, 0.15)" (pakai var(--shadow-*)/none/ring)
+style.css:531                 A26 (warn)  nilai spasi 30px di luar skala (padding)
+style.css:546                 A24  border-radius literal "0 0 24px 24px" (pakai var(--radius-*) atau 0)
+style.css:558                 A23  font-size literal "14px" (pakai var(--fs-*))
+style.css:574                 A23  font-size literal "14px" (pakai var(--fs-*))
+style.css:589                 A27  kelas CSS mati ".chip-row" (tidak dipakai di HTML/JS)
+style.css:605                 A26 (warn)  nilai spasi 18px di luar skala (padding)
+style.css:606                 A24  border-radius literal "100px" (pakai var(--radius-*) atau 0)
+style.css:610                 A23  font-size literal "13px" (pakai var(--fs-*))
+style.css:615                 A09  transition: var(--transition) dilarang
+style.css:616                 A08  :hover di luar @media (hover: hover) ".chip:hover"
+style.css:625                 A03  literal warna "#fff" di luar blok token (selector .chip.active)
+style.css:630                 A07  zoom scale(...) dilarang
+style.css:646                 A23  font-size literal "18px" (pakai var(--fs-*))
+style.css:652                 A23  font-size literal "13px" (pakai var(--fs-*))
+style.css:656                 A09  transition: var(--transition) dilarang
+style.css:657                 A08  :hover di luar @media (hover: hover) ".see-all:hover"
+style.css:661                 A04  gradien pada selector tak-ter-allowlist ".reading-card"
+style.css:667                 A26 (warn)  nilai spasi 14px di luar skala (gap)
+style.css:668                 A26 (warn)  nilai spasi 14px di luar skala (padding)
+style.css:671                 A03  literal warna "#fff" di luar blok token (selector .reading-card)
+style.css:673                 A09  transition: var(--transition) dilarang
+style.css:674                 A26 (warn)  nilai spasi 10px di luar skala (margin-top)
+style.css:675                 A08  :hover di luar @media (hover: hover) ".reading-card:hover"
+style.css:678                 A07  lift translateY(-...) dilarang
+style.css:683                 A07  zoom scale(...) dilarang
+style.css:691                 A03  literal warna "rgba(0, 0, 0, 0.3)" di luar blok token (selector .reading-thumb)
+style.css:691                 A25  box-shadow literal "0 2px 8px rgba(0, 0, 0, 0.3)" (pakai var(--shadow-*)/none/ring)
+style.css:699                 A23  font-size literal "15px" (pakai var(--fs-*))
+style.css:704                 A23  font-size literal "12px" (pakai var(--fs-*))
+style.css:712                 A03  literal warna "rgba(255, 255, 255, 0.2)" di luar blok token (selector .progress-bar-container)
+style.css:713                 A24  border-radius literal "100px" (pakai var(--radius-*) atau 0)
+style.css:720                 A02  hex terlarang #38bdf8 (daftar ┬º4.1)
+style.css:720                 A03  literal warna "#38bdf8" di luar blok token (selector .progress-bar)
+style.css:721                 A24  border-radius literal "100px" (pakai var(--radius-*) atau 0)
+style.css:733                 A23  font-size literal "11px" (pakai var(--fs-*))
+style.css:738                 A23  font-size literal "11px" (pakai var(--fs-*))
+style.css:740                 A04  gradien pada selector tak-ter-allowlist ".promo-banner"
+style.css:745                 A26 (warn)  nilai spasi 18px di luar skala (padding)
+style.css:746                 A02  hex terlarang #065f46 (daftar ┬º4.1)
+style.css:746                 A02  hex terlarang #059669 (daftar ┬º4.1)
+style.css:746                 A03  literal warna "#065f46" di luar blok token (selector .promo-banner)
+style.css:746                 A03  literal warna "#059669" di luar blok token (selector .promo-banner)
+style.css:751                 A03  literal warna "#fff" di luar blok token (selector .promo-banner)
+style.css:755                 A23  font-size literal "15px" (pakai var(--fs-*))
+style.css:760                 A23  font-size literal "12px" (pakai var(--fs-*))
+style.css:767                 A23  font-size literal "36px" (pakai var(--fs-*))
+style.css:773                 A26 (warn)  nilai spasi 14px di luar skala (gap)
+style.css:787                 A09  transition: var(--transition) dilarang
+style.css:788                 A08  :hover di luar @media (hover: hover) ".book-card:hover"
+style.css:791                 A07  lift translateY(-...) dilarang
+style.css:795                 A07  zoom scale(...) dilarang
+style.css:812                 A08  :hover di luar @media (hover: hover) ".book-card:hover .book-cover-wrap img"
+style.css:815                 A07  zoom scale(...) dilarang
+style.css:819                 A23  font-size literal "13px" (pakai var(--fs-*))
+style.css:830                 A23  font-size literal "11px" (pakai var(--fs-*))
+style.css:836                 A23  font-size literal "11px" (pakai var(--fs-*))
+style.css:844                 A26 (warn)  nilai spasi 3px di luar skala (gap)
+style.css:845                 A23  font-size literal "12px" (pakai var(--fs-*))
+style.css:852                 A23  font-size literal "14px" (pakai var(--fs-*))
+style.css:859                 A23  font-size literal "11px" (pakai var(--fs-*))
+style.css:860                 A27  kelas CSS mati ".rank-badge" (tidak dipakai di HTML/JS)
+style.css:869                 A24  border-radius literal "50%" (pakai var(--radius-*) atau 0)
+style.css:871                 A03  literal warna "#fff" di luar blok token (selector .rank-badge)
+style.css:872                 A23  font-size literal "12px" (pakai var(--fs-*))
+style.css:878                 A27  kelas CSS mati ".new-badge" (tidak dipakai di HTML/JS)
+style.css:884                 A26 (warn)  nilai spasi 3px di luar skala (padding)
+style.css:885                 A24  border-radius literal "100px" (pakai var(--radius-*) atau 0)
+style.css:887                 A03  literal warna "#fff" di luar blok token (selector .new-badge)
+style.css:888                 A23  font-size literal "10px" (pakai var(--fs-*))
+style.css:901                 A23  font-size literal "12px" (pakai var(--fs-*))
+style.css:909                 A26 (warn)  nilai spasi 6px di luar skala (padding)
+style.css:914                 A23  font-size literal "12px" (pakai var(--fs-*))
+style.css:918                 A09  transition: var(--transition) dilarang
+style.css:922                 A23  font-size literal "16px" (pakai var(--fs-*))
+style.css:923                 A08  :hover di luar @media (hover: hover) ".sort-btn:hover"
+style.css:939                 A26 (warn)  nilai spasi 14px di luar skala (gap)
+style.css:945                 A09  transition: var(--transition) dilarang
+style.css:946                 A08  :hover di luar @media (hover: hover) ".book-list-item:hover"
+style.css:951                 A07  lift translateY(-...) dilarang
+style.css:955                 A07  zoom scale(...) dilarang
+style.css:975                 A23  font-size literal "15px" (pakai var(--fs-*))
+style.css:981                 A26 (warn)  nilai spasi 3px di luar skala (margin-top)
+style.css:986                 A23  font-size literal "12px" (pakai var(--fs-*))
+style.css:992                 A26 (warn)  nilai spasi 6px di luar skala (margin-top)
+style.css:993                 A04  gradien pada selector tak-ter-allowlist ".featured-hero-card"
+style.css:993                 A27  kelas CSS mati ".featured-hero-card" (tidak dipakai di HTML/JS)
+style.css:999                 A02  hex terlarang #1e293b (daftar ┬º4.1)
+style.css:999                 A02  hex terlarang #0f172a (daftar ┬º4.1)
+style.css:999                 A03  literal warna "#1e293b" di luar blok token (selector .featured-hero-card)
+style.css:999                 A03  literal warna "#0f172a" di luar blok token (selector .featured-hero-card)
+style.css:1000                A03  literal warna "#fff" di luar blok token (selector .featured-hero-card)
+style.css:1004                A03  literal warna "rgba(15, 23, 42, 0.2)" di luar blok token (selector .featured-hero-card)
+style.css:1004                A25  box-shadow literal "0 8px 24px rgba(15, 23, 42, 0." (pakai var(--shadow-*)/none/ring)
+style.css:1006                A27  kelas CSS mati ".featured-hero-content" (tidak dipakai di HTML/JS)
+style.css:1013                A27  kelas CSS mati ".featured-hero-text" (tidak dipakai di HTML/JS)
+style.css:1020                A27  kelas CSS mati ".badge-featured" (tidak dipakai di HTML/JS)
+style.css:1020                A30  text-transform: uppercase pada ".badge-featured" (maks 1 selector, ada 3)
+style.css:1023                A23  font-size literal "10px" (pakai var(--fs-*))
+style.css:1026                A03  literal warna "rgba(255, 255, 255, 0.2)" di luar blok token (selector .badge-featured)
+style.css:1028                A24  border-radius literal "4px" (pakai var(--radius-*) atau 0)
+style.css:1034                A23  font-size literal "18px" (pakai var(--fs-*))
+style.css:1040                A23  font-size literal "13px" (pakai var(--fs-*))
+style.css:1041                A03  literal warna "rgba(255, 255, 255, 0.7)" di luar blok token (selector .featured-hero-text p)
+style.css:1042                A27  kelas CSS mati ".featured-hero-image" (tidak dipakai di HTML/JS)
+style.css:1048                A03  literal warna "rgba(0, 0, 0, 0.3)" di luar blok token (selector .featured-hero-image img)
+style.css:1048                A25  box-shadow literal "0 4px 12px rgba(0, 0, 0, 0.3)" (pakai var(--shadow-*)/none/ring)
+style.css:1050                A27  kelas CSS mati ".carousel-dots" (tidak dipakai di HTML/JS)
+style.css:1055                A26 (warn)  nilai spasi 6px di luar skala (gap)
+style.css:1057                A27  kelas CSS mati ".dot" (tidak dipakai di HTML/JS)
+style.css:1062                A24  border-radius literal "50%" (pakai var(--radius-*) atau 0)
+style.css:1063                A03  literal warna "rgba(255, 255, 255, 0.3)" di luar blok token (selector .carousel-dots .dot)
+style.css:1067                A03  literal warna "#fff" di luar blok token (selector .carousel-dots .dot.active)
+style.css:1069                A24  border-radius literal "4px" (pakai var(--radius-*) atau 0)
+style.css:1070                A27  kelas CSS mati ".book-card-lg" (tidak dipakai di HTML/JS)
+style.css:1077                A27  kelas CSS mati ".book-cover-wrap-lg" (tidak dipakai di HTML/JS)
+style.css:1086                A09  transition: var(--transition) dilarang
+style.css:1094                A08  :hover di luar @media (hover: hover) ".book-card-lg:hover .book-cover-wrap-lg"
+style.css:1098                A07  lift translateY(-...) dilarang
+style.css:1099                A08  :hover di luar @media (hover: hover) ".book-card-lg:hover .book-cover-wrap-lg "
+style.css:1102                A07  zoom scale(...) dilarang
+style.css:1103                A27  kelas CSS mati ".book-card-lg-info" (tidak dipakai di HTML/JS)
+style.css:1106                A26 (warn)  nilai spasi 10px di luar skala (margin-top)
+style.css:1110                A23  font-size literal "15px" (pakai var(--fs-*))
+style.css:1121                A23  font-size literal "13px" (pakai var(--fs-*))
+style.css:1134                A03  literal warna "rgba(255, 255, 255, 0.92)" di luar blok token (selector .detail-topbar)
+style.css:1135                A05  backdrop-filter dilarang (glassmorphism)
+style.css:1135                A06  filter: blur dilarang
+style.css:1140                A23  font-size literal "17px" (pakai var(--fs-*))
+style.css:1149                A04  gradien pada selector tak-ter-allowlist ".detail-cover-glow"
+style.css:1155                A03  literal warna "rgba(14, 116, 144, 0.2)" di luar blok token (selector .detail-cover-glow)
+style.css:1159                A24  border-radius literal "50%" (pakai var(--radius-*) atau 0)
+style.css:1160                A06  filter: blur dilarang
+style.css:1179                A23  font-size literal "22px" (pakai var(--fs-*))
+style.css:1185                A23  font-size literal "14px" (pakai var(--fs-*))
+style.css:1195                A26 (warn)  nilai spasi 10px di luar skala (margin-top)
+style.css:1202                A23  font-size literal "14px" (pakai var(--fs-*))
+style.css:1207                A23  font-size literal "18px" (pakai var(--fs-*))
+style.css:1214                A24  border-radius literal "50%" (pakai var(--radius-*) atau 0)
+style.css:1219                A23  font-size literal "14px" (pakai var(--fs-*))
+style.css:1223                A08  :hover di luar @media (hover: hover) ".meta-link:hover"
+style.css:1235                A23  font-size literal "16px" (pakai var(--fs-*))
+style.css:1237                A26 (warn)  nilai spasi 10px di luar skala (margin-bottom)
+style.css:1241                A23  font-size literal "13px" (pakai var(--fs-*))
+style.css:1250                A08  :hover di luar @media (hover: hover) ".text-link:hover"
+style.css:1259                A26 (warn)  nilai spasi 14px di luar skala (padding)
+style.css:1270                A23  font-size literal "22px" (pakai var(--fs-*))
+style.css:1276                A23  font-size literal "13px" (pakai var(--fs-*))
+style.css:1282                A23  font-size literal "12px" (pakai var(--fs-*))
+style.css:1319                A26 (warn)  nilai spasi 10px di luar skala (gap)
+style.css:1328                A23  font-size literal "13px" (pakai var(--fs-*))
+style.css:1333                A23  font-size literal "13px" (pakai var(--fs-*))
+style.css:1339                A26 (warn)  nilai spasi 14px di luar skala (padding)
+style.css:1342                A26 (warn)  nilai spasi 10px di luar skala (margin-bottom)
+style.css:1348                A26 (warn)  nilai spasi 10px di luar skala (gap)
+style.css:1350                A04  gradien pada selector tak-ter-allowlist ".reviewer-avatar"
+style.css:1355                A24  border-radius literal "50%" (pakai var(--radius-*) atau 0)
+style.css:1357                A03  literal warna "#fff" di luar blok token (selector .reviewer-avatar)
+style.css:1361                A23  font-size literal "13px" (pakai var(--fs-*))
+style.css:1366                A23  font-size literal "14px" (pakai var(--fs-*))
+style.css:1377                A23  font-size literal "14px" (pakai var(--fs-*))
+style.css:1382                A02  hex terlarang #e2e8f0 (daftar ┬º4.1)
+style.css:1382                A03  literal warna "#e2e8f0" di luar blok token (selector .review-stars .star.empty)
+style.css:1386                A23  font-size literal "12px" (pakai var(--fs-*))
+style.css:1393                A23  font-size literal "13px" (pakai var(--fs-*))
+style.css:1408                A03  literal warna "rgba(255, 255, 255, 0.95)" di luar blok token (selector .floating-cta)
+style.css:1409                A05  backdrop-filter dilarang (glassmorphism)
+style.css:1409                A06  filter: blur dilarang
+style.css:1415                A03  literal warna "rgba(17, 24, 39, 0.96)" di luar blok token (selector body[data-theme="dark"] .detail-topbar,
+)
+style.css:1419                A02  hex terlarang #7dd3fc (daftar ┬º4.1)
+style.css:1419                A03  literal warna "#7dd3fc" di luar blok token (selector body[data-theme="dark"] .estimate-card s)
+style.css:1425                A24  border-radius literal "50%" (pakai var(--radius-*) atau 0)
+style.css:1432                A09  transition: var(--transition) dilarang
+style.css:1434                A08  :hover di luar @media (hover: hover) ".icon-btn-outline:hover"
+style.css:1437                A02  hex terlarang #ef4444 (daftar ┬º4.1)
+style.css:1437                A03  literal warna "#ef4444" di luar blok token (selector .icon-btn-outline:hover)
+style.css:1438                A02  hex terlarang #ef4444 (daftar ┬º4.1)
+style.css:1438                A03  literal warna "#ef4444" di luar blok token (selector .icon-btn-outline:hover)
+style.css:1439                A04  gradien pada selector tak-ter-allowlist ".btn-primary-large"
+style.css:1443                A26 (warn)  nilai spasi 14px di luar skala (padding)
+style.css:1445                A03  literal warna "#fff" di luar blok token (selector .btn-primary-large)
+style.css:1449                A23  font-size literal "15px" (pakai var(--fs-*))
+style.css:1452                A09  transition: var(--transition) dilarang
+style.css:1453                A03  literal warna "rgba(14, 116, 144, 0.3)" di luar blok token (selector .btn-primary-large)
+style.css:1453                A25  box-shadow literal "0 4px 12px rgba(14, 116, 144, " (pakai var(--shadow-*)/none/ring)
+style.css:1454                A08  :hover di luar @media (hover: hover) ".btn-primary-large:hover"
+style.css:1457                A03  literal warna "rgba(14, 116, 144, 0.4)" di luar blok token (selector .btn-primary-large:hover)
+style.css:1457                A25  box-shadow literal "0 6px 20px rgba(14, 116, 144, " (pakai var(--shadow-*)/none/ring)
+style.css:1458                A07  lift translateY(-...) dilarang
+style.css:1462                A07  zoom scale(...) dilarang
+style.css:1475                A26 (warn)  nilai spasi 10px di luar skala (padding)
+style.css:1479                A23  font-size literal "14px" (pakai var(--fs-*))
+style.css:1484                A09  transition: var(--transition) dilarang
+style.css:1500                A24  border-radius literal "100px" (pakai var(--radius-*) atau 0)
+style.css:1501                A08  :hover di luar @media (hover: hover) ".sub-tab:hover"
+style.css:1513                A24  border-radius literal "100px" (pakai var(--radius-*) atau 0)
+style.css:1514                A02  hex terlarang #ef4444 (daftar ┬º4.1)
+style.css:1514                A03  literal warna "#ef4444" di luar blok token (selector .tab-badge)
+style.css:1515                A03  literal warna "#fff" di luar blok token (selector .tab-badge)
+style.css:1516                A23  font-size literal "10px" (pakai var(--fs-*))
+style.css:1519                A26 (warn)  nilai spasi 5px di luar skala (padding)
+style.css:1535                A26 (warn)  nilai spasi 14px di luar skala (gap)
+style.css:1536                A26 (warn)  nilai spasi 14px di luar skala (padding)
+style.css:1540                A26 (warn)  nilai spasi 10px di luar skala (margin-bottom)
+style.css:1542                A09  transition: var(--transition) dilarang
+style.css:1543                A08  :hover di luar @media (hover: hover) ".loan-card:hover"
+style.css:1564                A23  font-size literal "14px" (pakai var(--fs-*))
+style.css:1570                A23  font-size literal "11px" (pakai var(--fs-*))
+style.css:1572                A26 (warn)  nilai spasi 3px di luar skala (padding)
+style.css:1573                A24  border-radius literal "100px" (pakai var(--radius-*) atau 0)
+style.css:1578                A02  hex terlarang #fef3c7 (daftar ┬º4.1)
+style.css:1578                A03  literal warna "#fef3c7" di luar blok token (selector .due-tag.warning)
+style.css:1579                A02  hex terlarang #92400e (daftar ┬º4.1)
+style.css:1579                A03  literal warna "#92400e" di luar blok token (selector .due-tag.warning)
+style.css:1583                A02  hex terlarang #fee2e2 (daftar ┬º4.1)
+style.css:1583                A03  literal warna "#fee2e2" di luar blok token (selector .due-tag.danger)
+style.css:1584                A02  hex terlarang #991b1b (daftar ┬º4.1)
+style.css:1584                A03  literal warna "#991b1b" di luar blok token (selector .due-tag.danger)
+style.css:1588                A02  hex terlarang #e0f2fe (daftar ┬º4.1)
+style.css:1588                A03  literal warna "#e0f2fe" di luar blok token (selector .due-tag.info)
+style.css:1589                A02  hex terlarang #075985 (daftar ┬º4.1)
+style.css:1589                A03  literal warna "#075985" di luar blok token (selector .due-tag.info)
+style.css:1593                A02  hex terlarang #dcfce7 (daftar ┬º4.1)
+style.css:1593                A03  literal warna "#dcfce7" di luar blok token (selector .due-tag.success)
+style.css:1594                A02  hex terlarang #166534 (daftar ┬º4.1)
+style.css:1594                A03  literal warna "#166534" di luar blok token (selector .due-tag.success)
+style.css:1600                A03  literal warna "#fff" di luar blok token (selector .btn-sm-primary)
+style.css:1604                A23  font-size literal "13px" (pakai var(--fs-*))
+style.css:1607                A09  transition: var(--transition) dilarang
+style.css:1608                A08  :hover di luar @media (hover: hover) ".btn-sm-primary:hover"
+style.css:1615                A07  zoom scale(...) dilarang
+style.css:1619                A26 (warn)  nilai spasi 7px di luar skala (padding)
+style.css:1619                A26 (warn)  nilai spasi 14px di luar skala (padding)
+style.css:1625                A23  font-size literal "12px" (pakai var(--fs-*))
+style.css:1628                A09  transition: var(--transition) dilarang
+style.css:1630                A08  :hover di luar @media (hover: hover) ".btn-sm-outline:hover"
+style.css:1637                A07  zoom scale(...) dilarang
+style.css:1643                A26 (warn)  nilai spasi 14px di luar skala (gap)
+style.css:1644                A26 (warn)  nilai spasi 14px di luar skala (padding)
+style.css:1648                A26 (warn)  nilai spasi 10px di luar skala (margin-bottom)
+style.css:1649                A09  transition: var(--transition) dilarang
+style.css:1650                A08  :hover di luar @media (hover: hover) ".queue-card:hover"
+style.css:1659                A26 (warn)  nilai spasi 6px di luar skala (gap)
+style.css:1660                A26 (warn)  nilai spasi 6px di luar skala (margin-top)
+style.css:1661                A23  font-size literal "12px" (pakai var(--fs-*))
+style.css:1663                A27  kelas CSS mati ".my-review-card" (tidak dipakai di HTML/JS)
+style.css:1672                A27  kelas CSS mati ".my-review-book" (tidak dipakai di HTML/JS)
+style.css:1678                A26 (warn)  nilai spasi 10px di luar skala (margin-bottom)
+style.css:1679                A27  kelas CSS mati ".my-review-cover" (tidak dipakai di HTML/JS)
+style.css:1684                A24  border-radius literal "6px" (pakai var(--radius-*) atau 0)
+style.css:1690                A23  font-size literal "14px" (pakai var(--fs-*))
+style.css:1692                A27  kelas CSS mati ".my-review-rating" (tidak dipakai di HTML/JS)
+style.css:1702                A23  font-size literal "16px" (pakai var(--fs-*))
+style.css:1707                A02  hex terlarang #e2e8f0 (daftar ┬º4.1)
+style.css:1707                A03  literal warna "#e2e8f0" di luar blok token (selector .my-review-rating .star.empty)
+style.css:1708                A27  kelas CSS mati ".rating-number" (tidak dipakai di HTML/JS)
+style.css:1711                A23  font-size literal "13px" (pakai var(--fs-*))
+style.css:1714                A26 (warn)  nilai spasi 6px di luar skala (margin-left)
+style.css:1715                A27  kelas CSS mati ".review-date" (tidak dipakai di HTML/JS)
+style.css:1718                A23  font-size literal "11px" (pakai var(--fs-*))
+style.css:1722                A27  kelas CSS mati ".pending-review-section" (tidak dipakai di HTML/JS)
+style.css:1726                A27  kelas CSS mati ".pending-title" (tidak dipakai di HTML/JS)
+style.css:1729                A23  font-size literal "14px" (pakai var(--fs-*))
+style.css:1732                A26 (warn)  nilai spasi 10px di luar skala (margin-bottom)
+style.css:1733                A27  kelas CSS mati ".pending-review-card" (tidak dipakai di HTML/JS)
+style.css:1744                A27  kelas CSS mati ".pending-info" (tidak dipakai di HTML/JS)
+style.css:1751                A23  font-size literal "14px" (pakai var(--fs-*))
+style.css:1758                A30  text-transform: uppercase pada ".history-month-title" (maks 1 selector, ada 3)
+style.css:1761                A23  font-size literal "14px" (pakai var(--fs-*))
+style.css:1782                A24  border-radius literal "6px" (pakai var(--radius-*) atau 0)
+style.css:1792                A23  font-size literal "14px" (pakai var(--fs-*))
+style.css:1800                A23  font-size literal "11px" (pakai var(--fs-*))
+style.css:1807                A23  font-size literal "11px" (pakai var(--fs-*))
+style.css:1809                A26 (warn)  nilai spasi 3px di luar skala (padding)
+style.css:1810                A24  border-radius literal "100px" (pakai var(--radius-*) atau 0)
+style.css:1811                A26 (warn)  nilai spasi 6px di luar skala (margin-top)
+style.css:1815                A02  hex terlarang #dcfce7 (daftar ┬º4.1)
+style.css:1815                A03  literal warna "#dcfce7" di luar blok token (selector .history-status.completed)
+style.css:1816                A02  hex terlarang #166534 (daftar ┬º4.1)
+style.css:1816                A03  literal warna "#166534" di luar blok token (selector .history-status.completed)
+style.css:1820                A02  hex terlarang #e0f2fe (daftar ┬º4.1)
+style.css:1820                A03  literal warna "#e0f2fe" di luar blok token (selector .history-status.returned)
+style.css:1821                A02  hex terlarang #075985 (daftar ┬º4.1)
+style.css:1821                A03  literal warna "#075985" di luar blok token (selector .history-status.returned)
+style.css:1831                A23  font-size literal "14px" (pakai var(--fs-*))
+style.css:1836                A29  komentar jejak generator "WA STYLE"
+style.css:1847                A23  font-size literal "14px" (pakai var(--fs-*))
+style.css:1863                A09  transition: var(--transition) dilarang
+style.css:1864                A08  :hover di luar @media (hover: hover) ".wa-item:hover"
+style.css:1873                A24  border-radius literal "50%" (pakai var(--radius-*) atau 0)
+style.css:1874                A03  literal warna "#fff" di luar blok token (selector .wa-avatar)
+style.css:1879                A26 (warn)  nilai spasi 14px di luar skala (margin-right)
+style.css:1901                A23  font-size literal "15px" (pakai var(--fs-*))
+style.css:1912                A23  font-size literal "12px" (pakai var(--fs-*))
+style.css:1915                A27  kelas CSS mati ".wa-time" (tidak dipakai di HTML/JS)
+style.css:1918                A23  font-size literal "12px" (pakai var(--fs-*))
+style.css:1929                A23  font-size literal "13px" (pakai var(--fs-*))
+style.css:1934                A26 (warn)  nilai spasi 10px di luar skala (margin-right)
+style.css:1935                A27  kelas CSS mati ".wa-badge" (tidak dipakai di HTML/JS)
+style.css:1939                A03  literal warna "#fff" di luar blok token (selector .wa-badge)
+style.css:1940                A23  font-size literal "11px" (pakai var(--fs-*))
+style.css:1942                A26 (warn)  nilai spasi 6px di luar skala (padding)
+style.css:1943                A24  border-radius literal "100px" (pakai var(--radius-*) atau 0)
+style.css:1944                A04  gradien pada selector tak-ter-allowlist ".trending-book-hero"
+style.css:1953                A09  transition: var(--transition) dilarang
+style.css:1954                A08  :hover di luar @media (hover: hover) ".trending-book-hero:hover"
+style.css:1957                A07  lift translateY(-...) dilarang
+style.css:1959                A30  text-transform: uppercase pada ".trending-book-hero-rank" (maks 1 selector, ada 3)
+style.css:1962                A23  font-size literal "11px" (pakai var(--fs-*))
+style.css:1964                A03  literal warna "rgba(255, 255, 255, 0.8)" di luar blok token (selector .trending-book-hero-rank)
+style.css:1972                A26 (warn)  nilai spasi 14px di luar skala (gap)
+style.css:1980                A03  literal warna "rgba(0, 0, 0, 0.3)" di luar blok token (selector .trending-book-hero-cover)
+style.css:1980                A25  box-shadow literal "0 4px 16px rgba(0, 0, 0, 0.3)" (pakai var(--shadow-*)/none/ring)
+style.css:1989                A23  font-size literal "17px" (pakai var(--fs-*))
+style.css:1991                A03  literal warna "#fff" di luar blok token (selector .trending-book-hero-info h3)
+style.css:1996                A03  literal warna "rgba(255, 255, 255, 0.75)" di luar blok token (selector .trending-book-hero-info .book-author)
+style.css:2002                A23  font-size literal "11px" (pakai var(--fs-*))
+style.css:2004                A26 (warn)  nilai spasi 3px di luar skala (padding)
+style.css:2004                A26 (warn)  nilai spasi 10px di luar skala (padding)
+style.css:2005                A24  border-radius literal "100px" (pakai var(--radius-*) atau 0)
+style.css:2006                A03  literal warna "rgba(255, 255, 255, 0.2)" di luar blok token (selector .trending-genre-chip)
+style.css:2007                A03  literal warna "#fff" di luar blok token (selector .trending-genre-chip)
+style.css:2011                A26 (warn)  nilai spasi 10px di luar skala (margin-top)
+style.css:2012                A23  font-size literal "12px" (pakai var(--fs-*))
+style.css:2013                A03  literal warna "rgba(255, 255, 255, 0.8)" di luar blok token (selector .trending-book-reason)
+style.css:2025                A09  transition: var(--transition) dilarang
+style.css:2026                A08  :hover di luar @media (hover: hover) ".trending-book-list-item:hover"
+style.css:2033                A23  font-size literal "18px" (pakai var(--fs-*))
+style.css:2034                A22  font-weight 800/900 dilarang
+style.css:2056                A23  font-size literal "14px" (pakai var(--fs-*))
+style.css:2064                A23  font-size literal "12px" (pakai var(--fs-*))
+style.css:2074                A26 (warn)  nilai spasi 3px di luar skala (gap)
+style.css:2081                A26 (warn)  nilai spasi 6px di luar skala (margin-top)
+style.css:2087                A24  border-radius literal "50%" (pakai var(--radius-*) atau 0)
+style.css:2088                A03  literal warna "#fff" di luar blok token (selector .tca)
+style.css:2089                A26 (warn)  nilai spasi -5px di luar skala (margin-right)
+style.css:2099                A04  gradien pada selector tak-ter-allowlist ".profile-avatar"
+style.css:2104                A24  border-radius literal "50%" (pakai var(--radius-*) atau 0)
+style.css:2109                A03  literal warna "rgba(14, 116, 144, 0.3)" di luar blok token (selector .profile-avatar)
+style.css:2109                A25  box-shadow literal "0 4px 16px rgba(14, 116, 144, " (pakai var(--shadow-*)/none/ring)
+style.css:2113                A23  font-size literal "20px" (pakai var(--fs-*))
+style.css:2119                A23  font-size literal "14px" (pakai var(--fs-*))
+style.css:2136                A23  font-size literal "18px" (pakai var(--fs-*))
+style.css:2142                A23  font-size literal "12px" (pakai var(--fs-*))
+style.css:2148                A26 (warn)  nilai spasi 10px di luar skala (padding)
+style.css:2153                A23  font-size literal "14px" (pakai var(--fs-*))
+style.css:2157                A09  transition: var(--transition) dilarang
+style.css:2158                A08  :hover di luar @media (hover: hover) ".btn-outline-profile:hover"
+style.css:2166                A26 (warn)  nilai spasi 14px di luar skala (padding)
+style.css:2175                A23  font-size literal "15px" (pakai var(--fs-*))
+style.css:2183                A23  font-size literal "11px" (pakai var(--fs-*))
+style.css:2192                A24  border-radius literal "12px" (pakai var(--radius-*) atau 0)
+style.css:2193                A02  hex terlarang #64748b (daftar ┬º4.1)
+style.css:2193                A03  literal warna "#64748b" di luar blok token (selector .theme-toggle)
+style.css:2195                A09  transition: var(--transition) dilarang
+style.css:2202                A24  border-radius literal "50%" (pakai var(--radius-*) atau 0)
+style.css:2203                A03  literal warna "#fff" di luar blok token (selector .theme-toggle span)
+style.css:2205                A09  transition: var(--transition) dilarang
+style.css:2223                A26 (warn)  nilai spasi 14px di luar skala (gap)
+style.css:2227                A09  transition: var(--transition) dilarang
+style.css:2228                A08  :hover di luar @media (hover: hover) ".menu-item:hover"
+style.css:2236                A23  font-size literal "22px" (pakai var(--fs-*))
+style.css:2241                A23  font-size literal "15px" (pakai var(--fs-*))
+style.css:2247                A23  font-size literal "20px" (pakai var(--fs-*))
+style.css:2257                A24  border-radius literal "50%" (pakai var(--radius-*) atau 0)
+style.css:2259                A03  literal warna "#fff" di luar blok token (selector .edit-avatar-btn)
+style.css:2260                A03  literal warna "#fff" di luar blok token (selector .edit-avatar-btn)
+style.css:2269                A23  font-size literal "16px" (pakai var(--fs-*))
+style.css:2286                A23  font-size literal "13px" (pakai var(--fs-*))
+style.css:2299                A23  font-size literal "15px" (pakai var(--fs-*))
+style.css:2301                A09  transition: var(--transition) dilarang
+style.css:2309                A03  literal warna "#fff" di luar blok token (selector .form-group input:focus,
+.form-group se)
+style.css:2310                A03  literal warna "rgba(14, 116, 144, 0.1)" di luar blok token (selector .form-group input:focus,
+.form-group se)
+style.css:2325                A26 (warn)  nilai spasi 28px di luar skala (padding)
+style.css:2327                A05  backdrop-filter dilarang (glassmorphism)
+style.css:2327                A06  filter: blur dilarang
+style.css:2336                A26 (warn)  nilai spasi 3px di luar skala (gap)
+style.css:2341                A09  transition: var(--transition) dilarang
+style.css:2347                A23  font-size literal "24px" (pakai var(--fs-*))
+style.css:2348                A09  transition: var(--transition) dilarang
+style.css:2352                A23  font-size literal "11px" (pakai var(--fs-*))
+style.css:2362                A08  :hover di luar @media (hover: hover) ".nav-item:hover"
+style.css:2386                A10  animation-delay (stagger) dilarang
+style.css:2390                A10  animation-delay (stagger) dilarang
+style.css:2394                A10  animation-delay (stagger) dilarang
+style.css:2398                A10  animation-delay (stagger) dilarang
+style.css:2402                A10  animation-delay (stagger) dilarang
+
+--- Ringkasan per aturan ---
+  A01  error  2
+  A02  error  90
+  A03  error  145
+  A04  error  15
+  A05  error  3
+  A06  error  4
+  A07  error  18
+  A08  error  26
+  A09  error  28
+  A10  error  5
+  A11  error  1
+  A12  error  3
+  A13  error  1
+  A14  error  40
+  A15  error  185
+  A16  error  77
+  A17  error  76
+  A18  error  1
+  A19  error  26
+  A20  error  5
+  A21  error  6
+  A22  error  3
+  A23  error  113
+  A24  error  32
+  A25  error  8
+  A26  warn   70
+  A27  error  48
+  A28  error  1
+  A29  error  4
+  A30  error  3
+  A31  error  12
+  A32  warn   77
+  A33  error  15
+  D01  error  1
+
+Total: 1144 temuan (997 error, 147 warn)

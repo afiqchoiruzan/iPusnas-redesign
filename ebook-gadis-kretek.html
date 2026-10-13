@@ -1,80 +1,161 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gadis Kretek - Reader</title>
+    <title>Cuplikan Gadis Kretek</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gantari:wght@400;500&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --ink: #172033;
-            --muted: #6b7280;
-            --paper: #fffdf8;
-            --line: #e8e1d5;
+            --paper: rgb(255 253 248);
+            --paper-2: rgb(246 243 236);
+            --ink: rgb(30 31 36);
+            --ink-2: rgb(79 81 96);
+            --line: rgb(226 220 207);
+            --read: "Literata", Georgia, "Times New Roman", serif;
+            --ui: "Gantari", system-ui, -apple-system, sans-serif;
         }
-        * { box-sizing: border-box; }
+
+        :root[data-theme="dark"] {
+            --paper: rgb(23 24 28);
+            --paper-2: rgb(31 32 37);
+            --ink: rgb(237 234 227);
+            --ink-2: rgb(189 186 178);
+            --line: rgb(51 52 59);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             margin: 0;
             color: var(--ink);
-            background: #e8edf0;
-            font-family: Georgia, 'Times New Roman', serif;
+            background: var(--paper-2);
+            font-family: var(--read);
         }
-        .book-page {
-            width: min(100%, 680px);
+
+        .page {
+            width: min(100%, 36em);
             min-height: 100vh;
             margin: 0 auto;
-            padding: 38px 28px 64px;
+            padding: 40px 28px 72px;
             background: var(--paper);
-            box-shadow: 0 0 18px rgba(15, 23, 42, 0.07);
         }
-        .book-kicker {
-            margin: 0 0 12px;
-            color: var(--muted);
-            font: 600 11px/1.4 Arial, sans-serif;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
+
+        .label {
+            margin: 0 0 20px;
+            padding: 6px 10px;
+            display: inline-block;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            color: var(--ink-2);
+            font-family: var(--ui);
+            font-size: 12px;
+            font-weight: 500;
         }
+
         h1 {
             margin: 0;
-            font-size: 30px;
-            line-height: 1.1;
-            font-weight: 700;
+            font-size: 28px;
+            line-height: 1.15;
+            font-weight: 600;
         }
+
         .author {
-            margin: 8px 0 34px;
-            color: var(--muted);
+            margin: 8px 0 32px;
+            color: var(--ink-2);
             font-size: 16px;
         }
+
         .chapter {
             margin: 0 0 24px;
             padding-bottom: 14px;
             border-bottom: 1px solid var(--line);
             font-size: 18px;
-            font-weight: 700;
+            font-weight: 600;
         }
-        p {
-            margin: 0 0 18px;
-            font-size: 17px;
-            line-height: 1.75;
+
+        p.body {
+            margin: 0 0 20px;
+            font-size: 18px;
+            line-height: 1.78;
         }
-        .notice {
-            margin-top: 36px;
-            padding-top: 14px;
+
+        p.body:first-letter {
+            font-size: 2.4em;
+            font-weight: 600;
+            line-height: 0.9;
+            float: left;
+            padding: 4px 8px 0 0;
+        }
+
+        p.body + p.body:first-letter {
+            font-size: inherit;
+            font-weight: inherit;
+            float: none;
+            padding: 0;
+        }
+
+        .note {
+            margin-top: 40px;
+            padding-top: 16px;
             border-top: 1px solid var(--line);
-            color: var(--muted);
-            font: 12px/1.5 Arial, sans-serif;
+            color: var(--ink-2);
+            font-family: var(--ui);
+            font-size: 12px;
+            line-height: 1.6;
         }
     </style>
 </head>
+
 <body>
-    <article class="book-page">
-        <p class="book-kicker">Sedang membaca</p>
+    <article class="page">
+        <p class="label">Cuplikan contoh, bukan isi asli buku</p>
         <h1>Gadis Kretek</h1>
         <p class="author">Ratih Kumala</p>
-        <h2 class="chapter">Bab 1</h2>
-        <p>Di antara aroma tembakau dan suara kota yang mulai ramai, sebuah kisah lama kembali membuka pintunya. Kenangan tentang keluarga, pilihan, dan jejak yang ditinggalkan seseorang tersimpan di balik setiap linting kretek.</p>
-        <p>Ia membaca kembali catatan itu perlahan. Setiap kalimat membawa ingatan pada rumah, pada percakapan yang belum selesai, dan pada nama yang selama ini hanya disebut dalam bisikan.</p>
-        <p>Halaman berikutnya menunggu untuk dibaca. Gunakan gulir halaman ini untuk melanjutkan membaca.</p>
-        <p class="notice">Prototype reader iPusnas. File ebook dapat diganti dengan file resmi yang tersedia di katalog perpustakaan.</p>
+        <h2 class="chapter">Satu</h2>
+        <p class="body">Pagi di Kudus mulai dengan bau yang sama setiap hari: tembakau yang baru dibuka, cengkih
+            yang ditumbuk kasar, dan kopi tubruk di gelas blirik milik mandor gudang. Lebas berdiri di pintu
+            pabrik yang catnya sudah mengelupas, memegang secarik kertas dengan satu nama yang tidak pernah ia
+            dengar sebelum ayahnya sakit.</p>
+        <p class="body">Nama itu ditulis dengan tinta yang mulai pudar, huruf-hurufnya miring seperti ditulis
+            tergesa. Jeng Yah. Dua kata yang membuat ibunya diam dan membuat ayahnya, yang biasanya hanya bicara
+            soal harga daun dan upah pelinting, tiba-tiba memanggilnya mendekat.</p>
+        <p class="body">Di dalam gudang, deretan keranjang bambu disusun sampai ke langit-langit. Perempuan-perempuan
+            duduk bersila, jari mereka bergerak cepat melinting satu demi satu, begitu lama sampai gerakan itu
+            tidak lagi butuh dipikirkan. Salah seorang dari mereka mengangkat kepala, memandang Lebas sebentar,
+            lalu kembali pada pekerjaannya tanpa sepatah kata.</p>
+        <p class="body">Lebas melipat kertas itu dan memasukkannya ke saku. Ia tahu perjalanan ini tidak akan
+            selesai di satu kota. Ada kereta yang harus dinaiki, ada orang-orang tua yang harus ditemui sebelum
+            ingatan mereka ikut pergi, dan ada satu pertanyaan yang belum berani ia ucapkan: mengapa nama ini
+            baru ia dengar di hari-hari terakhir ayahnya.</p>
+        <p class="body">Di luar, suara kota mulai ramai. Becak melintas, pedagang membuka tutup dagangannya, dan
+            asap tipis dari cerobong pabrik naik perlahan ke udara yang masih dingin. Lebas menarik napas, mencium
+            lagi aroma yang sama, dan mulai melangkah ke arah stasiun.</p>
+        <p class="note">Teks di atas adalah tulisan contoh yang dibuat tim untuk prototype iPusnas. Teks ini bukan
+            kutipan dari buku asli dan hanya menggambarkan tampilan halaman baca.</p>
     </article>
+
+    <script>
+        (function () {
+            function applyTheme(value) {
+                document.documentElement.dataset.theme = value === 'dark' ? 'dark' : 'light';
+            }
+            try {
+                var params = new URLSearchParams(window.location.search);
+                applyTheme(params.get('theme') || 'light');
+            } catch (e) {
+                applyTheme('light');
+            }
+            window.addEventListener('message', function (e) {
+                if (e.data && e.data.type === 'theme') applyTheme(e.data.value);
+            });
+        })();
+    </script>
 </body>
+
 </html>

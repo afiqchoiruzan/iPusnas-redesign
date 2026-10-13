@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "script.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "audit:ui": "node tools/slop-audit.mjs",
+    "screenshots": "node tools/screenshots.mjs",
+    "covers": "node tools/fetch-covers.mjs",
+    "demo": "node record-demo.js"
   },
   "keywords": [],
   "author": "",

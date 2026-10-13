@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="40" viewBox="0 0 150 40" role="img" aria-label="iPusnas">
+  <!-- Tanda daun/bintang brand (hijau) -->
+  <path fill="#009834" d="M11 6c3.6 1.5 6.2 4.6 7 8.4C14.4 12.9 11.8 9.8 11 6Z"/>
+  <path fill="#009834" d="M19 7.2c-1.1 3.7-4 6.6-7.6 7.8 1.1-3.7 4-6.6 7.6-7.8Z"/>
+  <!-- Wordmark iPusnas (navy pada tema terang) -->
+  <text x="26" y="29" font-family="Gantari, 'Segoe UI', system-ui, sans-serif" font-size="24" font-weight="700" letter-spacing="-0.5" fill="#253F8A">iPusnas</text>
+</svg>
