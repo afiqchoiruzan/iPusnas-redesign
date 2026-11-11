@@ -1,2 +1,5 @@
 node_modules/
 demo-video/
+.kiro/
+docs/
+
