@@ -90,6 +90,7 @@ window.IPUSNAS_DATA = {
         'Dewi Ayu bangkit dari kubur setelah dua puluh satu tahun dan menengok nasib keempat anaknya. Dari kota pesisir Halimunda, kisah ini merangkai cinta, kutukan, dan kekerasan sepanjang beberapa generasi.',
       copies: 3,
       onLoan: 3,
+      queueFull: true,
     },
     {
       id: 'pulang',
@@ -197,7 +198,8 @@ window.IPUSNAS_DATA = {
       synopsis:
         'Empat perempuan yang bersahabat sejak kecil menata hidup masing-masing di kota yang berubah cepat, sementara seorang mantan pastor bernama Saman bergerak di antara mereka. Cerita berpindah antara masa kecil di perkebunan dan kota yang gelisah menjelang akhir 1990-an.',
       copies: 3,
-      onLoan: 1,
+      onLoan: 3,
+      queueFull: true,
     },
     {
       id: 'hujan',
