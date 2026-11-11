@@ -18,11 +18,11 @@ function registerDynamicClasses(host) {
     host.classList.add('banner-slide', 'banner-slide--event', 'banner-slide--collection', 'banner-slide--bulletin', 'banner-slide--book');
     host.classList.add('cover', 'cover--sm', 'cover--md', 'cover--lg');
     host.classList.add('avatar', 'avatar--sm', 'avatar--md', 'avatar--lg', 'avatar--xl');
-    host.classList.add('tag', 'tag--warn', 'tag--danger', 'loan-card__tag', 'empty');
+    host.classList.add('tag', 'tag--warn', 'tag--danger', 'loan-card__tag', 'empty', 'loan-card__main', 'btn--disabled', 'status-card--warn');
     host.classList.remove('banner-slide', 'banner-slide--event', 'banner-slide--collection', 'banner-slide--bulletin', 'banner-slide--book');
     host.classList.remove('cover', 'cover--sm', 'cover--md', 'cover--lg');
     host.classList.remove('avatar', 'avatar--sm', 'avatar--md', 'avatar--lg', 'avatar--xl');
-    host.classList.remove('tag', 'tag--warn', 'tag--danger', 'loan-card__tag', 'empty');
+    host.classList.remove('tag', 'tag--warn', 'tag--danger', 'loan-card__tag', 'empty', 'loan-card__main', 'btn--disabled', 'status-card--warn');
 }
 
 /* ============ STATE RUNTIME ============ */
@@ -135,6 +135,15 @@ function monogram(name) {
 function isAvailable(book) { return book.copies > book.onLoan; }
 function isOnLoan(id) { return DATA.loans.some(function (l) { return l.bookId === id; }); }
 function queueEntry(id) { return DATA.queue.find(function (q) { return q.bookId === id; }) || null; }
+function isQueueFull(book) {
+    if (!book) return false;
+    if (book.queueFull === true) return true;
+    var maxQueue = book.maxQueue || 20;
+    var q = queueEntry(book.id);
+    if (q && q.total >= maxQueue) return true;
+    if (book.copies && book.onLoan >= book.copies && (book.queueTotal || 0) >= maxQueue) return true;
+    return false;
+}
 
 /* ============ FRAGMEN RENDER ============ */
 // Kelas modifier ditulis sebagai string terkutip tunggal supaya terdeteksi audit.
@@ -315,8 +324,21 @@ function renderSelengkapnya(books, label) {
 
 /* ============ RENDER: DETAIL ============ */
 function ctaForBook(book) {
+    if (isOnLoan(book.id)) {
+        var loan = DATA.loans.find(function (l) { return l.bookId === book.id; });
+        var days = loan ? daysUntil(loan.dueAt) : 0;
+        var dueText = loan ? 'Kembali otomatis ' + fmtDate(loan.dueAt) + ' \u00b7 ' + days + ' hari lagi' : 'Sedang kamu pinjam';
+        return {
+            label: 'Baca',
+            action: 'open-reader',
+            variant: 'primary',
+            disabled: false,
+            card: '<div class="status-card"><span class="material-symbols-rounded" aria-hidden="true">auto_stories</span>' +
+                '<div><strong>Sedang kamu pinjam</strong><p>' + dueText + '</p></div></div>'
+        };
+    }
     if (isAvailable(book)) {
-        return { label: 'Pinjam', action: 'borrow', card: '' };
+        return { label: 'Pinjam buku', action: 'borrow', variant: 'primary', disabled: false, card: '' };
     }
     var q = queueEntry(book.id);
     if (q) {
@@ -324,15 +346,29 @@ function ctaForBook(book) {
             label: 'Keluar dari antrean',
             action: 'leave-queue',
             variant: 'secondary',
+            disabled: false,
             card: '<div class="status-card"><span class="material-symbols-rounded" aria-hidden="true">schedule</span>' +
                 '<div><strong>Kamu di antrean ke-' + q.position + ' dari ' + q.total + '</strong>' +
                 '<p>Perkiraan tersedia \u00b1' + q.estimateDays + ' hari lagi</p></div></div>'
+        };
+    }
+    if (isQueueFull(book)) {
+        return {
+            label: 'Pinjam buku',
+            action: 'none',
+            variant: 'disabled',
+            disabled: true,
+            card: '<div class="status-card status-card--warn"><span class="material-symbols-rounded" aria-hidden="true">block</span>' +
+                '<div><strong>Antrean buku penuh</strong>' +
+                '<p>Semua eksemplar sedang dipinjam dan antrean telah mencapai batas maksimal.</p></div></div>'
         };
     }
     var waiting = book.onLoan;
     return {
         label: 'Masuk antrean',
         action: 'join-queue',
+        variant: 'primary',
+        disabled: false,
         card: '<div class="status-card"><span class="material-symbols-rounded" aria-hidden="true">group</span>' +
             '<div><strong>Sedang dipinjam semua</strong>' +
             '<p>' + waiting + ' orang menunggu buku ini</p></div></div>'
@@ -364,9 +400,17 @@ function renderDetail(bookId) {
     document.getElementById('detail-status-slot').innerHTML = cta.card;
     var ctaBtn = document.getElementById('detail-cta-btn');
     ctaBtn.textContent = cta.label;
-    ctaBtn.className = 'btn ' + (cta.variant === 'secondary' ? 'btn--secondary' : 'btn--primary');
+    var variantClass = cta.variant === 'secondary' ? 'btn--secondary' : cta.variant === 'disabled' ? 'btn--disabled' : 'btn--primary';
+    ctaBtn.className = 'btn ' + variantClass;
     ctaBtn.setAttribute('data-action', cta.action);
     ctaBtn.setAttribute('data-book-id', book.id);
+    if (cta.disabled) {
+        ctaBtn.setAttribute('disabled', '');
+        ctaBtn.setAttribute('aria-disabled', 'true');
+    } else {
+        ctaBtn.removeAttribute('disabled');
+        ctaBtn.removeAttribute('aria-disabled');
+    }
 
     // Favorit / bookmark
     var fav = document.getElementById('detail-fav');
@@ -425,12 +469,15 @@ function renderRak() {
             var tagBase = 'loan-card__tag';
             var tagClass = 'tag ' + sevClass + ' ' + tagBase;
             var tagText = 'Kembali otomatis ' + fmtDate(l.dueAt) + ' \u00b7 ' + days + ' hari lagi';
-            return '<div class="loan-card">' + coverHtml(book, 'sm') +
-                '<div class="loan-card__body">' +
-                '<div class="loan-card__title">' + escapeHtml(book.title) + '</div>' +
-                '<div class="loan-card__author">' + escapeHtml(book.author) + '</div>' +
+            return '<div class="loan-card">' +
+                '<button type="button" class="loan-card__main" data-action="open-book" data-book-id="' + book.id + '" aria-label="Lihat detail ' + escapeHtml(book.title) + '">' +
+                coverHtml(book, 'sm') +
+                '<span class="loan-card__body">' +
+                '<span class="loan-card__title">' + escapeHtml(book.title) + '</span>' +
+                '<span class="loan-card__author">' + escapeHtml(book.author) + '</span>' +
                 '<span class="' + tagClass + '">' + tagText + '</span>' +
-                '</div>' +
+                '</span>' +
+                '</button>' +
                 '<button type="button" class="btn btn--secondary btn--sm" data-action="open-reader" data-book-id="' + book.id + '">Baca</button>' +
                 '</div>';
         }).join('') || '<div class="empty-state"><h3>Belum ada pinjaman</h3><p>Pinjam buku dari katalog untuk mulai membaca.</p></div>';
@@ -452,12 +499,15 @@ function renderRak() {
             queueEl.innerHTML = DATA.queue.map(function (q) {
                 var book = getBook(q.bookId);
                 var hint = q.position === 1 ? 'Giliranmu berikutnya' : 'Perkiraan tersedia \u00b1' + q.estimateDays + ' hari lagi';
-                return '<div class="queue-card">' + coverHtml(book, 'sm') +
-                    '<div class="queue-card__body">' +
-                    '<div class="loan-card__title">' + escapeHtml(book.title) + '</div>' +
-                    '<div class="loan-card__author">' + escapeHtml(book.author) + '</div>' +
-                    '<div class="queue-card__status">Antrean ke-' + q.position + ' dari ' + q.total + ' \u00b7 ' + hint + '</div>' +
-                    '</div>' +
+                return '<div class="queue-card">' +
+                    '<button type="button" class="loan-card__main" data-action="open-book" data-book-id="' + book.id + '" aria-label="Lihat detail ' + escapeHtml(book.title) + '">' +
+                    coverHtml(book, 'sm') +
+                    '<span class="queue-card__body">' +
+                    '<span class="loan-card__title">' + escapeHtml(book.title) + '</span>' +
+                    '<span class="loan-card__author">' + escapeHtml(book.author) + '</span>' +
+                    '<span class="queue-card__status">Antrean ke-' + q.position + ' dari ' + q.total + ' \u00b7 ' + hint + '</span>' +
+                    '</span>' +
+                    '</button>' +
                     '<button type="button" class="btn btn--secondary btn--sm" data-action="leave-queue" data-book-id="' + book.id + '">Keluar</button>' +
                     '</div>';
             }).join('');
@@ -480,11 +530,12 @@ function renderRak() {
                 g.items.map(function (h) {
                     var book = getBook(h.bookId);
                     var statusText = h.status === 'returned' ? 'Dikembalikan \u00b7 berhenti di hal. 112' : 'Selesai dibaca';
-                    return '<div class="history-item">' + coverHtml(book, 'sm') +
-                        '<div class="history-item__body">' +
-                        '<div class="history-item__title">' + escapeHtml(book.title) + '</div>' +
-                        '<div class="history-item__meta">' + fmtDateRange(h.from, h.to) + ' \u00b7 ' + statusText + '</div>' +
-                        '</div></div>';
+                    return '<button type="button" class="history-item" data-action="open-book" data-book-id="' + book.id + '" aria-label="Lihat detail ' + escapeHtml(book.title) + '">' +
+                        coverHtml(book, 'sm') +
+                        '<span class="history-item__body">' +
+                        '<span class="history-item__title">' + escapeHtml(book.title) + '</span>' +
+                        '<span class="history-item__meta">' + fmtDateRange(h.from, h.to) + ' \u00b7 ' + statusText + '</span>' +
+                        '</span></button>';
                 }).join('') + '</div>';
         }).join('');
     }
@@ -642,6 +693,10 @@ function userRowHtml(person, isConnection) {
 function borrowBook(bookId) {
     var book = getBook(bookId);
     if (!book || !isAvailable(book)) return;
+    if (DATA.loans.length >= 5) {
+        toast('Batas peminjaman tercapai (maksimal 5 buku). Kembalikan buku lain terlebih dahulu.');
+        return;
+    }
     book.onLoan += 1;
     DATA.loans.push({ bookId: bookId, borrowedAt: DATA.today, dueAt: addDays(DATA.today, 14), currentPage: 1 });
     toast('Berhasil dipinjam. Buku ada di Rak saya, kembali otomatis dalam 14 hari.');
@@ -842,6 +897,18 @@ function toggleTheme() {
 
 /* ============ NAVIGASI ============ */
 var pageHistory = [];
+var TAB_PAGES = ['page-beranda', 'page-rak-saya', 'page-komunitas', 'page-profil'];
+
+function updateNavVisibility(pageId) {
+    var nav = document.querySelector('.bottom-nav');
+    if (!nav) return;
+    if (TAB_PAGES.indexOf(pageId) !== -1) {
+        nav.classList.remove('is-hidden');
+        activateNavFor(pageId);
+    } else {
+        nav.classList.add('is-hidden');
+    }
+}
 
 function focusPageTitle(pageId) {
     var page = document.getElementById(pageId);
@@ -860,6 +927,7 @@ function showPage(pageId, pushHistory) {
     var scroll = target.querySelector('.page-scroll');
     if (scroll) scroll.scrollTop = 0;
     focusPageTitle(pageId);
+    updateNavVisibility(pageId);
 }
 
 function switchTab(navBtn, pageId) {
@@ -875,6 +943,7 @@ function goBack() {
         document.querySelectorAll('.page').forEach(function (p) { p.classList.remove('active'); });
         document.getElementById(prev).classList.add('active');
         focusPageTitle(prev);
+        updateNavVisibility(prev);
     } else {
         switchTab(document.querySelector('.nav-item'), 'page-beranda');
     }
@@ -1124,6 +1193,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initNotifSwitches();
     initEditForm();
     registerDynamicClasses(document.createElement('span'));
+    updateNavVisibility('page-beranda');
 
     // Klik global (delegasi data-action)
     document.addEventListener('click', function (e) {

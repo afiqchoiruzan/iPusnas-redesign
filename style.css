@@ -419,6 +419,14 @@ h1, h2, h3, h4 {
     color: var(--color-danger-fg);
 }
 
+.btn--disabled,
+.btn:disabled {
+    background: var(--color-surface-3);
+    color: var(--color-text-3);
+    border: 1px solid var(--color-line-strong);
+    cursor: not-allowed;
+}
+
 .btn--sm {
     height: 36px;
     padding: 0 var(--space-4);
@@ -1388,6 +1396,15 @@ h1, h2, h3, h4 {
     margin-top: 2px;
 }
 
+.status-card--warn {
+    background: var(--color-warn-bg);
+    border-color: var(--color-warn-fg);
+}
+
+.status-card--warn .material-symbols-rounded {
+    color: var(--color-warn-fg);
+}
+
 .detail-facts {
     border: 1px solid var(--color-line);
     border-radius: var(--radius-card);
@@ -1485,16 +1502,20 @@ h1, h2, h3, h4 {
     line-height: 1.55;
 }
 
+#page-detail-buku .page-scroll {
+    padding-bottom: var(--space-5);
+}
+
 .detail-cta {
     display: flex;
     align-items: center;
     gap: var(--space-3);
-    padding: var(--space-3) var(--space-5);
+    padding: var(--space-3) var(--space-5) var(--space-4);
     background: var(--color-surface);
     border-top: 1px solid var(--color-line);
 }
 
-.detail-cta .btn--primary {
+.detail-cta .btn {
     flex: 1;
 }
 
@@ -1527,6 +1548,21 @@ h1, h2, h3, h4 {
     gap: var(--space-4);
     padding: var(--space-3) 0;
     border-bottom: 1px solid var(--color-line);
+}
+
+.loan-card__main {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    flex: 1;
+    min-width: 0;
+    background: none;
+    border: 0;
+    padding: 0;
+    text-align: left;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
 }
 
 .loan-card .cover {
@@ -1594,7 +1630,16 @@ h1, h2, h3, h4 {
     gap: var(--space-3);
     padding: var(--space-3) 0;
     border-bottom: 1px solid var(--color-line);
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    background: none;
     align-items: center;
+    width: 100%;
+    text-align: left;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
 }
 
 .history-item .cover {
@@ -2364,6 +2409,10 @@ h1, h2, h3, h4 {
     z-index: var(--z-nav);
 }
 
+.bottom-nav.is-hidden {
+    display: none;
+}
+
 .nav-item {
     flex: 1;
     display: flex;
@@ -2424,6 +2473,11 @@ h1, h2, h3, h4 {
 
     .chip:hover {
         border-color: var(--color-primary);
+    }
+
+    .loan-card__main:hover .loan-card__title,
+    .history-item:hover .history-item__title {
+        color: var(--color-primary);
     }
 }
 
